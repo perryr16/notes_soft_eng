@@ -1,0 +1,34 @@
+BRANCHING
+
+file creation 
+file changes
+git add
+git commit
+--now you have a master --
+git checkout -b new_branch
+--now youre on
+create new file
+make changes
+git add
+git commit
+git push origin new_branch
+--master cant see this--
+--on github, see branch dropdown--
+git checkout master
+--new file disappears!--
+git checkout new_branch
+--in new branch--
+--TO PULL--
+--on github--
+pull request
+confirm merge
+--now master has new stuff--
+--PULL DOWN TO LOCAL--
+git pull origin master
+--now you have it!
+git status
+--should be up to date-- 
+
+--to delete--
+--cant be in the branch--
+git branch -d new_branch

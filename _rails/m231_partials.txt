@@ -1,0 +1,13 @@
+m231-partials
+============
+file structure:
+app/views/artists
+	-form.html.erb
+	new.html.erb
+	show.html.erb
+
+in view:
+<%= render "form" %>
+	-form.html.erb
+	
+<%= render partial: 'form', locals: {path: '/artits/1', method: :get, button_text: 'this is text'}

@@ -1,0 +1,54 @@
+TASK MANAGER
+-----------
+CRUD: 
+Create
+Read
+Update
+Delete
+
+
+rails.new
+rails db:create (new database)
+
+MVC like a sandwhich shop
+Model. View. Controller.
+-basic structure most webpages are run on
+-lets user interact with a user interface: control of the system
+-user -> controller -> model -> view
+
+GET is what the webpage does when you ask it someting, [GET]"/tasks"
+
+ROOT (controller#action) > Controller (create controller) > Views (create folder named controller) > controller_named_folder (create html.erb file named after action) >
+create html file
+
+upon opening, 'welcome#index' means perform the index action within the welcome controller
+
+thus we need to add a welcome_cntroller
+in the welcome controller we need an index method
+and a welcome view
+within welcome view create html page called index. this will be referenced by the controller when I ask for it.
+
+erb tag: embedded rubby. access to instance variables
+<%= %> :echo (display) the return value
+<% %> :no echo
+
+cant get to webpage unless running "rails s"
+
+rails hashes are called with symbols regarless if they are written as strings
+
+migrations: allow you to evolve database structure over time...? 
+makes it easier to work with other people
+each migration is some change to a database
+e.g. add table, add columns, drop table...
+CAN TRANSFER APP TO DIFFERENT COMPUTERS WIHTOUT TRANSFERING THE WHOLE DATABASE
+transfer the instructions not the db
+`rails g migration CreateTask title:string description:string`
+g = generate 
+CreateTask will be class name
+
+
+play with database: psql -d task_manager_development 
+
+SELECT * FROM tasks;
+
+exit postgresql: \q

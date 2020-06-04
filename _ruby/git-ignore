@@ -1,0 +1,8 @@
+remove coverage from git ignore
+
+touch .gitignore #create git ignore file in main directory
+#add .coverage/ to .gitignore file
+git rm -r -f coverage/ #removes coverage/ from git tracking. 
+git add .gitignore
+git commit -m "some git ignore message"
+#run a test and see if coverage shows

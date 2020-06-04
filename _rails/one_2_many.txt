@@ -1,0 +1,25 @@
+One-Many
+==========
+in reference to setlist
+One Artist - Many Songs
+(Need shoulda-matchers)
+
+SPEC *******************
+spec/models/artist_spec.rb
+	 it { should have_many :songs }
+	 
+spec/models/song_spec.rb
+ it { should belong_to :artist }
+
+
+MODEL ******************
+app/models/artist.rb 
+	has_many :songs
+
+app/models/song.rb
+	belongs_to :artist
+
+
+MIGRATION **************
+rails g migration CreateArtist name:string
+rails g migration AddArtistToSongs artist:references

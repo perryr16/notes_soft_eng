@@ -1,0 +1,70 @@
+the internet: a wire
+----------
+
+
+light => router => electrical signal => pc
+light => tower => electro magnetic waves => mobile
+
+ICANN: monitors domain names and stuff
+
+internet is infrastructure
+web is service built ontop of that infrastructure
+
+servers are coputers that contain website information
+
+servers are connected DIRECTLY to the internet
+
+clients are connected INDRECTLY through an ISP. my pc is a client
+
+routers: where 2 or more parts of the internet intersect (10-15 needed to get to 1 website) everytime packets hit a router it adds a layer on the way to a server. on the way back, each layer is removed. this gaurentees it returns on the same path it took.
+
+===================
+DNS (DOMAIN NAME SYSTEM) is a phone book of ip addresses => urls
+long distance causes lags. this is LATENCY
+optical fibers underwater
+
+actually going to www.google.com.
+that dot is the "root"
+
+cache = memory
+TLD = COM (Top Level Domain)
+ANS authoritative name servers
+
+====================
+
+URL= uniform resource locator
+
+https://www.github.com/perryr16
+https:// = protocol (hyper text transfer protocol secure)
+www.github.com = domain name
+/perryr16 = path
+
+https://video.google.com:80/videoplay?docid=1342323523#00h02m30s
+
+https:// = protocol
+video = subdomain 
+google.com = domain name
+:80 = port
+/videoplay = path
+? = query
+docid=adfadf = parameters 
+#00h02m30s = fragment
+
+ip address = everything has one
+Network code: first 3 octets
+Host ID: last octet
+
+CLASS A B C D E F G (more networks, more users)
+A: first octet are netwrork ID (leading 0)
+B: first 2 (leading 10)
+C: first 3 (leaing 110)
+
+Subnet mask
+A: 255.0.0.0
+B: 255.255.0.0
+C: 255.255.255.0
+
+special IP addresses:
+loopback address 127.0.0.0
+network address  local set to 0
+boadcast address set to 255

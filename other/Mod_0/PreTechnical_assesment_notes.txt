@@ -1,0 +1,18 @@
+TECHNICAL ASSESSMENT NOTES
+--------------------------
+dont do session 4 hw
+DO THE ASSESSMENT
+--------------------------
+timed 80 mins
+practice through the assessment
+
+structure
+
+I github
+
+II top down design
+20 mins or less
+
+III class objects instances...
+
+https://fierce-beyond-34376.herokuapp.com/

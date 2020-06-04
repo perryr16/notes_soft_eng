@@ -1,0 +1,155 @@
+Mod0-02-01 Notes 
+1/7/20
+-------
+terminal stuff
+notate file paths, folder paths
+commands on a daily basis
+git
+
+comments on gist comments
+dm if its wrong
+---------
+METHODS OF CLASSES
+METHOD: a behavior or action of a class
+	(verbs)
+
+*session 4 prior to assesment
+-------
+FILE PATHS & DIRECTORIES
+directory = folder
+FILE PATH: how we notate where a file lives
+"directory_name/file_name.extension"
+
+conventions:
+use lower case letters
+ruby = "_"
+java = "-"
+
+practice:
+to_do/home/cleaning.txt
+to_do/random.txt
+to_do/recurring.txt
+to_do/home/bills.txt
+to_do/work/projects_to_delegate/data_entry.csv
+-----------
+PARENTS AND CHILDREN
+work is parent of projects_to_delegate
+work is child of to_do
+projects_to_delegate is a grandchild of to_do
+-----------
+
+TERMINAL AND COMMAND LINE
+TERMINAL: program we use to interact with command line. or command lind interface
+COMMAND LINE low level interface to give text based commands to a computer
+
+mac = .zsh
+turing = .bash
+easy promt generator to update terminal view
+------------
+COMMANDS
+--ACTION
+mkdir : make a folder (directory)
+cd : change directory
+cd .. : go up a directory (backo)
+touch : make a new file (include extension)
+cat : see contents of a file
+--SAFE INFORMATIVE COMMANDS
+pwd : present working directory.
+	where am I right now
+	~ = home directory
+ls : list stuff - see contents of current 	folder.directory
+--DESTRUCRTIVE COMMANDS
+rm : remove a file
+rm -rf : remove a directory
+
+
+
+"atom ." will oepn in the atom app
+
+practice:
+in work
+cd .. or cd to_do
+in projects to deelegate, want to_do
+cd ..
+cd ..
+or cd to_do 
+or cd ../..
+
+in the home directory what 3 comands to get to projects to delegate
+cd ..
+cd work
+cd projects_to_delegate
+cd../../home
+
+-------------------
+GIT
+*******************
+version control: save changes to a code base over time
+	different snapshots in time
+	collaborate on code over time
+GITHUB : just a website
+
+ACTION COMMANDS
+git init : initialized git tracking
+	turn on tracking
+	run it once per project
+	*refer to MOD0-2 agenda
+> git init very_important_file.txt	
+git add : adds file to stating area
+> git add very_important_file.txt
+git commit : commit file to directory with message
+messages always present tense
+messages start with capital letters
+> git commmit -m "initial commit"
+
+SAFE COMMANDS
+git status : where files/folders are in 	reference to git tracking
+> git status (of where ever you are)
+git diff : shows actual content of file
+> git diff
+git log : show all commits for a given project
+
+basically, every time you want to make a draft, add then commit.
+
+
+
+
+untracked :
+unmodified :
+modified :
+stating area : stopping point/loading dock
+
+--------
+TERMINAL
+cmd c will stop processes or reset 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

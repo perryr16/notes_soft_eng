@@ -1,0 +1,127 @@
+m221_sessions_cookies_flashes
+==============================
+-how are cookies part of the http request repsonse cylce?
+-how cookies and sessions tie together
+-how to store state in both cookies and sessions
+-syntax for setting and fetching session data
+-flash messages based on conditionals
+------------
+:5 Session:
+application has a session for each user (saved btn requests)
+
+session is only avaliable in the controller and view can use one of the following:
+ActionDispatch::Session::CookieStore - Stores everything on the client.
+ActionDispatch::Session::CacheStore - Stores the data in the Rails cache.
+ActionDispatch::Session::ActiveRecordStore - Stores the data in a database using Active Record. (require activerecord-session_store gem).
+ActionDispatch::Session::MemCacheStore - Stores the data in a memcached cluster (this is a legacy implementation; consider using CacheStore instead).
+
+session ids must be stored in a cookie
+then look up session data on server
+rails wont accept edited cookies, by nature they are incrypted
+4kb is always enough, if you need more, rethink it
+dont store model instances in cookies: issues reassembling
+short storage of non critical data= ActionDispatch::Session::CacheStore
+
+store session data in the database:
+$ rails g active_record:session_migration
+
+session key = name of cookie
+restart server when modifying session key
+sessions arent auto loaded
+sessions look like hashes
+session[:current_user_id] = user.id
+reset entire session: $ reset_session
+
+FLASH!
+a FlashHash instance (but its hash like)
+put in a method and exicuted in line 
+
+class LoginsController < ApplicationController
+  def destroy
+    session.delete(:current_user_id)
+    flash[:notice] = "You have successfully logged out."
+    redirect_to root_url
+  end
+end
+can be used when redirect: message displays to redirect page
+redirect_to root_url, notice: "You have successfully logged out."
+redirect_to root_url, alert: "You're stuck here!"
+redirect_to root_url, flash: { referral_code: 1234 }
+
+should display it in body
+
+to keep the previous flash
+flash.keep
+useful if a value is created incorrectly
+flash.now
+
+
+COOKIES
+cookies method, similar to session or cookie methods
+its also a hash
+
+DELETEING
+session:
+ @_current_user = nil
+cookie:
+ cookie.delete(:key)
+ 
+cookie jars
+serializers, :marshall is default if :json isnt specified, or :hybrid
+
+store strings and numbers in cookies
+
+where you store cookies is where you store flash and sessions
+
+
+
+
+video 1:
+sessions + cookies
+http is a stateless protocol
+"stateless interaction with starbucks"
+they dont remember!
+every interaction with sbucks is "stateless"
+how could starbucks be more "stateful"
+2 parts: your id, and where they are storing info
+client: server
+cookie: client
+session: server
+cookie is ALWAYS client side
+session is SOMETIMES (not always) server side
+"sessions and cookies are what make http stateful"
+where are sessions stored? usually server, sometimes client
+by default rails stores session on client
+	good: this is faster because lookup is simple
+	bad: lack of space - only 4kb of space
+
+video 2:
+cookie: a small piece of data stored in the browser for a website
+4kb
+name = value
+user.id = 12345
+browser => servers 
+servers =>cookie=> browser
+browser =>cookie=> servers
+USUALLY 20 cookies/website
+a cookie is only for 1 website
+if youre storing more than 20, maybe you should rethink it...
+dont store big cookies
+some browsers dont process multiline cookies properly
+easy to store it in a cookie instead of a database
+
+video 3:
+dropped on harddrive
+store browsing info
+dont collect anyhting else
+some are deleted when closed, or after x time
+locaiton, preferences, ads clicked,
+my cookies overlap with others. then we are all targeted
+target advertising
+3rd party cookies are when host shares my info with others
+cookies set by organization hosting the website
+SEE THIRD PARTY COOKIES ghostery
+now were being tracked with device id
+
+
+

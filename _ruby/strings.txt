@@ -1,0 +1,40 @@
+STRINGS
+=======
+str = "string"
+str[0..3] = "stri"
+	if you use a '-4' count backwards (no zero index)
+str.length = 5 # the number of characters (no zero)
+
+#{} allows you to put a variable in a string
+name = 'ross'
+'my name is #{name}'
+
+--------------
+# METHODS
+
+a = 'this is a string'
+a.split = ["this", "is", "a", "string"]
+a.split('') = ["t", "h", "i", "s", " ", "i", "s", " ", "a", " ", "s", "t", "r", "i", "n", "g"]
+a.split('i') = ["th", "s ", "s a str", "ng"]
+	#the argument is excluded
+.sub('to find', 'to replace') = substitute / replace
+.gsub('to find', 'to replace') = global substitue / replace all
+.reverse = inverts the string
+.include?('argument') = returns true if the string contains the argument
+.end_with?('argument) = return true if ends with argument
+.downcase = all lower case
+.upcase = all uper case
+.intern = string to symbol (:symbol)
+.to_sym = string to symbol (:symbol)
+.tr('arg1', 'arg2') = trims a string of arg1, and replaces it with arg2. 
+.tr('aeiou', '') removes all vowels
+.tr('^aeiou') = remove all but vowels *^ = except
+.empty? = true if string = ''
+"A".ord = numberical value (65)
+65.chr = alpha value ("A")
+.delete_suffix("known_suffix") = removes the last known characters
+
+
+can multiply strings within #{}. but only when using "" (not '')
+a = very
+b = "I am #{a * 3} excited" > I am veryveryvery excited

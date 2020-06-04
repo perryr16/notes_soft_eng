@@ -1,0 +1,109 @@
+mod_0_05_01_notes
+-----------------
+turn something on?
+
+my error is displayed!
+compare commits
+$ git log --oneline 
+$ git pull origin master
+	:wq
+$ git push origin master
+
+MOD1
+---
+attention to detail is an issue
+-missing or misplaced character
+-READ THE DOCUMENTATION (2x)
+-tutorials: dont miss a step
+
+1. correct
+2. correct
+3. correct
+4. quote mismatch
+5. correct
+6. correct - refrencing variable above
+7. false is lower case
+8. good
+9. camel case inconsistent last letter
+10. nope, po ' closes it out, need an escape character
+11. 12 oz is either a string without '' or needs to be all 
+12.
+13.
+14.
+15. 11th grade
+16. ' ""
+
+use the "code pen""
+irb
+
+array syntax = plural
+
+separate your objects on each line
+
+ITERATION
+---------
+a process of repeating a task for each object in a collection
+ ex: grading papers
+ 	collection: papers
+	task: grade
+
+scenario: replacing tires
+collection: tires
+for each: tire
+do this: take off tire, put tire on
+then: repeat with next tire
+
+scenario: wash dishes
+collection: dishes
+for each: dish
+do this: clean dish, put in drying rack
+then repeat with next dish
+
+---------------
+Iteration in Back End
+EACH = for
+ex:
+
+numbers = [2, 6, 10, 15, 18, 23]
+
+total_of_array = 0
+numbers.each do |number|
+  total_of_array += (number * 2)
+  # or total_of_array = number  + total_of_array
+end
+
+total_of_array 
+
+returns 148
+
+
+puts = print to screen
+
+ex: students = ["m", "j", "x", "a", "n"]
+
+students.each do |student|
+  puts "grading paper for #{student}"
+  # or puts "grading paper for " + student
+end
+
+
+string interpolation :"string #{array}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

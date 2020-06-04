@@ -1,0 +1,76 @@
+Mod 0 - 01 - 02 NOTES
+maybe more technial
+*******************
+SHORTCUTS
+
+highlight current URL
+cmd+ L
+
+reload page
+cmd+shift+r
+
+switch between windows of a similar program
+cmd+ ` 
+
+**************
+CLASSES
+**************
+CLASS: categorization of a thing 
+(always singular)
+	class: pizza
+	instance: chicago, detroit, new york
+	
+INSTANCES: things that belong to a category
+
+ATTRIBUTE: characteristic that every intance in a class has
+	class: pizza
+	attributes: crust, sauce, cheese
+**************
+
+google it.
+use the program language in the search
+
+StackOverflow : good resource
+w3schools : be weary
+mdn : FRONT END 
+css tricks : FRONT END
+Ruby-doc : BACK END
+git-scm : GIT
+	filter by past year
+	videos
+
+*************
+DATA TYPES
+*************
+STRING: used to represent text, has " "
+INTEGERS: whole numbers, no decimal
+FLOATS: numbers with decimals
+BOOLEANS: true/false (&&, ||, ==)
+ARRAY: data structure that represents a group
+OBJECT/HASH: collection of key-value pairs
+
+**************
+syntax in RUBY
+**************
+IRB - interactive ruby enviormnet
+in terminal $ irb
+cmd+k = clear terminal
+$ exit (to exit)
+
+TO ASSIGN IN IRB:
+my_address = "123 Main Street"
+
+using an underscore is called SNAKE CASING
+.reverse : reverses a string(a method) 
+.object_id : address in PC memory
+
+
+*variables are locations in computer memory
+*memory is a collection of bins
+
+***********
+homework
+fork > edit 
+
+
+

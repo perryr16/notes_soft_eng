@@ -1,0 +1,77 @@
+RUBY
+# == comment
+" #{}" > will escape the string and perform the code within the string
+
+FIND DATA TYPE
+a = [1, 'a', nil, false]
+a.class => Array
+a.is_a?(Array) => true
+a[0].class => Integer
+a[0].is_a?(Numeric)(Integer) => true
+1.2.is_a?(Numeric)(Float) => true
+a[1].class String
+a[1].is_a?(String) => true
+a[2].class NilClass
+a[2].is_a?(NilClass) => true
+a[3].class FalseClass
+a[3].is_a?(FalseClass) => true
+{}.class = Hash
+
+use a variable to call a method
+===============================
+def bark
+ p "WOOF"
+end 
+var = :bark
+
+dog.send(var) > "WOOF"
+
+
+EQUAL TO ANY OF THE FOLLOWING?
+/[aeiou]/
+
+
+
+
+>puts #prints to termianl when run
+puts 123
+puts 456
+puts 789
+123
+456
+789
+>print #display on terminal
+	print vs puts: print instead of puts to print a string without a \n (newline)
+	ex:
+	print 123
+	print 456
+	print 789
+	123456789
+>p # prints the value as its data type
+>variable = gets.chomp # take a string input from users
+
+**********
+PROMPT
+**********
+variable = $stdin.gets.chomp
+variable = gets.chomp
+$stdin = standard input
+$stdout
+
+*****
+Call PRY
+****
+require "pry"; binding.pry
+
+* WILL ALWAYS BE A STRING
+variable.to_i will convet to an integer
+
+terminal
+ruby 'file name'.rb will run ruby
+type irb to enter "Interactive Ruby"
+	exit to exit
+	
+DEFINE A NEW METHOD (similar to a function)
+def add_two(number)
+	number + 2
+end

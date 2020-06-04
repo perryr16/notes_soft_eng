@@ -1,0 +1,14 @@
+m232-APIs
+========-
+API: application programing interface
+how we interact with computers
+-conetext of the web
+ex: adding weather to an app 
+
+JSON is most common language for using APIs (other is XML, it is the worst. looks a lot like HTML)
+
+$ my_hash.to_json
+-returns json string
+
+$ JSON.parse(some_json, symbolize_names: true)
+-returns RUBY hash

@@ -1,0 +1,80 @@
+OOP
+----
+small batches, not one giant one
+
+************************************************
+define a class (INSTANTIATION)instantiation
+************************************************
+file: good_dog.rb
+
+class GoodDog
+end
+
+dr_dog = GoodDog.new
+
+
+note: file names are snake case and class names are cammel case
+************************************************
+MODULES: define a method of a class
+module Speak
+	def speak(sound)
+		puts sound
+	end
+end
+
+Class GoodDog
+	include Speak
+end
+
+dr_dog.speak("WOOF") # => "WOOF"
+
+GoodDog.ancestors
+************************************************
+the `initialize` method is always run when a new object is added to a class
+
+INSTANCE VARIABLE @name
+INSTANCE METHOD name, name=
+
+use @tagname to 
+called an instance variable
+always tied to the class
+
+
+ENCAPSULATION: hiding pieces of functionality 
+making it unavailable to the rest of the code base
+data protection
+
+OBJECTS: nouns
+can be given methods
+
+POLYMORPHISM: ability for data to be represented as many different types
+
+INHERITANCE: where a class inheritts the behaviors of another class
+a SUBCLASS inherets behaviors from a SUPERCLASS
+
+MODULE: shared behavior
+must be mixed in with a class using the INCLUDE invocation. 
+called: mixin
+after mixin a module the behaviors declared in that module are available to the new class
+
+classes are the molds that create objects
+
+CLASS: categorization of a thing 
+(always singular)
+	class: pizza, string, number, hash...
+	instance: chicago, detroit, new york
+	
+INSTANCES: things that belong to a category
+
+ATTRIBUTE: characteristic that every intance in a class has
+	class: pizza
+	attributes: crust, sauce, cheese
+
+METHOD: a behavior or action of a class
+	(verbs)
+	Methods CHANGE an INSTANCE
+	The actions instances of classes can take
+	
+OBJECT = INSTANCE
+
+*******************

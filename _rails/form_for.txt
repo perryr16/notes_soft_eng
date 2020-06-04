@@ -1,0 +1,41 @@
+form_for
+========
+in relation to setlist
+one-many: artist-songs
+
+spec----------
+page.fill_in "song[title]", with: "abc"
+page.fill_in "song[length]", with: "123"
+page.fill_in "song[play_count]", with: "456"
+
+
+routes--------
+****Needs to be resources
+
+resources :artists, only: [:show] do
+  resources :songs, only: [:create]
+end
+
+songs_controller--------
+
+def new 
+	@artist = Artist.find(params[:id])
+	@song = @artist.songs.new
+end
+
+
+views/songs/new.html.erb-------
+<%= form_for [@artist, @song] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %> 
+
+  <%= f.label :length %>
+  <%= f.number_field :length %> 
+
+  <%= f.label :play_count %>
+  <%= f.number_field :play_count %> 
+
+  <%= f.submit %>
+<% end %>
+
+

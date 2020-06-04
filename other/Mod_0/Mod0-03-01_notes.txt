@@ -1,0 +1,52 @@
+Mod 0-03-0 1notes
+-----------------
+Git review
+Github
+	navigating github repository
+-----------------
+minimal homework this weekend! ski day!
+---------------
+GIT = version control system
+
+create remote repo on github
+terminal
+make file
+git init
+git add
+git commit
+git status
+git push 
+
+github
++
+create new repo
+enter repositiory name
+public
+"skip this step"
+click SSH
+in terminal
+git remote add origin git@github.com...
+git remove -v (shows push and fetch rights)
+git push -u
+
+
+****
+ls -a list including hidden files
+"rm -rf .git" will stop tracking 
+
+
+FORK: Fork to personal account
+cloning: taking a repo and
+
+"git clone (git@git which is found and coppied in git)"
+
+cd into that directory (repo)
+dont git init in a cloned repo
+dont use initial commit (look at git log)
+
+cloning vs pulling:
+pulling assumes you have a remote repo and local repo, just pulling changes
+cloning CREATES the repo on our pc
+
+--------
+homework notes

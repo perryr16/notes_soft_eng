@@ -1,0 +1,57 @@
+Many to Many
+=============
+using Songs, Playlists, and PlaylistSongs
+where PLAYLIST IS NEW 
+
+------------------------------------------
+SPEC *****************
+
+/spec/models/playlist_spec.rb
+
+    it { should have_many :playlist_songs}
+	it { should have_many(:songs).through(:playlist_songs)}
+	
+/spec/models/song_spec.rb
+
+	it { should have_many :playlist_songs}
+	it { should have_many(:playlists).through(:playlist_songs)}
+	
+	
+/spec/models/playlist_songs_spec.rb
+	it {should belong_to :playlist}
+	it {should belong_to :song}
+	
+	
+------------------------------------------
+MODELS ****************
+	
+/app/models/playlist.rb
+	has_many :playlist_songs
+	has_many :songs, through: :playlist_songs
+	
+/app/models/song.rb
+	has_many :playlist_songs
+	has_many :playlists, through: :playlist_songs
+	
+*create*
+ /app/models/playlist_song.rb
+	belongs_to: playlist
+	belongs_to: song
+
+	
+------------------------------------------
+MIGRATION  ***********
+
+$ rails g migration CreatePlaylists name:string
+$ rails g migration CreatePlaylistSongs song:references playlist:references
+
+$ rails db:migrate
+	
+	
+
+
+*** NOTE
+PlaylistSong.create(song_id: @song1.id, playlist_id: @playlist1.id)
+	is functionaly equal to
+@playlist1.songs << @song1
+	yes, you can call @playlist1.songs => @song1 and @song1.playlists => @playlist1

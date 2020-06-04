@@ -1,0 +1,218 @@
+CSS
+===
+Syntax
+------
+COMMENTS~ /* adfasfd */
+selector and declaration block
+
+selector {property:value;} << declaration block
+
+h1 {color:blue; font-size:12px;}
+^^^ above has 2 declarations
+declaration always ends with ;
+
+**************************************
+selectors:
+**************************************
+class: .class_name {proterty: value;}
+class: h1.class_name {property:value;}
+id:	   #header1 {property:value;}
+universal: * {property:value;}
+grouped: h1, h2, p {property:value;}
+**************************************
+
+**************************************
+3 ways to add CSS
+**************************************
+External CSS
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+Internal CSS
+<style>
+body {background-color:linen;}
+</style>
+
+Inline CSS
+<body style="background-color:linen" >
+**************************************
+
+
+**************************************
+BOX MODEL: describes every HTML element as a box within a box
+**************************************
+content < padding < border < margin
+
+challenging to calculate total size
+Total element width = width + left padding + right padding + left border + right border + left margin + right margin
+
+Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
+**************************************
+
+
+Colors: 
+********
+background-color:
+color:
+border:
+predefined: tomato, orange, red, gray
+RBG: rgb(255,99,71) 255 is max
+HEX: #ff6347 ff is max
+HSL(hue, saturation, lightness): hsl(9, 100%, 64%)
+RGBA: add a transparency value at end 0.0-1.0
+HSLA: add a transparency value at end 0.0-1.0
+
+Background
+*********
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  margin-right: 200px;
+  background-attachment: scroll;
+  
+} /*- repeat-x for horizontal repeat, -y for vertial repeat, or no-repeat*/
+
+background shorthand:
+body {
+  background: #ffffff url("img_tree.png") no-repeat right top;
+}
+list property values in this order
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+/* color not needed if image */
+
+Boarder
+********
+border-style: ....
+dotted - Defines a dotted border
+dashed - Defines a dashed border
+solid - Defines a solid border
+double - Defines a double border
+groove - Defines a 3D grooved border. The effect depends on the border-color value
+ridge - Defines a 3D ridged border. The effect depends on the border-color value
+inset - Defines a 3D inset border. The effect depends on the border-color value
+outset - Defines a 3D outset border. The effect depends on the border-color value
+none - Defines no border
+hidden - Defines a hidden border
+
+border-width: 5px; or medium; or thick;
+border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+border-color: same as all other color settings
+border-color: red green blue yellow; /* red top, green right, blue bottom and yellow left */
+individual sides
+boarder-top-style:
+boarder-right-style
+
+border-style:
+if 4 values: top, right, bottom, left
+if 3 values: top, right/left, bottom
+if 2 values: top/bottom, right/left
+if 1 value : all
+
+border shorthand***
+border: border-width border-style border-color;
+border-left: same...
+
+border-radius: 5px
+
+
+Margin (shorthand follows this order)
+********
+margin-top
+margin-right
+margin-bottom
+margin-left
+
+auto - the browser calculates the margin
+length - specifies a margin in px, pt, cm, etc.
+% - specifies a margin in % of the width of the containing element
+inherit - specifies that the margin should be inherited from the parent element
+
+Padding - space around text inside of boarders
+*******
+padding-top
+padding-right
+padding-bottom
+padding-left
+
+length - specifies a padding in px, pt, cm, etc.
+% - specifies a padding in % of the width of the containing element
+inherit - specifies that the padding should be inherited from the parent element
+
+height width
+***********
+auto - This is default. The browser calculates the height and width
+length - Defines the height/width in px, cm etc.
+% - Defines the height/width in percent of the containing block
+initial - Sets the height/width to its default value
+inherit - The height/width will be inherited from its parent value
+
+max-width:
+
+Outline: drawn around OUTSIDE of element
+*********
+not part of the elements dimensions, may overlap content
+MUST SET OUTLINE STYLE
+outline-style
+outline-color
+outline-width
+outline-offset: space between border (inner) and outline (outer)
+outline
+outline-color: invert /* ensures outline is visable regardless of color background */
+
+Shorthand
+outline: outline-width outline-style outline-color (order doesnt matter)
+
+
+Text
+************
+color:
+text-align: center; left; justify(stretch to end);
+direction: rtl (right to left)
+unicode-bidi: bidi-override; ^^these two will mirror text
+text-decoration: none; (remove underline from link)
+			   : overline
+			   : line-through
+			   : underline
+text-transform: uppercase; lowercase; capitalize;
+text-indent: 50px
+letter-spacing: 3px; -3px
+line-height: 0.8; 1.8;
+word-spacing: 10px; -5px;
+white-space: wrap; nowrap;
+text-shadow: horizontalpx verticalpx color
+		   : hpx vpx blurpx color;
+		   
+		   
+Font
+*************
+serif has "feet"
+sans-serif has no "feet"
+
+generic-family: boring fonts
+font-family: exciting fonts
+font-family: "Times New Roman", Times, serif;
+
+font-style: normal; italic; oblique;
+font-weight: normal; bold
+font-varint: normal; small-caps
+
+font-size: 10px;
+font-size: 2.5em; /* 40px/16=2.5em */
+font-size: vw  /*viewport width*/
+		 : 1vw = 1% of viewport width
+ *dont mess with heading sizes
+ *relative vs absolute
+ 
+Font Shorthand
+----
+font-style
+font-variant
+font-weight
+font-size/line-height
+font-family
+
+

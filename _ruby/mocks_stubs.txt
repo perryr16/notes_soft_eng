@@ -1,0 +1,42 @@
+MOCKS AND STUBS
+---------------
+
+gem install mocha #(only once)
+require 'mocha/minitest'
+
+fake_object = mock('name') => #<Mock:name>
+fake_object = mock		   => #<Mock:0xadf3rq45random>
+
+object.stubs(:method).returns("desired result")
+object.expects(:method).returns("desired result")
+	will return error, if the method was never called
+
+*doesnt even need to be a real method. When you call that fake method, it will return the retuns variable
+
+only use mocks/stubs if the original object/behavior is working and tested
+
+mocha respone when calling methods on mocks:
+	> unexpected invocation: mock....
+
+can stub on real objects too!
+	
+ex: 
+	paint_1 = mock('paint 1')
+    paint_1.stubs(:color).returns("Alizarin Crimson")
+	#fake method
+	paint_1.stubs(:not_real).returns("Titanium White")
+	paint_2 = Paint.new("Van Dyke Brown")
+	#fake method
+	paint_2.stubs(:banana_sandwhich).returns("SHIBUYA")
+	
+	OUTPUT
+	paint_1	
+	=> #<Mock:paint 1>
+	paint_1.color 
+	=> "Alizarin Crimson"
+	paint_1.not_real 
+	=> "Titanium White"
+	paint_2
+	=> #<Paint:0x43r3aefa>
+	paint_2.banana_sandwhich
+	=>"SHIBUYA"

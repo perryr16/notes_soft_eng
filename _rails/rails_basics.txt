@@ -1,0 +1,15 @@
+rails commands
+------------
+rails new
+-T : dont use default testing suite
+-d="postgresql" : using a postgresql database
+
+rails server (or rails s) : start server
+
+http://localhost:3000/ shows which rails is running
+
+
+
+app - This is where our MVC structure lives
+config - routes.rb file tells rails app which HTTP request to respond to
+db - database lives here

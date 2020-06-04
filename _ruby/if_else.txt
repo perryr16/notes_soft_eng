@@ -1,0 +1,7 @@
+IF / ELSE
+
+elsif = else if 
+
+true false conditions - SHOULD HAVE A "?"
+.nil? = returns true when == nil
+.include?(element) = array method for finding an element

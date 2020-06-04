@@ -1,0 +1,21 @@
+m224-shopping-cart-order-lifecycle
+----------------------------------
+create alias for bundle exec rspc (bers)
+make rout look as restful as possible
+check rails routes more often
+restfulness =  has routes, mvc
+sessions = make them appear to be restful
+avoid talking to the db as much as possibe
+db interactions take time and money
+xpath error = no page from controller
+fickle users (add and delete and add...) isnt worth the db call
+
+> "#you have {pluralize(quantity_var, "copy")} copy of #{song.title}"
+use session if you dont want someone to have to create an account
+
+1 Request response cycle: user makes get:songs request
+
+COERCION:
+def count_of(id)
+	@contents[id.to_s].to_i # if this is nil, this will "coerce" it to 0
+end

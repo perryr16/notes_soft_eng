@@ -1,0 +1,3 @@
+Slack
+leave a channel : /leave
+search: cmd+k

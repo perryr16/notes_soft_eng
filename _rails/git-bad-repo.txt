@@ -1,0 +1,25 @@
+git-repo
+-----------
+did you forget to fork?
+
+CHECK IT
+$ git remote -v 
+=> git@github.com:turing-school.github.....
+
+DELETE REMOTE ORIGIN
+$ git remote rm origin
+
+CHECK IT
+$ git remote -v 
+*nothing
+
+ON REPO, CLICK CLONE OR DOWNLOAD, AND COPY LINK
+
+ADD NEW ORIGIN
+$ git remote add origin *cmd-v*
+
+CHECK IT
+$ git remote -v
+=> git@github.com:perryr16...
+
+PUSH IT

@@ -1,0 +1,60 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2512
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red21\green0\blue240;\red0\green0\blue0;\red18\green0\blue233;
+\red0\green0\blue233;}
+{\*\expandedcolortbl;;\cssrgb\c12050\c12449\c95332;\cssrgb\c0\c1\c1;\cssrgb\c10160\c10293\c93230;
+\cssrgb\c0\c0\c93333;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Golden puppy\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.rover.com/blog/wp-content/uploads/2019/05/puppy-in-bowl.jpg"}}{\fldrslt 
+\f1 \cf2 \expnd0\expndtw0\kerning0
+https://www.rover.com/blog/wp-content/uploads/2019/05/puppy-in-bowl.jpg}}
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 French\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://i.etsystatic.com/10819873/r/il/f612a3/1705058087/il_570xN.1705058087_te1f.jpg"}}{\fldrslt \cf4 https://i.etsystatic.com/10819873/r/il/f612a3/1705058087/il_570xN.1705058087_te1f.jpg}}\cf4 \
+\
+Chocolate lab\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://ichef.bbci.co.uk/news/976/cpsprodpb/16B90/production/_107427039_gettyimages-636475496.jpg"}}{\fldrslt \cf4 https://ichef.bbci.co.uk/news/976/cpsprodpb/16B90/production/_107427039_gettyimages-636475496.jpg}}\
+\
+Sylvester\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://i.pinimg.com/originals/c9/a3/1f/c9a31fca0099248013c51670634675b9.jpg"}}{\fldrslt \cf5 \ul \ulc5 https://i.pinimg.com/originals/c9/a3/1f/c9a31fca0099248013c51670634675b9.jpg}}\
+\
+Red kitten\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://cf.ltkcdn.net/cats/images/std/200777-425x322-kitten_crop.jpg"}}{\fldrslt \cf5 \ul \ulc5 https://cf.ltkcdn.net/cats/images/std/200777-425x322-kitten_crop.jpg}}\cf5 \ul \ulc5 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ulnone \
+Oreo \
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://image.shutterstock.com/image-photo/cute-american-shorthair-cat-kitten-260nw-352176329.jpg"}}{\fldrslt \cf5 \ul https://image.shutterstock.com/image-photo/cute-american-shorthair-cat-kitten-260nw-352176329.jpg}}\cf5 \ul \
+\
+Black cat \
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://bloximages.newyork1.vip.townnews.com/roanoke.com/content/tncms/assets/v3/editorial/4/d4/4d4438ec-0958-56b9-8832-ac1486cda4f8/5bd738d346d4f.image.jpg?resize=400%2C320"}}{\fldrslt \cf5 https://bloximages.newyork1.vip.townnews.com/roanoke.com/content/tncms/assets/v3/editorial/4/d4/4d4438ec-0958-56b9-8832-ac1486cda4f8/5bd738d346d4f.image.jpg?resize=400%2C320}}\
+\
+dr. Dog \
+{\field{\*\fldinst{HYPERLINK "https://i.redd.it/4ygdq7e6gze11.jpg"}}{\fldrslt https://i.redd.it/4ygdq7e6gze11.jpg}}\
+\
+\cf3 \ulnone Line 18 \
+<img class="pet-image-small" src="<%= pet.image %>" alt="<%= pet.name %> image"> <p>\
+\
+Procfile \
+web: bundle exec puma -t 5:5 -p $\{PORT:-3000\} -e $\{RACK_ENV:-development\}\
+web: bundle exec puma -C config/puma.rb\
+\
+\
+<%= select_tag "Favorite Pets", options_for_select(@favorite_pets.map \{|pet| [pet.name, pet.id]\}), multiple: :true %><br><br>\
+\
+  <% @actor.associates.each do |name| %>\
+    <p><%= name %></p>\
+  <% end %>\
+}

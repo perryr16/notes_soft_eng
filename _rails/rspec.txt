@@ -1,0 +1,44 @@
+RSPEC
+------
+Behavior Driven Development (BDD)
+similar to TDD
+
+when running in terminal
+> rspec spec/'file_spec'.rb
+
+require 'rspec'
+
+describe ClassName do 		#only 1 describe for an entire class
+
+	before do 
+		@object1 = Class1.new
+		@object = Class2.new #these are the same as "def setup" in TDD
+	end 
+	
+	context "group of methods" do 
+		it "returns the method return value" do 
+			expect(@object1.method).to eql("Return value")
+		end 
+		
+		it "returns the method return value" do 
+			expect(@object1.method).to include("Return value")
+			expect(@object1.method).not_to include("Wrong value")
+		end
+		
+		it "returns the method return value" do 
+			expect(@object1.true_method).to be_true_method
+		end
+
+	
+	end #context
+end #describe
+
+rspec 
+=========
+Clear Rails Test Database (if there are leftover values that shouldnt be there)
+
+$ bundle exec rake db:drop RAILS_ENV=test
+
+$ bundle exec rake db:create RAILS_ENV=test
+
+$ bundle exec rake db:migrate RAILS_ENV=test

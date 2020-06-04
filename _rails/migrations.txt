@@ -1,0 +1,43 @@
+Migrations
+==========
+
+$ rails db:create
+> created...development'
+> created...test'
+
+$ rails g migration CreateModel name:string description:text true_false:boolean
+
+REMOVE COLUMN FROM TABLE--------------------------------------
+$ rails g migration RemoveColumnFromTable column:string
+(add --force to overwrite)
+
+DROP A TABLE---------------------------------------------
+$ rails db
+# drop table tablename
+
+CHANGE A COLUMN NAME------------------------------------
+$ rails g migration ChagneColumnName (exact)
+def change 
+  rename_column :table_name, :old_column_name, :new_column_name
+end
+$ rails db:migrate
+
+CHANGE A COLUMN DATA TYPE------------------------------------
+$ rails g migration ChangeColumnToDataType
+def change
+	change_column :table, :column, :datatype
+end
+
+
+ADD A COLUMN---------------------------------------------
+rails g migration AddColumnToTables column:datatype
+
+REMOVE A REFERENCE---------------------------------------------
+$ rails g migration RemoveFavoritesFromPets
+def change
+ 	remove_reference: :belongs_to_table, :has_many_table_singular, index:true, foreign_key:true
+end
+
+HEROKU---------------------------------------------------------------
+$ rails db:migrate  
+$ heroku run rake db:migrate

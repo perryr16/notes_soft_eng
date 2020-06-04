@@ -1,0 +1,126 @@
+is learning a differnt code language the same as learning a differnt language?
+
+"learning fluency"
+
+english major
+practiced japenese
+took spanish
+hebrew
+italian in college
+bad at all of them
+cantonese/mandarin
+
+sweet revenge
+
+chess player
+no women at coding conference
+lots of plays/actor
+
+chess = stragegy
+theature = improv
+softwater = 1/2 and 1/2
+object orented code similar to chinese
+good english = good documentation
+its a puzzle
+all the details matter
+fluency is key
+
+ruby is the best according to google
+on paper ruby sounds crazy
+
+the best way to learn code is to come up with a project and begin
+learn by doing
+
+...this isnt for sara
+boys v girls
+
+middleberry immersive chinese
+one word at a time
+chunks of 5
+20, 40, 60..
+it worked.
+
+natural context
+thron in the deep end
+IRB
+start somwehre
+
+PRACticed sKILL
+study hard, study dillegently, and every day you will see progress
+
+fluency is key
+CHUNKING
+remembering patterns
+-repetition
+fluency builds understanding
+classrooms teach mastery of understanding is backwards
+
+open source
+effort into not plagerizing
+journalizm contradicts opensource
+sean duckett in colorado at turing
+thinking algorithmically
+history of computer science
+
+DISCIPRINE
+TEAMWORK
+understanding and respect for the work that came before
+
+its tedious
+
+work to bend the rules to be a little creative
+discipline befor imagination
+
+inovation is realized in heindisght
+
+'the disregard of rote memorization is a failire of imaginaion
+------------
+git staging
+-better to do many small commits instaed of one big one.
+-move 
+allows you to concentrate on new changes
+
+--------
+CODECADEMY GIT PRO
+-red means they havent been added
+-green means the have been added
+-diff only works after add & before commit
+	-i.e. git diff shows changes in the staging area
+-its ok to have red files that arent going to be added.
+-git add after each changee
+-git commit - short, pressnt tense
+SHA is the random code of each commit. this identifies the commit
+VERSION CONTROL
+git init
+git status
+git add
+git diff
+git commit
+git log
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

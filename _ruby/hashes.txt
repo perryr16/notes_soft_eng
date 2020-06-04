@@ -1,0 +1,58 @@
+HASHES (Objects)
+=================
+definition: an unordered collection where the data is organized into "key/value pairs"
+values are linked to keys using a "ROCKET" or "=>"
+called a "hashmap"
+hash = {"key"=> value, "key2"=> value2}
+hash = {key: value1, key2: value2}
+---------------
+# METHODS
+
+hash.invert # swap value and key
+hash.key?("key") # is key present? true/false
+hash.keys # display keys
+hash.values # display values
+Hash.new("default value") # create a new hash with default value
+hash.delete(key) # delete the key and value pair
+hash["key"] = value # add a key value pair
+hash[:key] = value # *note: this will add the key and value to the end of the hash
+hash.key("known value") = returns the key of a given value
+hash.first = 'key', :value
+hash.first[0] = 'key'
+hash.first[0][0] = 'k'
+hash = Hash.new('default value') = when using integers, assign 0
+hash.default = 'new default value'
+hash[:new_key] = hash.delete(:old_key) # rename a key
+hash.sort.to_h = reorder hash alphabetically based on keys
+hash.count = numbers of key/value pairs
+hash.merge(hash2) = combine hash2 with hash 1. if conflicts, hash2 will overwrite. can also use iteration for conflicts
+hash.merge(hash2) {|key, hash_val, hash2_val| hash2_val}
+hash.default = "default value" # return default if the key/value doesnt exist
+has.transform_values {|value| value+whatever} = transforms the values of an array
+hash.values_at(:key1, :key2) = whatever values were at those keys
+
+--------------
+CREATING A NEW HASH WHERE VALUE IS ARRAY OF VALUES
+new_hash =  Hash.new { |hash, key| hash[key] =  []}
+   @units.each do |unit|
+       new_hash[unit.name] << unit.number
+    end
+new_hash
+
+
+EACH DO
+hash.each do |key, value|
+	code
+end
+
+compounded hash's
+--
+hash1 = {
+'a' => 1,
+'b' => 2}
+
+hash2 = {
+'dog' => 'a',
+'fox' => 'b'}
+
+hash1[hash2['dog']] = 1

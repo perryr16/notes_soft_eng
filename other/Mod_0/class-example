@@ -1,0 +1,24 @@
+class bottle
+
+attributes
+--
+current_volume (float)
+max_volume
+material (string)
+color (string)
+cap_type (string)
+is_open (boolean)
+brand (string)
+stickers (array)
+is_recycled (boolean)
+
+methods
+--
+paint_exterior (modify the color)
+exchange_cap (modify cap type)
+add_liquid (adds to current_volume by 10)
+empty (set current_volume to 0)
+open (set is_open to true)
+close (set is_open to false)
+recycle (sets is_recycled to true)
+calculate_percent_full (current_volume/max_volume)

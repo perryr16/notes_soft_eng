@@ -1,0 +1,38 @@
+M221 sql & active record
+========================
+1. what is a database? 
+- As place to store an organized collection of data
+2. what is sql: structured query language
+- a language for querying and accessing data in a database
+3. What is a table?
+- Location to house organized data in a db made of rows and columns. Each entry is a row, each column is a property
+4. What is a primary key?
+- when an entry is logged, it is assigned an id. this is a primary key
+5. What is a foreign key?
+- table that "belongs_to" an another table will have a column linking them a related table. This column has the id of the related entry. 
+6. Select = choose columns
+	Where = a conditional used to filter rows/entries
+	Order by = sort data from given attribute or calculation
+	Limit = return the first x number of resutls
+	Pluck = returns a RUBY ARRAY of the attribute that is being plucked. Must be at end of AR string
+	Distinct = only return unique values, ignore duplicates
+	
+==========
+access SQL database
+rails dbconsole
+
+Active record
+$ rails c
+
+.to_sql => shows how AR is translated into sql
+
+PRETTY PRINT
+pp Song.select(:title)
+-.select returns all columns with AR associations
+-.pluck returns a ruby array (not AR associations)
+conditional or comparison operator
+-sql injection
+MUST BE SINGLE QUOTE
+Get in habbit of calling table.attribute not just attribute
+AR SELECT - all properties not specified will be returned as nil
+use select for performance (HUGE TABLES)

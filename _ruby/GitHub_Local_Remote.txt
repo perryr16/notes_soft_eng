@@ -1,0 +1,87 @@
+HOW TO PUSH A LOCAL REPO
+------------------------
+github.com/perryr16
+*terminal and paste those two lines
+	*git remote add origin...
+		*adds remote to local
+	*git push -u origin master
+		* pushses repo to github
+git remote -v 
+	*shows fetch and push permission
+create a local file
+git init
+git add
+git commit
+git push -u origin master (for the first one)
+	*will say permanently added to the RSA host key for IP address...*
+* make changes
+git add
+git commit (again)
+git push origin master
+
+CHANGE REPOS
+------------
+git remote -v (to check current repo)
+git remote rm origin (removes the origin)
+git remote add origin git@github.com:username/repo.git
+
+
+HOW TO CLONE A REPO
+-------------------
+Fork Repo on Github
+in terminal
+git clone (github url)
+*check with ls, it will pull into current directory
+
+FORKING & CLONING
+-----------------
+*terminal
+git clone (github url)
+cd (github)
+*make changes with atom...
+git diff
+git add
+git commit (not initial commit)
+git log
+git push origin master
+
+
+-DONT GIT INIT A FOLDER THAT ALREADY HAS GIT 
+J-UST PUSH IN THAT NEW FOLDER, DONT GIT REMOTE ADD...
+-CHECK IF ITS INIALIZED BY CHECKING HIDDEN FOLDERS. If .git is present, then you're aleardy initialized
+-----------------------
+*chceck hidden folders
+ls -la
+*if .git is listed
+rm -rm .git
+
+******************
+GIT GENEARL NOTES
+*********
+GIT = Version control system
+GIT IS LOCAL
+GitHub - website for hosting git repositories
+Commits = Snapshots
+
+
+-red means they havent been added
+-green means the have been added
+-diff only works after add & before commit
+	-i.e. git diff shows changes in the staging area
+-its ok to have red files that arent going to be added.
+-git add after each changee
+-git commit - short, pressnt tense
+SHA is the random code of each commit. this identifies the commit
+VERSION CONTROL
+git init
+git status
+git add
+git diff
+git commit
+git log
+
+git init> Unmodified > Modified >(git add) > uncommited > git commit
+
+
+remove git tracking
+rm -fr .git

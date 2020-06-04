@@ -1,0 +1,19 @@
+NUMBERS
+====
+see all methods/operations
+>5.methods # any number.methods
+
+.odd?
+.even?
+.zero?
+1234.digits = [1,2,3,4]
+
+dont use for, use do & end?
+ex:
+5.times do; puts 'hello ross'; end
+>hello ross
+>hello ross
+>hello ross
+>hello ross
+>hello ross
+

@@ -1,0 +1,57 @@
+<<<<<<< Local Changes
+STYLING!
+=========
+HTML_CSS
+=========
+CSS - Cascading Style Sheets
+DOM - document object model (HTML PAGE)
+<!DOCTYPE html> => use html 5
+<html> # otherwise its a disastor
+and ending tag </html>
+<title>what the tab says</title>
+<a></a> = Anchor tag
+
+$ open file #will open the html file
+
+
+SEMANTIC TAGS
+<nav></nav> #navigation tag
+<footer></footer>
+<header></header>
+<section></section> # same as div, but its semantic
+<article></article> # small amounts of text thats bundled
+
+
+class is mostly used (98%)
+fine to use class="animal-1"
+			class="animal-2"
+id is good for nav and footer (things that exist only once)
+	-submit button is *ok* too
+	
+block = goes across the whole screen (tetris)
+<span> is an inline element
+	gets put "inline" right next to
+	
+<%= yeild %> pulls the route view file
+
+add <nav> to the application.html, but class="active" wont work
+add anything that we want on EVERY PAGE ti application.html.erb
+	
+	
+DONT MAKE STYLE CHNAGES INLINE: makes you look silly
+
+application.css is a manifest file
+no touching anything above line 15
+
+this is a css rule:
+selector {
+	property:value;
+}
+h1 {
+	color: blue;
+}
+
+naming convention: use "-"
+
+ctrl+i is like pry. can make changes but they wont be saved to atom=======
+HTML_CSS>>>>>>> External Changes

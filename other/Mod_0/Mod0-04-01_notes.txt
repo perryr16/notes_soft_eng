@@ -1,0 +1,46 @@
+Mod0-04-01 notes
+---------------
+forgoing session 4 homework and straight to the technical assesment
+
+TECHNICAL ASSESMENT
+------------------
+going over the core conecpts today
+should take tomorrow or this evening
+
+Top Down design
+OOP: object oriented programming
+
+---------------
+when cloning be aware of directory
+dont include personal data in commits
+---------------
+TOP DOWN DESIGN:
+An approach to breaking down problems into smaller easy problems
+
+ABSTRACTION: Complexities are abstracted away. where an object performs a task without being concerend about how it is done.
+-removing other objects that are irrelavent to the current process
+-ex: I dont need to know how the mother board works to use a computer.
+-hello.reverse : i dont need to know how the code works in order to implement it
+
+ENCAPSULATION: Where an object handles its own internal staes and behind the scenes work. 
+-Breaking things into smaller components
+---------
+OOP - Object Oriented Programming
+try to model data with objects
+RUBY, JAVASCRIPT are OOP languages
+modeling the world by treating everything as an object
+
+objects = instances
+attributes contain data about an object
+attributes usualyl named as nouns
+
+is it an attribute?
+will this data CHANGE? if so, not an attribute
+is there any other data that underlines this piece of data?
+ex: age is bad, age changers
+birthdate is good, never changes
+
+methods: behaviors, actions or calculations
+usually verbs
+
+return value: result of a method that performs a calculation

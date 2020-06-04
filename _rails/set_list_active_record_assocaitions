@@ -1,0 +1,99 @@
+gem 'shoulda-matchers' in test file
+require 'shoulda-matchers'.
+
+
+SONG MODEL
+class Song < ApplicationRecord
+	validates_presence_of :title
+	belongs_to :artist
+end
+
+ARTIST MODEL
+class Artist < ApplicationRecord
+	validates_presence_of :title
+	has_many :songs
+end
+
+
+SPEC FILE
+SONG
+require 'rails_helper'
+it {should validate_presence_of :title}
+it {should belong_to :artist}
+
+
+ARTIST
+RSpec.describe Artist do
+	describe "validations" do
+		it {should validate_presence_of :name}
+	end 
+	describe "Associations"
+		it {should have_many :songs}
+	end
+
+# create artists table
+$ rails g migration CreateArtists name:string
+$rails db:migrate
+
+#Add means add a column
+#Songs means it will hit Songs table
+$ rails g migration AddArtistToSongs artist:references
+=invoke
+=>create
+
+$ rails db:migrate
+=> shema should now have artist
+t.biginit "artist_id"
+t.index ["artist_id"], name: "index_songs_on_artist_id"
+
+
+PUT STUFF ON HEROKU
+heroku run rails db:seed
+
+
+SEED FILE
+carly = Artist.create(name: "Caly Rae")
+journey = Artist.create(name: "Journey")
+billy = Artist.create(name: "Billy Joel")
+
+caly.songs.create(title: "I really like you", playcount: 222, length: 4999)
+journey.songs.create(title: "Dont stop belevin", play_count: 222, length: 4008)
+journey.songs.create(title: "Wheel in the sky", play_count: 222, length: 4008)
+billy.songs.creaet(title: "Piano Man", play_count: 245, length: 42425)
+
+$ rails db:seed #puts evertyhing in database!
+$ rails c
+>Song.all
+>Artist.first 
+# carly rae 
+>journey = Artist.second
+>pp journey.songs
+# all songs!
+# pp = pretty print = makes format better
+>like_you = Song.first
+>like_you.artist
+#<carly rae>
+>like_you.artist.name
+#"Carly Rae"
+
+
+why doesnt it work with belongs_to :artist
+ID IS NIL!
+song_1.errors
+carly = Artist.create(name: "Carly Rae")
+song1 = carly.songs.creat(title: "I really like you"
+						  length: 204,
+						  play_count: 1234)
+
+
+
+
+=================
+
+
+it "can see the count of all the songs" do 
+
+
+
+
+

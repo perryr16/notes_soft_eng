@@ -1,0 +1,23 @@
+instance
+--
+leighs hydroflask
+
+current_volume: 16.0
+max_volume: 32.0
+material: 'metal'
+color: 'blue'
+cap_type: 'molded'
+is_open: false
+brand: 'hydroflask'
+stickers: ['turing', 'gdi', 'made in china']
+is_recycled: false
+
+
+
+paint_exterior: color = 'green'
+exchange_cap: cap_type = 'screw_top'
+increase_current_volume: 16+10 = 26
+empty: current_volume = 0.0
+close: is_open = false
+recycle: is_recycled = true
+calculate_percent_full: 26/32 = 0.81

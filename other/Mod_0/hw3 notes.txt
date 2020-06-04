@@ -1,0 +1,108 @@
+hw 3 Notes
+--------
+git = version control system
+github = website that hosts git repos. good for sharing
+repositories = folders which contain snapshots (commits)
+
+david whitaker
+
+origins
+--
+keep track of differences overtime
+similar to words go back or undo
+annotations!!
+folder = repo
+repos have tracking turned on
+git is local
+github is remote
+
+git developed by LINUS TORVALDS aka linux
+
+what is it good for
+---
+txt to mp4
+people work on the same project
+removes the problem of determining which is the original file
+annoations!
+
+
+github origins
+--
+developed in 2008
+easy to share code
+centralized tool for opensource
+pull request: a way for developers to propose changes and solicit feedback from other develppers aka code review
+track bugs/enhancements
+
+use
+--
+github is a remote harddrive
+needs internet
+branching = needed for multiple people to work
+
+who use 
+--
+private are paid
+public is free
+javascript framework, REACT
+31 million users
+96 million repos
+
+alts to git
+--
+mercurial
+subversion
+git doesnt require internet, but github does
+
+advs
+--
+git offline
+people know it
+KANBAN tracking
+disadv
+--
+steep learning curve
+
+need?
+--
+yes
+
+jobs
+--
+yes
+
+like googling, check thier github profile
+
+github was built in ruby
+turing gets unlimited free and private repos
+10 alumni working there
+
+---
+OOP
+--
+Object oriented programming
+
+class - bottle
+instance - specific bottles
+method - action they all can take or have done to them
+attribute - quality they all share
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

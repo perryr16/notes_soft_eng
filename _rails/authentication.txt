@@ -1,0 +1,214 @@
+authentication
+--------------
+
+CONTROLLER:-----------------------------------------------------------------
+class WelcomeController < ApplicationController
+  def index
+  end
+end
+
+class UsersController < ApplicationController
+  def new
+  end
+  
+  def create
+    new_user = User.create(user_params)
+    flash[:success] = "Welcome, #{new_user.username}!"
+    session[:user_id] = new_user.id
+    redirect_to "/"
+  end
+  
+  def show
+    @user = User.find(session[:user_id])
+  end
+  
+  private
+  def user_params
+    params.permit(:username, :password)
+  end
+end
+
+class SessionsController < ApplicationController
+  def new
+  end
+  
+
+def create
+    user = User.find_by(username: params[:username])
+    if user.authenticate(params[:password])
+      session[:user_id] = user.id
+      flash[:success] = "Welcome, #{user.username}!"
+      redirect_to '/'
+    else
+      flash[:error] = "Sorry, your credentials are bad."
+      render :new
+    end
+  end
+
+end
+
+class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+  
+  helper_method :current_user
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+end
+
+MODEL:-------------------------------------
+class User < ApplicationRecord
+  validates :username, uniqueness: true, presence: true
+  validates_presence_of :password, require: true
+
+  has_secure_password
+end
+
+ROUT:--------------------------------------
+get '/', to: 'welcome#index'
+post '/users', to: 'users#create'
+get '/profile', to: 'users#show'
+get '/login', to: 'sessions#new'
+post '/login', to: 'sessions#create'
+
+MIGRATION:-------------------------------------
+rails g migration CreateUsers username:string password_digest:string
+
+VIEW:-----------------------------------------------------------
+<!-- views/users/new.html.erb -->
+
+<%= form_tag '/users', method: :post do %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <%= submit_tag "Create User" %>
+<% end %>
+
+<!-- app/views/sessions/new.html.erb -->
+
+<%= form_tag '/login', method: :post do %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <%= submit_tag "Log In" %>
+<% end %>
+
+<!-- ROOT PAGE -->
+<% if current_user %>
+  <%= link_to "Log out" %>
+<% else %>
+  <%= link_to "Register as a User", "/users/new" %>
+  <%= link_to "I already have an account", "/login" %>
+<% end %>
+
+...MORE THAT YOU SHOULD BE ABLE TO FIGURE OUT ON VIEW
+
+SPEC:-------------------------------------------------------------------
+FEATURE
+require 'rails_helper'
+
+RSpec.describe "User registration form" do
+  it "creates new user" do
+    visit "/"
+
+    click_on "Register as a User"
+
+    expect(current_path).to eq("/users/new")
+
+    username = "funbucket13"
+    password = "test"
+
+    fill_in :username, with: username
+    fill_in :password, with: password
+
+    click_on "Create User"
+
+    expect(page).to have_content("Welcome, #{username}!")
+  end
+end
+
+CREATING A NEW USER
+RSpec.describe "User registration form" do
+  it "creates new user" do
+    ...
+  end
+
+  it "keeps a user logged in after registering" do
+    visit "/"
+
+    click_on "Register as a User"
+
+    username = "funbucket13"
+    password = "test"
+
+    fill_in :username, with: username
+    fill_in :password, with: password
+
+    click_on "Create User"
+
+    visit '/profile'
+
+    expect(page).to have_content("Hello, #{username}!")
+  end
+end
+
+LOGGIN IN
+require 'rails_helper'
+
+RSpec.describe "Logging In" do
+  it "can log in with valid credentials" do
+    user = User.create(username: "funbucket13", password: "test")
+
+    visit "/"
+
+    click_on "I already have an account"
+
+    expect(current_path).to eq('/login')
+
+    fill_in :username, with: user.username
+    fill_in :password, with: user.password
+
+    click_on "Log In"
+
+    expect(current_path).to eq('/')
+
+    expect(page).to have_content("Welcome, #{user.username}")
+    expect(page).to have_link("Log out")
+    expect(page).to_not have_link("Register as a User")
+    expect(page).to_not have_link("I already have an account")
+  end
+end
+
+
+CHECK PASSWORD
+
+it "cannot log in with bad credentials" do
+  user = User.create(username: "funbucket13", password: "test")
+
+  visit "/"
+
+  click_on "I already have an account"
+
+  fill_in :username, with: user.username
+  fill_in :password, with: "incorrect password"
+
+  click_on "Log In"
+
+  expect(current_path).to eq('/login')
+
+  expect(page).to have_content("Sorry, your credentials are bad.")
+end
+
+MODEL----------------------
+require 'rails_helper'
+
+describe User, type: :model do
+  describe "validations" do
+    it {should validate_presence_of(:username)}
+    it {should validate_uniqueness_of(:username)}
+    it {should validate_presence_of(:password)}
+  end
+end

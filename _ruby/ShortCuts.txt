@@ -1,0 +1,53 @@
+ShortCuts
+***********
+
+Spectacle
+----------
+Move to the left half — ⌥⌘←
+Move to the right half — ⌥⌘→
+Move to the top half — ⌥⌘↑
+Move to the bottom half — ⌥⌘↓
+
+Move to the upper left — ⌃⌘←
+Move to the lower left — ⌃⇧⌘←
+Move to the upper right — ⌃⌘→
+Move to the lower right — ⌃⇧⌘→
+
+
+Chrome
+-------
+highlight url - cmd+l
+reload - shift+cmd+r
+cycle tabs - control tab
+
+Mac
+---------
+cycle programs - cmd+tab
+cycle similar programs - cmd+`
+search - cmd+space
+
+Atom
+------
+split panes: ------------------ cmd + k (lift finger) arrow direction
+toggle panes: ----------------- cmd + k + arrow direction
+highlight and change all: ----- cmd + cntrl + g
+duplicate line: --------------- cmd + shft + d 
+move the whole line up/down: -- cmd + cntrl + up/down
+edit multi lines: ------------- cmd + mouse 
+delete line: ------------------ ctrl + shft + k 
+highlight next slection: ------ cmd + d
+swith atom file: -------------- cmd + p 
+new line mid text: ------------ cmd + enter
+copy line w/o highlighting: --- cmd + c
+pry shortcut: ----------------- pry + tab 
+new method: ------------------- def + tab
+test def setup: --------------- deft + tab
+new initialize def: ----------- defi + tab
+
+Terminal
+------
+move cursor full word: -------- opt + left/right
+place cursor wherever: -------- opt + mouse
+move cursor to end: ----------- cntrl + e
+move cursor to begining: ------ cntrl + a
+

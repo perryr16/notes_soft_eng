@@ -1,0 +1,184 @@
+SQL basics
+-----------
+sql commands: UPPERCASE (should be but not necessary)
+.exit
+must use single quotes 'billy joel'
+
+***********************
+AR = Active Record
+"Object-Relational Mappers"
+***********************
+
+CREATE TABLE fruits(id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(31), quantity INT);
+
+INSERT INTO fruits(name, quantity) VALUES ('apples', 6);
+
+**********************
+SELECT * FROM fruits;
+**********************
+SELECT * = find all rows
+
+.mode column 
+.header on
+**** settings to view table
+
+SELECT * FROM fruits WHERE name='apples';
+returns all columns of data
+SELECT name FROM... returns just the name
+WHERE
+
+LENGTH(name)=7
+
+DELETE is similar to SELECT
+DELETE FROM fruits WHERE name='oranges';
+UPDATE changes values
+UPDATE fruits SET quantity=17 WHERE name='bananas';
+
+ALTER TABLE fruits ADD COLUMN country_of_origin VARCHAR(127);
+
+ASC = ascending order (default)
+DESC = descending order 
+SELECT * from fruits ORDER BY name DESC;
+
+
+SELECT fruits.name, sales.created_at FROM fruits INNER JOIN sales ON fruits.id=sales.fruit_id;
+
+^^ find the name of the fruits and when they were created. then join them together where fruit(id) is equal to sales(fruit_id)
+
+SELECT customers.name, fruits.name, sales.created_at FROM fruits INNER JOIN sales ON fruits.id=sales.fruit_id INNER JOIN cust
+omers ON sales.customer_id=customers.id;
+name        name        created_at
+----------  ----------  -------------------
+Violet      apples      2020-04-28 22:03:58
+Jeff        bananas     2020-04-28 22:04:08
+Violet      apples      2020-04-28 22:04:13
+
+*** select multiple columns
+SELECT column1, column2 FROM database
+*** select rows where value is greater than 0 otherthing..
+SELECT * FROM database WHERE column > 0 AND column2 = x
+*** select rows where "Tennis" is in the name
+SELECT * FROM database WHERE cloumn LIKE '%Tennis%'
+*** select rows where id is 1 or 5
+SELECT * FROM database WHERE id IN (1,5)
+
+*** INNER JOIN
+SELECT db1.column1, db3.column3
+FROM database1 db1 
+	INNER JOIN database2 db2
+			ON db1.primary_key = db2.foreign_key
+	INNER JOIN dabatabse3 db3
+			ON db2.primary_key = db3.foreign_key
+
+
+*** CASE
+SELECT column1, 
+CASE WHEN column2 > x THEN "expensive"
+WHEN column2 <= x THEN "cheap"
+ELSE "unknown"
+END AS "new column name"
+FROM database
+
+*** select 10 distinct values from column 1 then order them
+SELECT DISTINCT column1 FROM database
+ORDER BY column1 
+LIMIT 10;
+*** select and combine columns from 2 tables. display as 1 column (only distinct values, use UNION ALL to allow duplicates)
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+
+*** select largest value in column1
+SELECT MAX(column1) FROM database
+*** select all of colum1 from table 1 where  condition from column 2 table 2
+SELECT column1 FROM database1 
+INNER JOIN database2 ON database1.primary_key = database2.foreign_key
+WHERE database2.columnx = condition
+---OR---
+SELECT db1.column1 
+FROM db1, db2
+WHERE db2.column2 = condition AND db1.id=db2.id
+ 
+**** assing an alias
+FROM datbase1 alias
+INNER JOIN  database2 alias2
+ON alias.id=alias2.id
+WHERE alias.column = condition
+
+
+***concat 2 strings 
+db.firstname || " " || db.lastname as fullname
+
+**** count
+SELECT COUNT(column name) FROM db WHERE condition
+
+**** group by: groups rows that have the same values into summary rows "Find the number of customers in each country"
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+
+**** SUM 
+SELECT SUM(column_name)
+FROM table_name
+WHERE condition;
+***note: if you want sums as an array, you must group by a second column
+SELECT column1, SUM(column2) as "sum column2"
+FROM db
+GROUP BY column1
+ORDER BY column1
+
+
+**** Having- because you cant use WHERE with aggregate 
+					(GROUP BY, SUM, MAX...) functions
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s) (not the aggregate)
+HAVING condition
+ORDER BY column_name(s);
+
+**** name an aggreagate new column
+SELECT SUM(goals) as "Total Goals"
+*** needs to be "" not ''
+
+
+
+TIMESPTAMP
+compare values like integers
+find dates after september 2012
+WHERE date >= '2012-09-01'
+a particilar date
+date <= '2012-09-01' AND date > '2012-09-02'
+
+LIKE:
+WHERE CustomerName LIKE 'a%'	Finds any values that start with "a"
+WHERE CustomerName LIKE '%a'	Finds any values that end with "a"
+WHERE CustomerName LIKE '%or%'	Finds any values that have "or" in any position
+WHERE CustomerName LIKE '_r%'	Finds any values that have "r" in the second position
+WHERE CustomerName LIKE 'a_%'	Finds any values that start with "a" and are at least 2 characters in length
+WHERE CustomerName LIKE 'a__%'	Finds any values that start with "a" and are at least 3 characters in length
+WHERE ContactName LIKE 'a%o'	Finds any values that start with "a" and ends with "o"
+
+
+
+ex:::::::::::::::
+- Get all songs
+SELECT * FROM songs;
+- Get the lengths of all songs
+SELECT length FROM songs;
+- Get the songs with a play count greater than 200
+SELECT * FROM songs WHERE play_count > 200;
+- Get the titles of the songs with a play count greater than 200, sorted alphabetically
+SELECT title FROM songs WHERE play_count > 200 ORDER BY title;
+- Get the length of the song with the most plays
+SELECT length FROM songs ORDER BY play_count DESC LIMIT 1;
+- Get all songs with artist info, even though some artists done have songs
+SELECT * FROM artists LEFT JOIN songs ON songs.artist_id = artists.id
+- Get artists with song lengtsh greater than 200
+SELECT * FROM DISTINCT artist.* JOIN songs ON artists.id = songs.artist_id WHERE song.length > 200;
+
+
+
+

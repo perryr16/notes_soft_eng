@@ -1,0 +1,54 @@
+Heroku
+======
+have a repo opened up
+install CLI
+$ brew install heroku/brew/heroku
+login
+$ heroku login
+create the heroku app
+$ heroku create
+deploy code
+$ git push heroku master
+view deployed app
+$ heroku open
+
+view logs (every action taken on app)
+$ heroku logs --tail
+ctrl+c to stop
+
+ProcFile: a text file in the root directory to declare what command sould be executed at the start of your app
+ex: `web: bundle exec puma -C config/puma.rb`
+
+show dynos running
+*dino: lightweight container that runs the command specified int he ProcFile
+$ heroku ps 
+
+
+create database and table using rake task (assuming I already generated a migration)
+$ bundle exec rake db:create db:migrate
+
+
+RUN LOCAL (http://localhost:5000)
+* dont need to push or add to see changes
+$ heroku local web
+cntrl + c to stop
+
+RUN ON WEB
+$ git add
+$ git commit
+$ git push heroku master
+$ heroku open
+
+show databse
+$ heroku pg:psql
+
+
+RESTART HEROKU (always useful, or if new migrations)
+heroku restart
+heroku run rake db:migrate
+
+RESET DATABASE
+heroku restart
+heroku pg:reset DATABASE (yes, DATABASE not the name of your db)
+heroku run rake db:migrate
+heroku run rake db:seed (if used)

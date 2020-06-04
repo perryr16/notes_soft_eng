@@ -1,0 +1,7 @@
+OPERATIONS
+-----
+x ** y # x^y
+x **= y # x = x ** y
+.sqrt()
+! = not
+.eql? = '=='

@@ -1,0 +1,161 @@
+Rails setup
+==========
+rails _5.1.7_ new set_list_2003
+-T : dont use minitest
+postgresql: always gonna use this database
+skip--spring: spring tries to help but it hurts
+
+group :development, :test do
+	gem 'rspec-rails' 
+	gem 'capybara'
+	gem 'launchy' /* what is this?
+	gem 'pry'
+	gem 'simplecov'
+end
+ALWAYS BUNDLE AFTER UPDATING GEMFILE
+bundle : same as bundle install
+
+after bundle /* white is already there
+green /*new from bundle 
+
+gems exist per version of ruby
+
+rails g rspec:install /*install it!
+
+/rails_helper.rb  /* add SimpleCov.start
+SimpleCov.start /* line 4
+
+make a features folder
+all feature tests should go in features folder
+name_of_file_spec.rb  /* all specs must end with _spec.rb
+
+****************
+rspec file example
+****************
+require 'rails_helper' 
+
+RSpec.describe "as a user, when I visit the songs index page", type: :feature do 
+	it "can see all songs titles and play count" do /* it is the actual test
+	song_1 = Song.create(title: "I really like you",
+						length: 208,
+						playcount: 234556)
+	song_2 = Song.create(title: "Call Me Maybe",
+						length: 199,
+						playcount: 122431)
+						
+	visit "/songs"
+	
+	expect(page).to have_content(song1.title)
+	expect(page).to have_contenct("Play Count: #{song_1.play_count}")
+	expect(page).to have_content(song2.title)
+	expect(page).to have_contenct("Play Count: #{song_2.play_count}")
+	end 
+end
+
+***** 
+terminal
+json error? gem 'json'
+
+$ rspec
+migration error
+$ rails db:create
+$ rspec
+=> uninitialized constant song : means we need to create the song class => MODELS
+
+/models/song
+class Song < ApplicationRecord
+end 
+
+$ rspec
+=>PG::Undefined Table: ERROR: relation Songs does not exist
+/* what is this song of which you speak? need to create a table called songs
+/* when you want to alter the "structure" of the database (create/delete/create-column)
+$ rails g micration CreateSongs title:string lenght:integer playcount:integer
+=>created songs table
+GO TO MIGRATION FILE
+migration file is similar to staging area. can make changes in the migration file instead of re-running $ rails g migration...
+add a timestamp to migration file
+
+t.timestamps
+
+back to terminal...
+$ rails db:migrate
+=>created table(:songs)
+$ rspec
+
+No rout matches [GET] "/songs"
+
+ROUTES
+get '/songs', to: 'songs#index'
+
+terminal 
+$ rails routes 
+$ rspec 
+
+CREATE SONGS CONTROLLER
+class SongsController < ApplicationController 
+end
+
+$ rspec
+no action index
+
+ADD 
+def index 
+end 
+to SongsController
+
+$ rspec
+missing a template for this request format and variant
+
+CREATE /VIEWS/SONGS
+index.html.erb 
+
+$ rspec
+failure: expected "I really like you" in ""
+
+>/Views/songs
+<h1>All Songs</h1>
+
+<% @songs.each do |song| %>
+	<h2><%= song.title %> </h2>
+	<p> Play count: <%= song.play_count %></p>
+<% end %>
+
+$ rspec 
+undefined method each for nilclass
+
+SongsController
+def index
+	@songs = Song.all
+end 
+
+$ rspec
+PASS!
+
+start server
+$ rails s
+localhost:3000/songs is empty!
+
+$ rails c /* rails console is an irb environment
+paste song create
+> Song.create(title: "I Really Like You", length: 209, play_count: 760847)
+> quit
+$ rails s
+
+VIEW CREATED SONGS
+$ rails c
+> Song.all
+
+======
+SCHEMA is a file that shows what the databse will look like
+DO NOT touch this file
+
+=====
+add new column to table
+
+
+
+
+
+
+

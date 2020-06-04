@@ -1,0 +1,102 @@
+html
+----
+<!DOCTYPE html> # declaration defines this document is HTML5
+<html> # element is the root element of an HTML page
+<head> # element contains meta information about the document
+<title>Page Title</title> # element specifies ta title for the documnet
+</head>
+<body> # element contains the visable page content
+
+<h1>This is a Heading</h1> # element defines a large heading
+<p>This is a paragraph.</p> # element defines a paragraph
+
+</body>
+</html>
+==========
+
+best practices:
+***************
+lowercase tag names
+close all tags </>
+
+<tag_start>
+</tag_end>
+
+tags:
+************
+<a href="www.website.com"> this is a link </a>
+<button>button text</button>
+<ul>  # unordered list (bullets)
+	<li>list item</li>
+</ul>
+<ol> </ol> # ordered list (1.2.3.)
+<dl> 
+	<dt> # define term
+	<dd> # describe each term
+</dl> # descrption list
+<br> # break, no end tag needed (empty element)
+<hr> horizontal rule (---------)
+<pre> </pre> preserves spaces and line breaks. fixed width font
+<img> no closing tag, use src and alt
+<div></div> takes up entire line, many block elements <h1><ol><p><address><blockquote><canvas><dd>
+<span></span> inline element only takes up necessary space <a><button><br><strong>
+
+attributes:
+***************
+href = link
+src = img source file
+alt = NEEDED img alternative text if image cant be displayed
+width = img width can be a number of pixels or percentage
+height = img height ^^^
+style="color:red;" 
+	  "font-family:verdana",
+	  "font-size:30px" ,"color:red;" 
+	  "font-family:verdana; font-size:300%" CSS, 
+	  "width:128px;height:128px"
+	  "boarder:0" prevents images from having borders
+	  "float:right" image will float to the right of text
+	  "list-style-type:disk", ":circle", ":square", ":none" >> unordered list
+type="1", "A", "a", "I", "i" >> ordered list
+start="50" # starts a list at 50
+lang="en-US"
+title="displayed when hovered over" (tool-tip)
+disbaled # input element should be disabled
+id # species a unique id for an element
+target="_blank"(new window or tab), 
+	   "_self"(opens link in smae window - default)
+	   "_parent"(opens in the parent frame)
+	   "_top"(opens in full body of window)
+	   framename (opens document in a named frame)
+onclick
+
+
+other:
+==========
+local links (to the same webpage) doesnt need https://www...
+class 
+get is default submit method. post exists
+
+input types
+===========
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week">

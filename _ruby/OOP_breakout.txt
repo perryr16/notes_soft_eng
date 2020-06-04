@@ -1,0 +1,32 @@
+Walking a dog
+-------------
+1. Prepare for walk
+  1.1 prepare dog
+    1.1.1 get poop bags
+    1.1.1 get leash
+  1.2 prepare human
+    1.2.1 get jacket
+    1.2.2 get shoes
+    1.2.3 get keys
+    1.2.4 choose rout
+2. Go on walk
+  2.1 leave house
+  2.2 if dog poops
+    2.2.1 pick up poop
+  2.3 if dog meets friend
+    2.3.1 allow to sniff butt
+  2.4if dog meets floe
+    2.4.1 heal dog
+3. Return home
+  3.1 open door
+    3.1.1 use key to unlock door
+    3.1.2 turn knob
+  3.2 take leash off
+    3.2.1 unclasp leash
+    3.2.2 hang leash on hook
+  3.3 fill water bowl
+    3.3.1 find water bowl
+    3.3.2 place in sink
+    3.3.3 turn water on
+    3.3.4 turn water off
+    3.3.5 place bowl on floor

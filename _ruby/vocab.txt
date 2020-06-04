@@ -1,0 +1,34 @@
+VOCAB:
+*************
+SYNTAX: The way we write and differentiate between data types
+************
+*CLASSES
+CLASS: categorization of a thing 
+(always singular)
+	class: pizza
+	instance: chicago, detroit, new york
+	
+INSTANCES: things that belong to a category
+
+ATTRIBUTE: characteristic that every intance in a class has
+	class: pizza
+	attributes: crust, sauce, cheese
+
+METHOD: a behavior or action of a class
+	(verbs)
+	Methods CHANGE an INSTANCE
+	The actions instances of classes can take
+	
+OBJECT = INSTANCE
+
+***********
+*GIT
+GIT = Version control system
+
+ORIGIN = url of a repository (repo) on github
+
+GIT PUSH = upload from local to remote (git to github)
+
+GIT PULL = download from remote to local (github to git)
+
+REPOSITORY = directory with git tracking turned on

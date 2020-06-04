@@ -1,0 +1,121 @@
+API's
+=======================
+an api about movies called ghibli
+
+
+gems 
+gem 'faraday' => how we interact with the internet
+
+============================================================================================================
+********************* ghibli_films.rb **********************************************************************
+============================================================================================================
+require 'faraday'
+require 'json'
+require 'pry'
+require_relative 'film
+
+film_search = FilmSearch.new
+
+film_search.each do |film|
+	puts film.title
+	puts "Directed by: #{film.director}"
+	puts "Produced by: #{film.producer}"
+	puts "Rotten Tomatoes Score: #{film.rotten_tomatoes}"
+  puts " "
+end
+
+class FilmSearch
+  def film_information
+    service.fimsl.map do |data|
+      Film.new(data)
+    end
+  end
+
+  def location_information
+    service.fimsl.map do |data|
+      Location.new(data)
+    end
+  end
+
+  def service
+    GhibliService.new
+  end
+end
+
+class GhibliService
+  def films
+    get_url("films")
+  end
+
+  def people
+    get_url("people")
+  end
+
+  def person(id)
+    get_url("people/#{id}")
+  end
+
+  def locations
+    get_url("locations")
+  end
+
+  def get_url(url)
+    response = Faraday.get("https://ghibliapi.herokuapp.com/#{url}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+end
+============================================================================================================
+
+
+pry
+----------------
+$ response.body => String
+$ parsed = JSON.parse(response.body) => Hash (yay)
+$ parsed = JSON.parse(response.body, symbolize_names: true) => hash, but keys are symbols
+$ parsed.class => Array
+
+
+film.rb
+---------
+class Film
+	attr_reader :title, :director, :producer # (but dont add it if you dont need it)
+	
+	def initialize(data)
+		@title	 		 = data[:title]
+		@director 		 = data[:director]
+		@producer 		 = data[:producer]
+		@rotten_tomatoes = data[:rt_score] # feel free to change the name of the api data
+	end
+	
+	def rotten_tomatoes
+		@rotten_tomatoes.round(2)
+	end	
+	
+end
+
+
+
+terminal
+----------------
+curl -x GET -H "content-Type: application/json".... => returns some api info
+***curl is used for command line, its not great
+
+
+postman
+---------------
+best. its an app. enter an api url. it looks similar to curl, but terminal is limited
+just a tool 
+can go to people/:id
+
+
+
+NOTES
+-----------
+documentation is likely going to be spotty
+if company updates it, it can break your app
+some api's charge per request. As a result use them intelligently
+
+
+FARADAY
+----------
+similar - httparty

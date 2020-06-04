@@ -1,0 +1,29 @@
+Methods
+---------
+essentially a function
+exicute the same code multiple times
+
+def "method_name"(parameter) or argument
+	"method body"
+end
+
+you "call" or "invoke" a method (method invocation)
+
+default parameters.
+	can be set in the method definition statement
+	if no arguments are passed, it will use the default parameter
+def say(words="hello")
+	puts words
+end
+
+
+use the "return" to actually return the value.
+
+"()" arent necessary, but you should use them.
+
+built in methods ex:
+string.split()
+	takes a string and splits based on 	(parameter)
+array.slice(1,2)
+	if just 1, returns the value at index 1
+	if 1&2, returns array of values from 	index 1 to index 2

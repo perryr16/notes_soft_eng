@@ -1,0 +1,55 @@
+Active record methods
+====================
+
+order results based on column
+>collection.order(:column)
+
+reverse order
+>collection.reverse order
+
+find results if value = known
+>collection.where(value: :known)
+
+AVG
+Person.average(:age) 
+
+SUM
+Person.sum(:age)
+
+find all entries where id is part fo an array
+Song.where(id: [1,2,3,4])
+
+select just a column
+Song.select(:play_count)
+
+ex::::::::::::::::::
+
+- Get all songs
+Song.all
+- Get the lengths of all songs
+Song.select(:length)
+- Get the songs with a play count greater than 200
+Song.where("play_count > ?", 200)
+- Get the titles of the songs with a play count greater than 200, sorted alphabetically
+Song.select(:title).where("play_count > ?", 200).order(:title)
+- Get the length of the song with the most plays
+Song.select(:length).order(play_count: :desc).limit(1)
+- join songs with artist
+Song.joins(:artist)
+- Get all songs with artist info, even though some artists done have songs
+Song.select('songs.*.artists.*').joins(:artist).first
+- Get artists who have songs longer than 200
+Artist.joins(:songs).where('songs.length > ?', 300).distinct
+
+UNIQ LIST OF NAMES FROM A JOINS TABLE
+    dishes.joins(:ingredients)
+          .distinct
+          .pluck('ingredients.name')
+		  
+POPULARITY OF AN ITEM IN A JOINS TABLE
+    dishes.joins(:ingredients)
+          .select('ingredients.name')
+          .group('ingredients.name')
+          .order(count: :desc)
+          .limit(3)
+          .pluck('ingredients.name') 
