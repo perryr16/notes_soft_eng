@@ -1,0 +1,25 @@
+JAVASCRIPT NOTES
+=================
+Open Console: Cmd + Opt + J
+REPL (read eval print loop) will read and run code
+> url:	real.it
+
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&
+OTHER
+&&&&&&&&&&&&&&&&&&&&&&&&
+Truthy
+Falsy = boolean false, empty string (‘’), undefined, null, NaN, +/- 0
+
+Function assignment syntax
+	function name(variable)
+	var ExVar = name(variable)
+	*leave the function out
+
+> === is a boolean question
+	Var a = ‘rock’
+	Var b = ‘rock’
+	Var c = ‘scissors’
+	Var a === b = true
+	Var a === c = false

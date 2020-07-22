@@ -1,0 +1,15 @@
+OmniAuth
+-------
+can be run on testmode
+OmniAuth.config.test_mode = true
+
+mock authorization
+OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+  :provider => 'twitter',
+  :uid => '123545'
+  # etc.
+})
+
+can use .add_mock to add a new mock provider. data will be merged
+OmniAuth.config.add_mock(:twitter, {:uid => '12345'})
+*note* it has to be a hash ^

@@ -1,0 +1,11 @@
+Resources:
+-----------
+routes
+
+resources :artists, only: [:index, show] do 
+  resources :songs, only: [:show, edit, update]
+end
+
+'/artists'/ => artists_path
+'/artists/:id' => artist_path(@artists)
+'/artists/:artis_id/songs/:id  => artist_song_path(@artist, @song)

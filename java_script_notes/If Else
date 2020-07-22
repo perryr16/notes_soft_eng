@@ -1,0 +1,11 @@
+&&&&&&&&&&&&&&&&&&&&&
+ IF ELSE (CONDITIONALS)
+&&&&&&&&&&&&&&&&&&&&&
+IF
+> if (‘conditional’) {‘true statement’
+	} else {‘false statement’}
+
+IF ELSE IF
+> if (‘conditional 1’) {‘true statement’}
+	else if (‘conditional 2’) {‘true statement’}
+	else {‘false statement’}

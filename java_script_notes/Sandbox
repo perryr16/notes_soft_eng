@@ -1,0 +1,11 @@
+what does this function need to to?
+
+take an object
+look at the VALUES in each KEY
+compare the value to a target
+if the target and the value are equal return the key
+
+
+function 1:
+take an object
+return the values.

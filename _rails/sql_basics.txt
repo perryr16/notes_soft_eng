@@ -1,5 +1,9 @@
 SQL basics
 -----------
+$ psql # enter SQL environment
+$ \dt # show all tables 
+
+
 sql commands: UPPERCASE (should be but not necessary)
 .exit
 must use single quotes 'billy joel'

@@ -1,0 +1,21 @@
+example calls
+
+can be run in inspect console if website supports it 
+
+ex::::::::
+> document.querySelector('h1').style.color = "blue"
+=> changes color to blue
+> document.querySelectorAll('h1')
+=> all <h1> on page
+> document.querySelector('.container').style.backgroundColor = "yellow 
+=> changes background to yellow 
+
+$ = document find
+
+> $('h1').text('hi)
+=> all h1 is changed to 'hi'
+> $('h1').style.color = "blue"
+=> color of h1 is blue 
+> $('h2').first().text('only chagned the first one!')
+
+USE CLASSES AND IDS, makes targetting objects simpler 

@@ -1,0 +1,27 @@
+&&&&&&&&&&&&&&
+OBJECTS
+&&&&&&&&&&&&&
+var 'object' = { 'key1': 'value1', 'key2': 'value 2'}
+
+>delete 'object'['key'] // deletes that PROPERTY
+
+check if property exists
+'object'['key'] === undefined
+
+Object.keys('object') // generates an array of all keys in an object
+Object.values('object') //generates an array of all objects in an object
+  ex:
+    >var obj = {a:1, b:2, c:'three'}
+    >var objKey = Object.keys(obj) //>> ['a', 'b', 'c']
+    >var objVal = Object.values(obj) //>>[1, 2, 'three']
+
+ADD A KEY TO AN OBJECT
+var obj1 = {a: 1, b: 2};
+obj1['c'] = 7;
+
+//result is {a:1, b:2, c:7}
+
+
+OBJECT TO STRING
+var obj = {apple: 1, bana: 2, dog:3}
+JSON.stringify(obj) = '{"apple":1,"bana":2,"dog":3}'

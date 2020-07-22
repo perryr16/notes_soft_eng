@@ -1,0 +1,54 @@
+General
+- JavaScript was developed in 10 days
+- in no way related to the then popular java 
+- ECMA script (SAME AS JS)
+- ES6 = ECMA script version 6
+- Transpiling is when you have to downgrade to accomidate another version/browser
+- ES5 supoorts most browsers, ES6 on Chrome
+
+if we user var, we cant reuse a variable
+we will primarily use let, not var
+camelCase 
+variable assignments (let, var) will return undefined even though the variable was assigned
+== compare regardless of datatype
+=== compare including data type
+5 == '5' -> true 
+5 === '5' -> true 
+alert('message') will popup message
+
+console.log(value) similar to puts
+
+control + r -> will clear out console
+
+-----PRY----------
+const myMath = (var1, var2) => {
+  var1 * var2;
+  debugger;
+}
+
+node.js packagage. node filename.js will run on CLI 
+
+-----FUNCTIONS------ES6----
+const a = 5, a will ALWAYS be 5 (ruby, use caps)
+"contant = immutable"
+functions MUST have a `return` keyword
+
+//functions are defined with 'const'
+const helloWorld = () => {
+  let greeting = 'hello';
+  let secondGreeting = ' world';
+  return greeting + secondGreeting;
+}
+console.log(helloWorld()) => 'hello world'
+
+
+-----IF---ELSE-----
+a =  5
+if (a > 6) {
+    console.log('bigger than 6');
+} else if (a > 4) {
+    console.log('bigger than 4');
+} else { 
+    console.log('a is' + a);
+}
+=> bigger than 4

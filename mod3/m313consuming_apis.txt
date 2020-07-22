@@ -1,0 +1,40 @@
+Ask yourself: 
+is it free?
+does it require authentication?
+does it have what I need?
+is there an example request?
+is there an example response?
+
+google 'free apis'
+https://rapidapi.com/ for a catalogue of free apis that they integrate with
+
+conn = Faraday.new(...)
+or
+conn = Faraday.get('https://api.github') do |faraday|
+  faraday.headers['Authorization'] = 'token OAUTH-TOKEN'
+end
+*can use req (request) or faraday bc its a faraday object
+
+GET USED TO CURL
+
+AUTHORIZATION
+headers will be listed in documentation with a `-H` and `:`
+
+propublica
+> curl "api_endpoint_here"
+  -H "X-API-Key: PROPUBLICA_API_KEY"
+==> faraday.headers['X-API-KEY'] = 'PROPUBLICA_API_KEY'
+
+github
+> curl -H "Authorization: token OAUTH-TOKEN" https://api.github.com
+==> faraday.headers['Authorization'] = 'token OAUTH-TOKEN'
+
+
+FIGARO is responsible for the application.yml
+FIGARO = RAILS
+DOTENV = RUBY
+hide your stuff here so people cant find it and then use it excessivly costing you money
+tokens have an experiation
+keys are good until I ask for a new one
+
+

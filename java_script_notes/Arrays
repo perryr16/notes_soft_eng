@@ -1,0 +1,67 @@
+
+&&&&&&&&&&&&&&&&&&&&&
+ARRAYS
+&&&&&&&&&&&&&&&&&&&&&
+array[index] // zero index
+
+> indexOf(‘value’)
+	returns the number of the value in the array
+
+a value of an array can be referenced in dot or [] notation. There is a difference but I don’t know when to use it
+	array.value
+	array[value]
+
+>array1.indexOf(‘value to search for’)
+	to determine if a value is present in an array, look at the 	index of and compare to -1. If a value is present it returns 	the number in the array
+
+
+ARRAY TO STRING
+'var'.toString() // will convert variable to a string
+  //if desired to do with numbers, you must put Number('#').toString(). or assign to a var
+JSON.stringify('arr') = '[1,2,3]'
+
+
+ADD A VALUE TO AN ARRAY //not sure if this is a good example. see below
+>var ary1 = [1,2,3,4];
+>var newDigit = 'five';
+>var newIndex = 4;
+>ary1[newIndex] = newDigit
+	>// ary1 now equals [1,2,3,4,'five']
+
+'var'.length // number of elements in an array
+'array'['array'.length-1] // last element in an array1
+
+'array'.push('element') // puts element at the end of an array
+'array'.pop('element') // removes the last element
+'array'.unshift('element') //adds element to the front of an array
+'array'.shift('element') //remove first element
+'array'.splice('indexPos', 'number of elements to remove', 'new element1', 'new element 2', 'new3'...) // remove elements,then add new ones
+	//can be used to just add elements, or to remove elements
+'array'.slice('starting index', 'final but not included')
+	//copy  s
+'array1'.concat('array2', 'array3') // adds arrays together
+'array.join('element') //element to be put between elements
+	//'-' makes a string
+	//if a number, it adds a number
+'array'.split(' ') //puts a space between each word
+						 ('') //separates letters
+'array'.indexOf(1234, 'after index')('string', 'after index')
+	//finds the index of an element. DNE = -1
+		//can be nested: .inderxOf(element1, .indexOf(element1))
+IS IT AN ARRAY?
+Array.isArray('variable') //returns true or false
+
+STRING TO ARRAY
+var str = 'this is a string with a bunch of words';
+var ary = str.split(" ");
+
+COPY AN ARRAY //the = assigns the reference, doesnt make a COPY
+copy = original.slice()
+
+REMOVE A SINGLE ELEMENT FROM AN ARRAY
+//not sure why these two are different, but its the second
+1:  array.splice(n,1);
+    var res = array.slice();
+2: var a var a = [1,2,3,'remove',4,5,6];
+a.splice(3,1)
+2: var res = array.splice(n,1)//doesnt work

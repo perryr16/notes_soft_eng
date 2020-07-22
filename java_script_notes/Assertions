@@ -1,0 +1,58 @@
+ASSERTION FUNCTIONS
+==================
+
+ASSERT EQUAL
+----------
+function assertEqual(actual, expected, testName) {
+  if (actual === expected) {
+      console.log('passed')
+  } else if (actual !== expected) {
+      console.log('FAILED ['+testName+'] Expected \"' + expected +'\", but got \"'+actual+'\"')
+  }
+
+}
+
+ASSERT ARRAYS EQUAL
+------------------
+function assertArraysEqual(actual, expected, testName) {
+  // your code here
+  var len = actual.length === expected.length
+
+  var vals = true;
+  for (var i = 0; i < actual.length; i++) {
+          if (actual[i] !== expected[i]) {
+            vals = false;
+              break
+          }
+      }
+
+  if (vals && len) {
+      console.log('passed')
+  } else {
+      console.log('FAILED ['+testName+'] Expected \"'+expected+'\", but got \"'+actual+'\"')
+  }
+}
+
+ASSERT OBJECTS EQUAL
+--------------------
+function assertObjectsEqual(actual, expected, testName) {
+  var a = JSON.stringify(actual);
+  var e = JSON.stringify(expected);
+
+  if (a === e) {
+      console.log('passed')
+  } else {
+      console.log('FAILED ['+testName+'] Expected '+e+', but got '+a)
+  }
+}
+
+ASSERT WITHIN RANGE
+-------------------
+function assertWithinRange(low, high, actual, testName) {
+  // your code here
+  if (actual <= high && actual >= low) {
+      console.log('passed')
+  } else {
+      console.log('FAIL ['+testName+'] \"'+actual+'\" not within range '+low+' to '+high)
+  }
+}

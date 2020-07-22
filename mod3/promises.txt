@@ -1,0 +1,37 @@
+with a promise fulfilled, .then() is hit
+                rejected, .catch() is hit 
+
+let promise = fetch(url);
+promise.then(gotData) <---- gotData is a function that will exicute WITH THE RETURNED PROMISE 
+
+gotData(data){
+  console.log(data)
+}
+---- but this is bad JS, it should be chained 
+fetch(url).then(callBack).catch(errorCallBack)
+function callback()..
+fucntion errorCallBack()...
+---- but we should use anonymous functions
+fetch(url)
+  .then(function(data){
+    console.log(data);
+  }).catch(function(err){
+    console.log(err);
+  })
+
+--- but I should use arrow function
+fetch(url)
+  .then(data => console.log(data))
+  .catch(err => console.log(err))
+
+--- but I dont have the data 
+fetch(url)
+  .then(response => resposne.json())
+  .then(json => console.log(json))
+  .catch(err => console.log(err))
+
+--- display on page
+fetch(url)
+  .then(response => resposne.json())
+  .then(json => createParagraph(json.word))
+  .catch(err => console.log(err))

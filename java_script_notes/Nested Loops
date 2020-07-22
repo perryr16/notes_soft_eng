@@ -1,0 +1,24 @@
+&&&&&&&&&&&&&&&&&&&&&&&&
+NESTED LOOPS
+&&&&&&&&&&&&&&&&&&&&&&&&
+Array of arrays
+Array = [[1,2,3] , [4,5,6], [7,8,9]]
+> for (var j = 0; j < Array.length; j++){
+	for (var k = 0; k < Array[j].length; k++){
+		{do statement for k;} ———>( console.log(array[j] [k])
+	do statement for j;}	———>(console.log(‘end of inner loop)
+
+Object
+> for (var ‘OuterKey’ in “object){
+	for (var ‘InnerKey’ in object[OuterKey){
+		inner do statement;}
+	outer do statment;}
+
+ALL COMBINATIONS of 2 arrays
+Given two separate arrays, or objects, or strings
+> var ary1 = [1,2,3]
+> var ary2 = [4,5,6]
+
+> for (var j = 0; j < ary1.length; j++){
+	for( var k = 0; k < ary2.length; k++){
+		console.log(ary1[j] + “ “ + ary2[k]

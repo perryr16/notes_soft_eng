@@ -1,0 +1,11 @@
+SETS
+======
+
+var 'mySet' = new Set([1,2,3,4])
+mySet.add(10) => [1,2,3,4,10]
+mySet.add('dog') =>[1,2,3,4,10,'dog']
+mySet.add({a:1, b:2}) => [1,2,3,4,10,'dog', {a:1, b:2}]
+
+mySet.size => not zero indexed
+
+a set will drop duplicate values

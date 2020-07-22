@@ -1,0 +1,90 @@
+&&&&&&&&&&&
+STRINGS
+&&&&&&&&&&&
+
+STRINGS: are immutable // cant chagne once they are created
+	to reassign you dont need to use 'var'
+	>var a = 'abc'
+	>a = 'def'
+
+'var'.substring('1st index', 'last index') //first value up to but not last
+'var'.indexOf('value','index') //returns index position you are looking for after the inex variable
+    //if the value is not found, returns -1
+'var'.toString() // will convert variable to a string
+    //if desired to do with numbers, you must put Number('#').toString(). or assign to a var
+
+ESCAPE CHARACTERS
+'=\' // not sure what this is
+\n // new line
+	>console.log(var1+'\n'+var2)
+
+ADD STRINGS
+just use the +
+var a = 'string'
+var b = 'cheese'
+var c = a+b //'stringcheese'
+
+
+STRING TO ARRAY
+var str = 'this is a string with a bunch of words';
+var ary = str.split(" ");
+
+ARRAY TO STRING
+'var'.toString() // will convert variable to a string
+  //if desired to do with numbers, you must put Number('#').toString(). or assign to a var
+
+STRING TO NUMBER
+str = '1 2 3 4'
+arr = str.split(' ')
+arrNum = arr.map(Number)
+
+
+console.log(ary) //[ 'this', 'is', 'a', 'string', 'with', 'a', 'bunch', 'of', 'words' ]
+
+EXAMPLE: take a string, turn it into an object where each word is a key. indicate the value of each key
+function countWords(stringOfWords) {
+  //create an array of that string
+  var ary = stringOfWords.split(" ");
+  //create an object
+  var obj = {};
+  //only operate if there are values
+  if (stringOfWords !== ''){
+      //if the value is 0, or undefined, add 1
+    for(var i = 0; i < ary.length; i++){
+      //assign 1 to all keys
+      if (obj[ary[i]] !== undefined){
+        obj[ary[i]] += 1;
+      } else {
+      obj[ary[i]] = 1;
+      }
+    }
+  }
+  //return the object
+  return obj
+}
+
+EXAMPLE: remove dounble spaces from a sentence string
+function convertDoubleSpaceToSingle(str) {
+  // split components based on double spaces
+  var ary = str.split('  ');
+	//
+  var joined = ary.join(' ');
+  var res = joined.toString();
+  return res;
+}
+
+EXANOPLE: Count all the characters in a string. create an onject with string characters as keys. if they exist, increment
+function countAllCharacters(str) {
+  // counts all characters, if they exist more than once, add to them
+  // gerenate keys based on characters
+  var res = {};
+
+  for (var i = 0; i < str.length; i++) {
+      if (res[str[i]] !== undefined) {
+          res[str[i]] ++;
+      } else {
+          res[str[i]] = 1;
+      }
+  }
+  return res;
+}

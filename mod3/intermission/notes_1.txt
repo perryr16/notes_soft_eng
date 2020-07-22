@@ -1,0 +1,7 @@
+APIs
+======
+like  a waiter at a restaurant. the restaurant is a remote app and I am a user/programmer. The waiter is an API, they are rules that govern interactiomn between the two
+
+JSON.parse(body, symbolize_names: true)
+
+SRP = single responsibility principle

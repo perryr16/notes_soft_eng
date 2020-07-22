@@ -1,0 +1,6 @@
+&&&&&&&&&&&&&&&&&&&&&&&
+OPERATORS AND METHODS
+&&&&&&&&&&&&&&&&&&&&&&&
+
+>Number.parseInt('var') //creates an integer from a string
+>Number.parseFloat('var') // creates an float from a string

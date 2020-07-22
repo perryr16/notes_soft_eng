@@ -1,0 +1,50 @@
+&&&&&&&&&&&&&&&&&&&&&
+LOOPS
+&&&&&&&&&&&&&&&&&&&&&
+Increment: i++
+Every other: i += 2
+
+*FOR
+
+for (initialization; condition; final expression)
+> for (‘variable’ = start; ‘variable = end; ‘variable’ change)
+	{‘do statement’;}
+
+*WHILE
+
+> while (‘variable’ </=/> ‘number’)
+	{‘do statement’;
+	‘variable change’;}
+
+Works for strings and arrays
+Shows value of a string index
+>var index = 0;
+>while (index < string.length ){
+	console.log(string[index];
+	index++;}
+Shows value of a array index
+>var index = 0;
+>while (index < array.length){
+	console.log(array[index];
+	index++;}
+//not index <= array.length bc it starts at 0 and length doesn’t include 0
+
+*FOR-IN
+	used to loop over properties in an object
+> for (var ‘key’ in ‘object’){‘do statement’}
+	the ‘key’ variable will always access the key of the object even if it isn’t created yet
+	the ‘object’ variable will always refer to the object
+
+
+CONTINUE
+This will skip over a specific value.
+
+> var array = [1,2,3,error,5]
+>for (var i = 0; i < array.length; i++){
+	if (i === 3) {
+		continue;}
+	console.log(array[I];}
+
+BREAK
+Used like CONTINUE
+Will stop the loop regardless of its position, good to prevent error

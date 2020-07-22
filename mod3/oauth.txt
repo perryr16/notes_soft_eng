@@ -1,0 +1,4 @@
+GET https://github.com/login/oath/authorize
+
+
+https://github.com/login/oath/authorize?client_id=adfadfadf&scope=repob 

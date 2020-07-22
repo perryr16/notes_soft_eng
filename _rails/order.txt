@@ -1,0 +1,4 @@
+ORDER
+-------
+expect(page.all('h2')[0]).to have_content(@shelter1.name)
+expect(page.all('h2')[1]).to have_content(@shelter2.name)

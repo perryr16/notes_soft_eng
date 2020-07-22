@@ -4,11 +4,11 @@ using Songs, Playlists, and PlaylistSongs
 where PLAYLIST IS NEW 
 
 ------------------------------------------
-SPEC *****************
+SPEC *************************************
 
 /spec/models/playlist_spec.rb
 
-    it { should have_many :playlist_songs}
+  it { should have_many :playlist_songs}
 	it { should have_many(:songs).through(:playlist_songs)}
 	
 /spec/models/song_spec.rb
@@ -23,7 +23,7 @@ SPEC *****************
 	
 	
 ------------------------------------------
-MODELS ****************
+MODELS ***********************************
 	
 /app/models/playlist.rb
 	has_many :playlist_songs
@@ -40,7 +40,7 @@ MODELS ****************
 
 	
 ------------------------------------------
-MIGRATION  ***********
+MIGRATION  *******************************
 
 $ rails g migration CreatePlaylists name:string
 $ rails g migration CreatePlaylistSongs song:references playlist:references

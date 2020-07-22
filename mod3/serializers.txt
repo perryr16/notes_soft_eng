@@ -1,0 +1,28 @@
+serializers replace the need for views, if we have APIs
+
+when we make the call
+render json: 
+rails makes the call
+as_json unless we have seriizlsers
+as_json then calls to_json and repsonse is generated
+lets customize what gets sent back
+
+to iterate through each object in the JSON response do the following
+if there is an order with many items 
+
+> attribute :num_items do |object|
+    object.items.count 
+  end  
+where `object` is similar to self and represents each reponse item 
+
+in controller
+-------------
+def index 
+  render json: ModelSerializer.new(Model.all)
+end
+def show 
+  render json: ModelSerializer.new(Model.find(params[:id]))
+end
+
+???--QUESTIONS--??? 
+serializer turns it into serial and then back to JSON?

@@ -1,0 +1,26 @@
+APIs MUST be double quoted sepearated by colon
+> "dog":"bark"
+
+====hash -> JSON =======
+> JSON.generate(my_hash) 
+> my_hash.to_json 
+
+====JSON -> hash ======
+> JSON.parse(my_hash)
+
+===TESTING===
+get 'api/v1/items' ---> visit 'api/v1/tiems'
+expect(response) ---> expect(page)
+render --> tells the controller what to render
+json: Item.all ---> hash argument for render. converts item.all to JSON
+^^^ these two are always paired in controller 
+def index 
+  render json: Item.all
+end
+def update 
+  render json: Item.update(item_params) #if item_params is a private method
+end
+
+???QUESTION??? can you always pass params as a hash? in a spec this works 
+get '/api/v1/items', params: {item: {name: "x", quantity: "3"}}
+

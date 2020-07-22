@@ -1,4 +1,4 @@
-Migrations
+pMigrations
 ==========
 
 $ rails db:create
@@ -11,9 +11,11 @@ REMOVE COLUMN FROM TABLE--------------------------------------
 $ rails g migration RemoveColumnFromTable column:string
 (add --force to overwrite)
 
-DROP A TABLE---------------------------------------------
-$ rails db
-# drop table tablename
+DELETE/ DROP A TABLE---------------------------------------------
+$ rails g migration DropTableName
+def change 
+  drop_table :table_name
+end
 
 CHANGE A COLUMN NAME------------------------------------
 $ rails g migration ChagneColumnName (exact)

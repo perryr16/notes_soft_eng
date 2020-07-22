@@ -1,0 +1,39 @@
+VCR/WEBMOCK/FIGARO
+
+VCR setup 
+
+----/gemfile----------
+gem 'figaro'
+
+group :test do 
+  gem 'webmock'
+  gem 'vcr
+end
+
+$ bundle install
+$ bundle exec figaro install
+
+-----/application.yml---------
+API_KEY1 = 12345adf4
+
+----spec/spec_helper.rb-------
+# under RSpec.configure do |config|
+require 'webmock/rspec'
+
+---spec/rails_helper------
+# on the bottom 
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data('<WHATEVER_I_WANT>') { ENV['API_KEY1'] }
+  config.configure_rspec_metadata!
+end
+
+----spec/fixtures------
+$ mkdir spec/fixtures
+
+---spec/ALL TESTS that use API-----
+# add :vcr 
+describe "test", :vcr do 
+  ...
+end

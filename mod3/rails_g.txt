@@ -1,0 +1,14 @@
+CREATE MODEL
+$  rails g model modelName column1:datatype column2:datatype OtherTable:references
+$ rails g model modelName name description ***if all strings, no need for datatype **
+
+CREATE CONTROLLER
+$ rails g controller controllerName index show
+namespacing
+$ rails g controller parent/parent/controllerName index show
+** be careful, it'll make weird routes
+
+CREATE SERIALIZER 
+$ rails g serializer ModelName id name description
+
+

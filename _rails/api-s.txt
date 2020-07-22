@@ -26,13 +26,13 @@ end
 
 class FilmSearch
   def film_information
-    service.fimsl.map do |data|
+    service.films.map do |data|
       Film.new(data)
     end
   end
 
   def location_information
-    service.fimsl.map do |data|
+    service.films.map do |data|
       Location.new(data)
     end
   end

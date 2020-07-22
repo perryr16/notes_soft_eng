@@ -1,0 +1,10 @@
+dont let methods violate srp
+
+touch app/poros
+#dont need to test
+
+touch app/services
+#pull it out of the controller
+
+Controller: to direct trafic to the index page. pass members object
+SearchResults: 
