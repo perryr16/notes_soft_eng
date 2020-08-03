@@ -1,0 +1,13 @@
+Run 
+$ ps aux | grep ruby
+-- or --
+$ ps aux | grep <application_name>
+
+print out will look like this:
+
+rossperry         1258   0.0  0.4  4398732  33004   ??  S    10:02AM   0:00.90 ruby i-scream-arcade-microservice-app.rb
+
+-- ! KILL ! --
+$ kill 1258
+
+DONE.

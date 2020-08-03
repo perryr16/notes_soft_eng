@@ -22,8 +22,9 @@ gems exist per version of ruby
 
 rails g rspec:install /*install it!
 
-/rails_helper.rb  /* add SimpleCov.start
-SimpleCov.start /* line 4
+/rails_helper.rb  (line 4)
+require 'simplecov'
+SimpleCov.start 
 
 make a features folder
 all feature tests should go in features folder

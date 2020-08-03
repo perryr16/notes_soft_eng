@@ -1,3 +1,19 @@
 SimpleCov
 =========
 $ open coverage/index.html
+
+group :development, :test do
+	gem 'rspec-rails' 
+	gem 'capybara'
+	gem 'launchy' /* what is this?
+	gem 'pry'
+	gem 'simplecov'
+end
+
+rails g rspec:install /*install it!
+
+# /rails_helper.rb 
+# OR
+# /spec_helper.rb
+require 'simplecov'
+SimpleCov.start #line4

@@ -1,0 +1,23 @@
+gem 'pry'
+gem 'figaro'
+gem 'rspec-rails'
+gem 'fast_jsonapi'
+gem 'rack-cors'
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'launchy'
+  gem 'simplecov'
+end
+
+$ bundle
+$ rails g rspec:install
+$ bundle exec figaro install
+
+Inside of the rails_helper.rb file add this to the RSpec.configure block:
+
+  config.include FactoryBot::Syntax::Methods
+  

@@ -1,0 +1,16 @@
+if getting HTML DOCTYPE responses from API/postman on PATCH POST or DELETE
+
+
+add this code to the top of the controller
+----------------------------------------------
+`skip_before_action :verify_authenticity_token`
+----------------------------------------------
+
+typical error: 
+```
+Started DELETE "/api/v1/destinations/2" for ::1 at 2020-08-02 15:26:40 -0600
+Processing by Api::V1::DestinationsController#destroy as */*
+  Parameters: {"id"=>"2"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+```

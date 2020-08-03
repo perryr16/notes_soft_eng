@@ -1,0 +1,6 @@
+theres a lot more that should go here, but to generate values in the .travis.yml file 
+
+$ heroku auth:token
+(saved heroku token)
+
+$ travis encrypt (saved heroku token) --add deploy.api_key

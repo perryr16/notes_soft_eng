@@ -3,6 +3,7 @@ VCR/WEBMOCK/FIGARO
 VCR setup 
 
 ----/gemfile----------
+gem 'faraday'
 gem 'figaro'
 
 group :test do 
