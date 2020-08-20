@@ -1,4 +1,4 @@
-pMigrations
+Migrations
 ==========
 
 $ rails db:create
@@ -7,8 +7,14 @@ $ rails db:create
 
 $ rails g migration CreateModel name:string description:text true_false:boolean
 
+Migrations
+==========
+
 REMOVE COLUMN FROM TABLE--------------------------------------
 $ rails g migration RemoveColumnFromTable column:string
+def change 
+  remove_column :table_name, :column_name
+end
 (add --force to overwrite)
 
 DELETE/ DROP A TABLE---------------------------------------------

@@ -1,0 +1,15 @@
+To pass values through postman in `body raw`
+
+HEADERS
+Content-Type => application/json
+
+BODY > raw
+{
+  "origin": "Portland,ME",
+  "destination": "Boston,MA",
+  "api_key": "be882f28f5847dedec3f2b7788c8f8bcc98ad781fce3a46af0f193eea64c"
+}
+
+RAILS
+-----
+just call params, and there it is

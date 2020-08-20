@@ -1,0 +1,25 @@
+WHEN '$ npm start' doesnt work
+
+errors:
+*********************************
+postgresql port in use 
+-- or ---
+ERROR: role "postgres" does not exist
+=================================
+$ brew services stop postgresql
+elephant > start 
+--- or ---
+lsof -i :5432
+kill <PID NUMBER>
+QUICKLY CLICK ELEPHANT START! - or do it a bunch of times until there are no more PID values
+
+
+Error: Cannot find module '../internals/native-weak-map'
+  at Object.<anonymous> (/Users/rossperry/Documents/_Turing_Projects/mod4/projects/Crate/code/web/node_modules/core-js/internals/internal-state.js:1:23)
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+=================================
+delete /code/web/node_modules
+$ npm install 
+$ npm start
+

@@ -1,0 +1,45 @@
+GraphQL
+--------
+https://www.digitalocean.com/community/tutorials/a-practical-graphql-getting-started-guide-with-nodejs
+made by facebook
+defining types and fields, then providing functions for each
+
+Hierarchical - Queries look like the data they return
+Client -specified queries - The CLient has the liberty ot dictate what they fetch from the server
+Strongly typed
+Introspective
+
+fragments - use `...`
+---------------------------------------------------------------
+query getUsers($shark: String, $age: Boolean!, $id: Boolean!) {
+  users(shark: $shark){
+    ...userFields
+  }
+}
+
+fragment userFields on Person {
+  name
+  age @skip(if: $age)
+  id @include(if: $id)
+}
+------------------------------------------------------------------
+
+SCHEMA
+--------
+var schema = buildSchema(`
+  type Query {
+    user(id: Int!): Person
+    users(shark: String): [Person]
+  },
+  type Person {
+    id: Int
+    name: String
+    age: Int
+    shark: String
+  }
+  type Mutation {
+    updateUser(id: Int!, name: String!, age: String): Person
+  }
+`);
+--------
+

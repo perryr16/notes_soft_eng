@@ -1,0 +1,38 @@
+view commit history
+--------------------
+$ git log --oneline
+
+
+in feature  branch
+------------------
+git rebase -i HEAD~<number of commits back you want to rebase>
+-- or --
+git rebase -i <commit sha> //---> includes commits infront
+
+in terminal editor
+------------------
+i ---> insert 
+*make changes* feel free to use the prefixes -> s = squash, r = reword
+esc
+:wq ---> save changes (write and quit?)
+**** Successfully rebased and updated refs/head/<branch_name>
+
+UNDO!! ABORT!!
+--------------
+git rebase --abort 
+
+
+push to github
+--------------
+# if github has different commit history
+git push -f origin <branch name>
+
+github changes have been approved and merged
+--------------------------------------------
+git checkout main
+git pull origin main # --> pull down changes
+git checkout <new feature>
+git rebase master # --> rebases new feature branch with master
+
+
+

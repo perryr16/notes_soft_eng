@@ -3,7 +3,7 @@ if getting HTML DOCTYPE responses from API/postman on PATCH POST or DELETE
 
 add this code to the top of the controller
 ----------------------------------------------
-`skip_before_action :verify_authenticity_token`
+ skip_before_action :verify_authenticity_token
 ----------------------------------------------
 
 typical error: 

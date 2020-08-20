@@ -1,0 +1,20 @@
+Continuous Integration
+======================
+'releasing changes fast and often'
+
+1. Travis CI
+2. Circle CI 
+3. Jenkins
+
+BUILD - all the steps needed to get an app up and running
+
+.travis.yml
+-----------
+sections:
+1. install - dependancies
+2. script - run code and tests
+3. deploy - deploy to web
+
+remove travis email notifications
+notifications:
+  email: false

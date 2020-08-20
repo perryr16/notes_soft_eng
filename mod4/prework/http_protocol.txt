@@ -1,0 +1,32 @@
+hyper text transfer protocol
+it is a TCP/IP based protocol
+
+1. connectionless protocol, after making the request, the two computers disconnect and reconnect when the response is ready
+2. http can deliver any sort of data
+3. http is stateless. client and server know about eachother during request, after close, its brand new - they dont remember information about eachother
+
+WHY HTTP?
+--------
+designed to fetch documents - thats it.
+designed well
+continuously evolved
+
+REQUEST RESPONSE CYCLE
+----------------------
+startline 
+header 
+body
+
+REQUEST
+-------
+start line: method, uri, http version
+headers: name value pairs (host, accept, accept-language)
+
+URI: uniform resource identifier
+
+MIME type
+
+RESPONSE
+--------
+no uri 
+status code: 200, 404...

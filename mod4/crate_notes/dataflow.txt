@@ -1,0 +1,21 @@
+Login
+-------
+page: /web/src/modules/pages/home.js
+note: there are several paths: '/crates --> redirects to login
+routes: user/login, user/singup, user/profile, user/subscriptions
+click login
+
+page: DNE. its pulling from /modules/user/login.js 
+if username is bad: /api/src/modules/user/resolvers.js
+hits `if (!user)` and throws error 
+this is represented in login.js by `this.props.messageShow(this.props.user.error)`
+
+Success:
+where is the redirection happening to /crates?
+at bottom there is <AuthCheck/> which is hitting the import AuthCheck
+in AuthCheck if it is successufl 
+admin: admin.dashboard.path = '/admin/dashboard'
+user: crate.list.path = '/crates'
+
+
+

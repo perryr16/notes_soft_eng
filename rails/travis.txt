@@ -1,0 +1,32 @@
+theres a lot more that should go here, but to generate values in the .travis.yml file 
+
+$ heroku auth:token
+(saved heroku token)
+
+$ travis encrypt (saved heroku token) --add deploy.api_key
+
+-------------- CAN JUST COPY AND MODIFY THIS ---------
+language: ruby
+cache: bundler
+notifications:
+  email: false
+rbenv:
+- 2.5.3
+before_install:
+- gem install bundler
+addons:
+  postgresql: 9.6
+  chrome: stable
+dist: xenial
+script:
+- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: ******GENERATE THIS WITH COMMANDS ABOVE!!!!
+  app: ******HEROKU APP NAME
+  on:
+    repo: perryr16/****REPO NAME
+  run: rails db:migrate
+  skip_cleanup: true

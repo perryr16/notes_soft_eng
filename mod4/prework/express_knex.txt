@@ -1,0 +1,32 @@
+Building an Express App 
+-----------------------
+js is exicuted on cleint-side or in browser engine. Chrome uses 'V8'
+
+
+npm = Node Package Manager - organization outside packages (similar to Ruby Gems)
+Express is a framework built ontop of the web server functionality provided by node.js
+
+KNEX
+----
+SQL query builder for Postgres MSSQL, MySQL, MariaDB, SQLite3, and ORacle
+JS instead of raw SQL
+https://devhints.io/knex
+
+
+
+npm init --yes
+npm install knex -g
+npm install knex --save
+npm install express -g
+npm install express --save
+npm install pg --save
+npm install body-parser --save
+
+knex init
+
+knex migrate:make initial
+knex migrate:latest
+knex migrate:make some-new-migration
+knex seed:make papers
+knex seed:run
+

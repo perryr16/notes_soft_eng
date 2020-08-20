@@ -1,0 +1,20 @@
+ENVIORNMENTS
+============
+enviornments correstpond to a specific phase of the release process
+
+1. Testing
+2. Development - Live on your laptop
+3. CI - run tests... just incase we forget
+4. Staging - As close to production as possible
+5. Production - The Internet
+
+Getting started with Heroku
+---------------------------
+brew tap heroku/brew && brew install heroku
+heroku login
+heroku create app_name
+git remote -v
+
+ProcFiles
+----------
+

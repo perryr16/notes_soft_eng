@@ -4,16 +4,34 @@ ARRAYS
 &&&&&&&&&&&&&&&&&&&&&
 array[index] // zero index
 
+ENUMERATION
+-----------
+.some(element => element.condition)     // atleast one? true/false
+.every(element => element.condition)    // all? true/false
+.find(element => element.condition)     // find first element that meets condition
+.filter(element => element.condition)   // find a subset that meets the condition
+.map(element => element.condidiont)     // map... 
+.sort((a, b) => a.condition > b.condition ? 1 : -1) // if a > b move it up the list, else move it down (ternerary statement)
+.reduce((sum, element) => {
+  return sum + element.value;
+}, 0);                                // the 0 at the end will set a default value, reduce is very maluable
+
+dont forget your 'returns'
+
+
+SPREAD OPPERATOR
+... => basically takes each element and applies the same action.
+a = [1,2,3]
+b = [11,12,13]
+c = [...a, ...b] => [1,2,3,11,12,13]
+
+
+
 > indexOf(‘value’)
 	returns the number of the value in the array
 
-a value of an array can be referenced in dot or [] notation. There is a difference but I don’t know when to use it
-	array.value
-	array[value]
-
 >array1.indexOf(‘value to search for’)
 	to determine if a value is present in an array, look at the 	index of and compare to -1. If a value is present it returns 	the number in the array
-
 
 ARRAY TO STRING
 'var'.toString() // will convert variable to a string
@@ -31,21 +49,21 @@ ADD A VALUE TO AN ARRAY //not sure if this is a good example. see below
 'var'.length // number of elements in an array
 'array'['array'.length-1] // last element in an array1
 
-'array'.push('element') // puts element at the end of an array
-'array'.pop('element') // removes the last element
-'array'.unshift('element') //adds element to the front of an array
-'array'.shift('element') //remove first element
-'array'.splice('indexPos', 'number of elements to remove', 'new element1', 'new element 2', 'new3'...) // remove elements,then add new ones
+.push('element') // puts element at the end of an array
+.pop('element') // removes the last element
+.unshift('element') //adds element to the front of an array
+.shift('element') //remove first element
+.splice('indexPos', 'number of elements to remove', 'new element1', 'new element 2', 'new3'...) // remove elements,then add new ones
 	//can be used to just add elements, or to remove elements
-'array'.slice('starting index', 'final but not included')
+.slice('starting index', 'final but not included')
 	//copy  s
 'array1'.concat('array2', 'array3') // adds arrays together
 'array.join('element') //element to be put between elements
 	//'-' makes a string
 	//if a number, it adds a number
-'array'.split(' ') //puts a space between each word
+.split(' ') //puts a space between each word
 						 ('') //separates letters
-'array'.indexOf(1234, 'after index')('string', 'after index')
+.indexOf(1234, 'after index')('string', 'after index')
 	//finds the index of an element. DNE = -1
 		//can be nested: .inderxOf(element1, .indexOf(element1))
 IS IT AN ARRAY?

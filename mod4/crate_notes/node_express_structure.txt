@@ -1,0 +1,10 @@
+great for making REST API's 
+no clue on organization
+
+
+there are controllers - should be in the api folder
+
+3 layer architecture 
+controller layer
+service layer
+Data access layer
