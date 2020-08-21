@@ -1,0 +1,83 @@
+to start:
+$ npm install --save sequelize 
+
+$ cd api //otherwise it puts files in wrong place
+
+* note: sequelize/express is responsible for config/mutations/models...
+
+new migration
+------------
+$ npx sequelize-cli migration:create --name <name of migration>
+
+/migration/1245324512345 name of migration // you can just rename this 5-user.js or whatever
+--------------------
+'use strict';
+
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.addColumn(
+      'users',
+      'style',
+      Sequelize.STRING
+    )
+  },
+
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.removeColumn('users', 'style')
+  }
+};
+
+
+this part Im not positive about... so many google searches
+$ npx sequelize-cli db:migrate 
+
+/modules/user/model 
+------------------------
+},
+style: {
+  type: DataTypes.TEXT
+},
+
+/modules/user/types
+------------------------
+},
+style: { type: GraphQLString},
+
+/seeders/1-user 
+------------------------
+up... 
+  ,
+  style: classy,
+
+down... 
+    return (
+      queryInterface.bulkDelete('subscriptions', null, {}), //was causing foreign key error 
+      queryInterface.bulkDelete('users', null, {})
+    )
+
+unseed / destroy the current DB
+-------------------------------
+sequelize db:seed:undo --env=production 
+
+* if no errors...
+-------------------------------
+sequelize db:seed --env=production
+
+localhost:3000
+---------------------------------
+query getUsers {
+  users{
+    id
+    name
+    email
+    password
+    style
+  }
+}
+
+===> users should have style
+
+
+helpful article;
+https://dev.to/nedsoft/add-new-fields-to-existing-sequelize-migration-3527
+https://gist.github.com/vapurrmaid/a111bf3fc0224751cb2f76532aac2465

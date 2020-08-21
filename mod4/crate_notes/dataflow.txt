@@ -17,5 +17,35 @@ in AuthCheck if it is successufl
 admin: admin.dashboard.path = '/admin/dashboard'
 user: crate.list.path = '/crates'
 
+Crates:
+populated from an import of List from /modules/crate/list
+I'd love to be able to see all the values in here
+pulling crates from `this.props.crates.list`
+if there are `this.props.crates.list` then it will map over the length and create 'CrateItems'
+follow CrateItems to './Item'
+onClickSubscribe crateId is set (clothes for men = 1, clothes for women = 2)
+where is a subscription created?
+'create' imported from 'subscriptions/api/actions'
+this.props.create()
+create is a mutation attatched through resolvers
+create is a resolver that finally looks familiar.
 
 
+
+*** SIDE NOTE *** 
+imports are the key to all of this
+feels like a controller scenario where we dont want to import to much
+/ 
+
+*** SIDE NOTE *** 
+what is `this`?
+has the following structure
+{
+context
+props: crates, history, location, match
+refs:
+state: null 
+updater:
+_reactInternalFiber:
+_reactInternalInstance:
+}

@@ -1,0 +1,66 @@
+queries have same shape as expected results
+```
+sandwhich {
+  bread
+  ham
+  cheese
+}
+```
+json payload are returned
+
+STRONGLY TYPED
+REST - vs - GRAPHQL 
+
+single entry point from an API 
+only returns fields requested 
+simplifies how you request 
+added complexity upfront
+great for LARGE API 
+
+include in the query `@include`, exclude `@skip`
+
+mutation is like a query, but data WILL BE MODIFIED on server
+
+`!` after a param means its required 
+
+schema manages queries and mutations
+
+type Query {...}      = GET 
+type Mutation {...}   = POST, UPDATE, DELETE, 
+
+Fragments help to DRY code 
+
+if asking for the same data over and over 
+ex: where users are 'Person's
+query findManyUsers ($userID1: Int!, $userID2: Int!) {
+  user1: user(id: $userID1){
+    id
+    name
+    age
+  }
+  user2: user(id: $userID2) {
+    id
+    name
+    age
+    favortieFood
+  }
+}
+
+you can do ---
+
+query findManyUsers ($userID1: Int!, $userID2: Int!) {
+  user1: user(id: $userID1) {
+    ...userInfo 
+  }
+  user2: user(id: $userID2) {
+    ...userInfo 
+    favoriteFood
+  } 
+
+  fragment userInfo on Person {
+    id
+    name
+    age
+  }
+}
+
