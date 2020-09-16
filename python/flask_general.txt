@@ -1,0 +1,15 @@
+all flast apps are Flask objects
+__init__ is like intialize
+__name__ tells the app where it lives 
+everything needs to be registered in in the app (__init__.py)
+
+* g. stands for global. used to store data across requests. like this or current_user
+
+Blueprint: a way to organize a group of related views and other code
+
+Templates: the view itself. without it 'TemplateNotFound'
+  flask uses JINJA template library to render templates
+  jinja code like erb: {{ }}
+  jinja control flor:  {% %}
+
+Static files: CSS. style wont change. its static

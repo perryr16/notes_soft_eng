@@ -1,0 +1,30 @@
+if else
+-------
+if a < b: 
+  #code 
+elif a > b: 
+  #code
+else: 
+  # code
+
+
+oneliner
+--------
+if a < b: print("a less than b")
+print("A") if a < b else print ("B")
+
+if a < b and b < c:
+  code
+
+if a < b or b < c:
+  code
+
+if a < b: 
+  if dog < cat: 
+    print("nested if")
+  else: 
+    code
+
+empty if
+if a < b:
+  pass

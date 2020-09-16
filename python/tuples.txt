@@ -1,0 +1,7 @@
+tuples
+-0-0-0-0-
+
+ordered and unchangabe 
+
+with ()
+tuple1 = (1, 2, 3, 4)

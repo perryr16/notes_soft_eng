@@ -1,0 +1,4 @@
+block chain - holds certain values like transactions
+storing in our DB - store other values like descriptions, images, private things
+
+python web3 library
