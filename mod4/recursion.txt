@@ -1,0 +1,78 @@
+RECURSION
+recursive 
+--------------
+What is a recursive function
+- a function that calls itself repeatedly until it reaches a certain condition
+
+What are the elements of a recursive function
+- exit condition of  `base case`
+  - the condition that prompts the desired result to return from the function
+  - triggers the function to stop executing 
+- recursive case - a block of code or a set of instructions that finish in a call to the function itself
+
+Why is it useful
+- great to traverse complex data
+  - node trees 
+  - nested arrays 
+  - sorting data (i.e. towers of Hanoi)
+
+if the dataset is getting smaller on each pass it is LOGARITHMIC O(log n)
+
+Tail call optimazation:
+- the last line should be the recursive call
+
+
+ex: 
+countdown from number to zero 
+
+def countdown(num)
+  return if num < 0
+  puts num 
+  countdown(num -1)
+end
+
+
+|-=-=-=-=-=-=-=-=-=-|
+|* * * ARTICLE * * *|
+|-=-=-=-=-=-=-=-=-=-|
+javascript
+
+GOOD FOR:
+iterating over an operation by having a function call itself repeatedly
+JS does not support recursive functions
+same function with different parameters 
+doesnt require setting and maintaining state 
+easy to test. easy to write.
+
+EX: FACTORIAL 
+```
+var factor = function(number) {
+  var result = 1;
+  var count;
+  for (count = number; count > 1; count--) {
+    result *= count;
+  }
+  return result;
+};
+console.log(factor(6));
+```
+```
+var factorial = function(number) {
+  if (number <= 0) { // terminal case
+    return 1;
+  } else { // block to execute
+    return (number * factorial(number - 1));
+  }
+};
+console.log(factorial(6));
+```
+
+PROBLEM:
+They keep stacking up on themselves
+Tail call allows them to take place immediately, instead of stacking 
+
+
+Trampoline functions
+one at a time 
+slows down performance and favors safety
+convoluded

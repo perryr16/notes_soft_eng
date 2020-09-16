@@ -1,0 +1,207 @@
+DataFlow:
+
+***************************************************
+* * * * * * * * * *  TRACK 1  * * * * * * * * * * *
+***************************************************
+
+Auth User -> Crates -> Subscriptions
+====================================
+* file: /web/src/modules/pages/home.js
+--------------------------------------
+check user status. if user is an Auth user then display 'Get Subscription' button
+user clicks 'Get Subscription'
+redirects user to 'crateRoutes.list.path' 
+  where crateRoutes is imported from '../../setup/routes/crate'
+  where list is the specific path and page at '../../modules/crate/List
+
+* file: /web/src/modules/crate/List.js
+---------------------------------------
+importing several styles
+importing several actions 
+
+All crates are populated on screen with the `render()` function
+crate data is dispalyed inside of the `Grid` and `GridCell`
+
+before displaying crates, app checks whether it 'isLoading'
+if not, then check how many crates there are 
+if there are more than 0 crates avaliable to 'this' 
+iterate through and generate CrateItems 
+  CrateItems are preformatted objects that are prepared to dispaly relevant Crate Data 
+  CrateItems are imported from './Item'
+
+* file: '/web/src/modules/crate/Item.js'
+---------------------------------------
+importing a 'create' method from '../subscriptions/api/actions'
+the Item class has a function: 'onClickSubscribe'
+when clicked: 
+  Loading is set to true
+  flash message 'Subscrubing, please wait...'
+  hits imported create method.
+    Will go there in a moment. see next page... 
+  if there are errors generated from the create method, dispaly them 
+  else display success message 'Subscribed successfully'
+  and redirect to the user subscriptions path '/user/subscriptions'
+
+* file: '/web/src/modules/subscription/api/actions.js'
+------------------------------------------------------
+when a user clicks 'subscribe' on a crate we end up at: 'export function create'
+it is passed an argument of 'variables'. in this instance it is 'crateId'
+axios, similar to fetch, will hit the mutations file associated with this route 
+  import { routeApi } from '../../../setup/routes'
+the mutation action is 'subscriptionCreate'
+  using variable: crateId
+
+* file: '/api/src/modules/subsriptions/mutations.js
+---------------------------------------------------
+we hit an exported mutation function called 'subscriptionCreate'
+we are modifying a subscription type - I assume this means it is a 'subscription' model in the DB
+  given a crateId that is currently a GraphQL integer 
+  using the resolver function 'create' 
+
+* file: '/api/src/modules/subscriptions/resolvers.js 
+----------------------------------------------------
+the mutation is using a resolver async function called 'create'
+the resolver will check to ensure the current user is an auth user 
+if authorized 
+  create a postgres Subscription model 
+    using crateId 
+    and userId  
+if not authorized 
+  flash error message 'Please login to subscribe to this crate'
+
+IF ALL SUCCESS WE SHOULD BE ON '/user/subscriptions' 
+
+* file: '/web/src/modules/user/Subscriptions.js 
+-----------------------------------------------
+* how do we know what this.props has access to?
+this class will render all subscriptions on page 
+based on the contents of 'this.props.subscriptions'
+iterate through and create SubscriptionItems
+  import SubscriptionItem from '../subsription/Item'
+this is very similar to how crates were created and displayed 
+
+* file: '/web/src/modules/subscription/Item.js
+----------------------------------------------
+subscribed crates are rendered and displayed.
+
+DONE.
+
+***************************************************
+* * * * * * * * * *  TRACK 2  * * * * * * * * * * *
+***************************************************
+
+** One potential dataflow for StyleSurvey **  
+(assuming we have created a user.style migration)
+
+Auth User -> Crates -> StyleSurvey -> Subscriptions
+===================================================
+* file: '/web/src/modules/crate/List.js
+---------------------------------------
+crates displays are created form import CrateItem from './Item'
+
+* file: '/web/src/modules/crate/Item.js'
+----------------------------------------
+add a conditional following the creation of a subscription and error checks 
+specifically after these lines: 
+  ```
+  if (response.data.errors && response.data.errors.length > 0) {
+    this.props.messageShow(response.data.errors[0].message)
+  ```
+add an else if statment to check if a user has a defined style 
+if they do not redirect to the style survey path
+```
+  } else if { (this.props.user.details.style === null) 
+    this.props.history.push(userRoutes.styleSurvey.path)
+  } 
+``` 
+
+* file: '/web/src/setup/routes/user.js'
+---------------------------------------
+create a new route for 'StyleSurvey'
+this route will render the page that has the style survey on it 
+``` 
+   styleSurvey: {
+     path: 'user/styleSurvey',
+     component: StyleSurvey,
+     auth: true 
+   }
+```
+create the file '/web/src/modules/user/StyleSurvey' 
+
+* file: '/web/src/modules/user/StyleSurvey' 
+-----------------------------------------
+will need to have sections for 
+tops, bottoms, dresses, pants, shoes
+each will have 14 images representing 7 stylesTypes (2 each)
+(vintage, sporty, posh, casual, grundge, country, hiphop)
+  note: we are doing this as a gender neutral survey, correct?
+only 2 images per section may be selected.
+  the stype attribtue will be collected and added to an array. how?
+upon submit we will pass the style array as an argument to the update api action
+dispaly a message 'Determining your style, please wait...'
+hit an api action called 'updateStyle'
+  import {updateStyle} from '../user/api/actions'
+if there are errros show them
+otherwise flash success message 
+and redirect to 'user/subscriptions'
+
+but before we end there, follow 'updateStyle'
+
+* file: 'web/src/modules/user/api/actions'
+----------------------------------------
+create a new 'export function udateStyle(variables)' 
+where 'variables' will be an array of styles passed from the style survey 
+use axios to hit the API service to and the user mutations 
+the specified opeation will be 'updateStyle'
+pass the given variables (the style array)
+fields: id of the user 
+
+* file: 'api/src/moudles/user/mutations.js 
+------------------------------------------
+a straight forward function that will use an imported resolver method 
+  import {create, remove update} from './resolvers'
+the userUpdateStyle mutation will use 
+  type: UserType
+  and pass 2 argumnets, the user id and the style string 
+  using resolve: update 
+
+* file: 'api/src/modules/user/resolvers.js'
+-------------------------------------------
+This one gets a bit more involved 
+export an async function called 'update' (these should be restful right?)
+we will be passed a string of styles like such
+  ['classy', 'casual', 'casual, 'grunge', 'hip hop', 'casual', 'hip hop']
+in order to generate the style attribute we need to totalize and restructure them 
+totalize the attributes into an object/hash 
+  {'casual': 3, 'classy': 1, 'grunge': 1, 'hip hop': 2}
+order them so we have a top 3 
+this is ONE WAY to do it:
+  split the values and keys. 
+  create a copy of values, and order highest to lowest
+  take the value of the first element in the sorted array and find its original index position
+  with that index position we can find the key of the associated value 
+assign values to:
+  firstStyle
+  secondStyle (if only style was chosen then do not assign)
+  thirdStyle (if there is a tie, pick the alphabetical one, if DNE, dont assign
+generate a style string 
+  `${firstStyle} but ${secondStyle} with a touch of {thirdStyle}`
+
+then perfom a postgres update function 
+'return await models.User.update(...)` 
+  given values of 'style' and user 'id'
+
+SHOULD BE ON 'user/subscriptions' at this point 
+
+* file: '/web/src/modules/user/Subscriptions.js 
+-----------------------------------------------
+add a Grid & GridCell to display the users new style 
+
+
+
+
+
+
+
+
+

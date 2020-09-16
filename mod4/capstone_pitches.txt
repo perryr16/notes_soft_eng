@@ -1,0 +1,54 @@
+* notes: setup organization to link projects
+* PR template
+* NO AUTHENTICATION
+
+* Taylor K	  - MealPlanner
+**************
+  plan out weekly meals
+  shopping list from meal plans
+* Edita I	    - Couchsurfing for dogs ( don't have a name yet )
+**************
+  sounds fun 
+  might be mobile
+* Jeremiah B	- theCodocs (the code ox)
+  translate code into many languages
+* Joe H	      - gift of gab
+**************: 
+  look really really relavent
+* Bill W	    - goldstar
+  teaching 3rd graders
+  cool stuff for young kids
+* Jack C	    - Ethereum Kickstarter(name TBD)
+**************
+* Stella B	  - App 1: Refactoring Food
+  iterations of a recipe : rails
+              - App 2: Street Art Walking Tour
+**************
+  like geo-caching
+  google maps api 
+* Antonio J	  - SunSpot
+**************
+  nrel and solar engergy 
+  address -> kwh
+  python - 
+* Kyle W	    - The Conscious Consumer
+**************
+  more environemntally friendly products
+* Madeleine H	- lets not get pregnant !
+  sounds dope
+  sounds like a woman heavy project 
+* Michelle F	- BestBuds 
+  pot stuff
+  virtual watering 
+  open cannibis api
+* Chase G	    - GamePhare
+  mobile match making for gammers 
+  consoles... 
+  similar qualities
+  python
+* Justin V	  - food bank locator
+  I didnt hear it...
+
+* Carlos/Alex E/Charles	 - Initiate Colorado
+
+* Liliana 	  -Space Trek -or- To The Moon and Back

@@ -5,7 +5,7 @@ note: there are several paths: '/crates --> redirects to login
 routes: user/login, user/singup, user/profile, user/subscriptions
 click login
 
-page: DNE. its pulling from /modules/user/login.js 
+page: its pulling from /modules/user/login.js 
 if username is bad: /api/src/modules/user/resolvers.js
 hits `if (!user)` and throws error 
 this is represented in login.js by `this.props.messageShow(this.props.user.error)`
@@ -14,12 +14,16 @@ Success:
 where is the redirection happening to /crates?
 at bottom there is <AuthCheck/> which is hitting the import AuthCheck
 in AuthCheck if it is successufl 
-admin: admin.dashboard.path = '/admin/dashboard'
-user: crate.list.path = '/crates'
+  admin: admin.dashboard.path = '/admin/dashboard'
+  user: crate.list.path = '/crates'
 
+
+--------------------------
+Logged in User on '/crates'
+--------------------------
 Crates:
+
 populated from an import of List from /modules/crate/list
-I'd love to be able to see all the values in here
 pulling crates from `this.props.crates.list`
 if there are `this.props.crates.list` then it will map over the length and create 'CrateItems'
 follow CrateItems to './Item'
@@ -32,10 +36,95 @@ create is a resolver that finally looks familiar.
 
 
 
+=======================================
+After logging in and taking a style survey
+---------------------------------
+'my-style' should appear on MySubscriptions and User profile
+
+changes to MySubscriptions:
+--------------------------
+page: web/src/modules/user/Subscriptions.js
+there should be a new grid where user.style is called.
+I believe it would be: {props.user.details.style}
+check to see if a user has style first.
+
+changes to Profile
+----------------------------
+page: web/src/modules/user/Profile.js
+under name and email, place a ternary statment for user style
+if its there display it, 
+else give instructions on how to generate a style
+
+=========================================
+Fisrt time subscriber: GENERATE STYLE SURVEY 
+------------------------------------------
+user goes to crates 
+/web/src/modules/crate/List.js
+within the `render` fxn there is a `CreateItem` object/fxn
+this puts the crate objects on screen 
+
+follow it 
+/web/src/modules/crate/Item.js
+user clicks `subscribe` on a crate
+within the `onClickSubscribe` fxn
+    creates a subscription 
+    if successful it will redirect to /user/subscriptions
+    see /web/src/setup/routes/user.js
+
+if a user has no style (burn)
+  else if (this.props.user.details.style === null)
+  this.props.messageShow('Subscribed successfully.')
+  this.props.history.push(userRoutes.styleSurvey.path)
+
+need to edit user routes 
+/web/src/setup/routes/user.js 
+  import StyleSurvey from '../../modules/user/StyleSruvey 
+
+create a new StyleSurvey page
+/web/src/modules/user/StyleSurvey 
+  imports 
+  render()
+  onClickSubmit = ... 
+  redirect to subscriptions
+
+
+otherwise follow normal path to MySubscriptions
+
+===============================================
+User gets to style survey
+-----------------------------------------------
+create new styleSurvey file
+file: web/src/modules/user/StyleSurvey.js 
+
+when submitted we need to:
+  create the subscription
+  update a users style --> `this.props.updateStyle({ styleResults })
+  then redirect to `MySubscriptions`
+
+to update style: 
+  import from `../user/api/actions`
+  export function updateStyle 
+  axios will hit routeApi mutations
+
+Head to user mutations /api/src/modules/user/mutations
+  create a new function called userUpdateStyle
+  end of function will have a reference to the user resolvers: update
+
+Head to user resolvers /api/src/modules/user/resolvers
+  crate a new fxn called update 
+    note: what does parentValue do? seems unused
+  filter through the style array and totalize
+  sort them so we have top 3 styles 
+  format them as `${style1} but ${style2} with a touch of ${style3}`
+  assign the style to user given a user idgo
+  
+
+
+
 *** SIDE NOTE *** 
 imports are the key to all of this
-feels like a controller scenario where we dont want to import to much
-/ 
+-> feels like a controller scenario where we dont want to import more than needed
+
 
 *** SIDE NOTE *** 
 what is `this`?
@@ -49,3 +138,5 @@ updater:
 _reactInternalFiber:
 _reactInternalInstance:
 }
+`this` references its nearest parent object 
+`props` stands for properties - parent passes data to a child

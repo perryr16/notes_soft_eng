@@ -1,0 +1,24 @@
+functions or methods?
+----------
+def function() :
+  print("THIS")
+
+def function2(arg) :
+  print(f'THIS {arg}')
+
+if the number of args is not knowns, use *arg 
+
+def function3(*val)
+  print(f'look at all these {args})
+
+need to use a `return` statement 
+anyhting after the return WILL NOT RUN
+
+__init__ is like def intialize 
+
+class create_person():
+  def __init__ (self, name, address, phone)
+    self.name = name 
+    self.address = address 
+    self.phone = phone 
+  

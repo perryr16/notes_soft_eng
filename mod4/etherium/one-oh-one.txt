@@ -1,0 +1,22 @@
+meant to be decentralized
+bitcoin aims to disrupt paypal and online banking
+etherium aims to replace internet third parties - those thta store data, transfer mortgages and keep track of financial instruments
+democratize the existing client server model 
+servrs and clouds replaced by "NODES" run by volunteers 
+  forming a world computer 
+compete to offer services
+most apps rely on the company - controlled by a third party and their server 
+return control over your notes 
+google docs could destroy everything
+could take down google and facebook
+`ether` is unique pieces of code that allow updates to the blockchains ledger
+misplacing your private key is a big deal
+third parties also act as a help desk
+desktop wallet 
+mobile wallet 
+hardware wallet 
+paper wallet (write it down)
+your current wallet has a bunch of numbers (credit card)
+dont need to wait for a banking
+suports applications beyond mondey 
+* devs can create apps or agreements that have more steps or new rules, alt transaction formats, new ways to transfer 

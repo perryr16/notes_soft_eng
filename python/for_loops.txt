@@ -1,0 +1,31 @@
+for loops
+&&&&&&&&&
+iterate over a sequence 
+
+nums = [1,2,3,4,5]
+for x in nums: 
+  print(x)  
+  # where x is the block variable
+
+word = "banana"
+for x in word: 
+  print(x)
+
+BREAK, CONTINUE, ELSE 
+
+run a specific number of times 
+for x in range(10):
+  print(x)
+
+for x in range(101, 103):
+  print(x)
+  # only runs bewteen 101, 102, and 103
+
+for x in range(10, 20, 2):
+  print(x)
+  # third variable is the increment value. this would only display even numbers
+
+nested loops are fine
+can use PASS - why?
+for x in range(20)
+  pass

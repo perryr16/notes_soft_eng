@@ -1,0 +1,100 @@
+**************************
+FIRST TIME:
+**************************
+$ python --version 
+=> Python 3.8.5 
+  # note: I have an bash alias python = python3
+$ which psql
+=> /Applications/Postgres.app/Contents/Versions/latest/bin/psql
+$ pipenv --version
+=> pipenv, version 2020.8.13
+
+$ brew install pipenv
+$ cd eth_crowdfund_api
+
+  # create a virtual env if not already created 
+$ pipenv --three 
+  # So you may ask, why do we need a virtual environment in Python? 
+  # using a virtual environment for python projects allows us to 
+  # have an isolated working copy of python which gives us the 
+  # opportunity to work on a specific project without worry of 
+  # affecting other projects.
+  
+  # start the virtual enviroment
+$ pipenv shell 
+  # activate virtual env
+=> (eth_crowdfund_be) bash-3.2$
+
+  # one time thing to install dependencies
+$ pipenv install flask flask-sqlalchemy psycopg2 flask-migrate flask-script marshmallow flask-bcrypt pyjwt
+
+  # Create db 
+$ createdb eth_crowdfund_api_db 
+
+
+  # environment variables
+$ export FLASK_ENV=development
+$ export JWT_SECRET_KEY=hhgaghhgsdhdhdd
+  # no longer needed --> $ export DATABASE_URL=postgres://name:password@houst:port/blog_api_db
+
+  # start server 
+python eth_crowdfund_api/run.py
+=>  * Serving Flask app "src.app" (lazy loading)
+    * Environment: development
+    * Debug mode: on
+    * Running on http://127.0.0.1:3000/ (Press CTRL+C to quit)
+    * Restarting with stat
+    /Users/rossperry/.local/share/virtualenvs/eth_crowdfund_be-TvIDdz62/lib/python3.8/site-packages/flask_sqlalchemy/__init__.py:833: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+    warnings.warn(FSADeprecationWarning(
+    * Debugger is active!
+    * Debugger PIN: 312-766-617
+
+**************************
+IF RETURNING:
+**************************
+PATH: /eth_crowdfund_be
+$ pipenv shell
+export FLASK_ENV=development
+export JWT_SECRET_KEY=hhgaghhgsdhdhdd
+python eth_crowdfund_api/run.py
+=>  * Serving Flask app "src.app" (lazy loading)
+    * Environment: development
+    * Debug mode: on
+    * Running on http://127.0.0.1:3000/ (Press CTRL+C to quit)
+    * Restarting with stat
+    /Users/rossperry/.local/share/virtualenvs/eth_crowdfund_be-TvIDdz62/lib/python3.8/site-packages/flask_sqlalchemy/__init__.py:833: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+    warnings.warn(FSADeprecationWarning(
+    * Debugger is active!
+    * Debugger PIN: 312-766-617
+
+**************************
+TO EXIT:
+**************************
+ctrl+c --> server exit
+exit --> get out of shell
+deactivate --> idk...
+
+**************************
+Database connection / check
+**************************
+$ psql 
+=# \c eth_crowdfund_api_db 
+* note \c == \connect
+=# \dt 
+=# SELECT * FROM campaigns;
+=# SELECT * FROM requests;
+
+**************************
+SETUP DB 
+**************************
+PATH: 
+ENV: bash-3.2
+$ python manage.py db init
+$ python manage.py db migrate
+$ python manage.py db upgrade 
+
+to make changes
+$ python manage.py db downgrade 
+> delete migration (if changing)
+$ python manage.py db migrate
+$ python manage.py db upgrade 

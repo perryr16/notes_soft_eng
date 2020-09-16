@@ -1,0 +1,27 @@
+booleans
+*******
+True and False
+a > b 
+a == b 
+a < b
+
+if a < b: 
+  print('this')
+else: 
+  print('that')
+
+bool('abc') --> True
+bool(123) --> True
+bool([1,2,3]) --> True
+bool('False') --> True
+bool(False) --> False 
+bool(None) --> False
+bool(0) --> False
+bool("") --> False
+bool([]) --> False
+bool(()) --> False
+bool({} --> False
+
+x = 123
+instance(x, int) --> True
+instance(x, str) --> False

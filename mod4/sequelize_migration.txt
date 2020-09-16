@@ -1,3 +1,8 @@
+
+helpful articles
+https://dev.to/nedsoft/add-new-fields-to-existing-sequelize-migration-3527
+https://gist.github.com/vapurrmaid/a111bf3fc0224751cb2f76532aac2465
+
 to start:
 $ npm install --save sequelize 
 
@@ -6,7 +11,7 @@ $ cd api //otherwise it puts files in wrong place
 * note: sequelize/express is responsible for config/mutations/models...
 
 new migration
-------------
+-------------
 $ npx sequelize-cli migration:create --name <name of migration>
 
 /migration/1245324512345 name of migration // you can just rename this 5-user.js or whatever
@@ -57,11 +62,15 @@ down...
 
 unseed / destroy the current DB
 -------------------------------
-sequelize db:seed:undo --env=production 
+sequelize db:seed:undo --env=production  
+* had to run 3 times, 1 for each seed ...
 
 * if no errors...
 -------------------------------
 sequelize db:seed --env=production
+
+$ npm run setup 
+$ npm start
 
 localhost:3000
 ---------------------------------
@@ -77,7 +86,8 @@ query getUsers {
 
 ===> users should have style
 
-
-helpful article;
-https://dev.to/nedsoft/add-new-fields-to-existing-sequelize-migration-3527
-https://gist.github.com/vapurrmaid/a111bf3fc0224751cb2f76532aac2465
+--------
+need to re run these commands:
+$ NODE_ENV=test npm run setup:db 
+$ npx sequelize-cli db:seed:undo:all --env=test
+$ npx sequelize-cli db:seed:all --env=test

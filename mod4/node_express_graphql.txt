@@ -1,0 +1,15 @@
+graphql - 
+  A language/syntax for requesting data from a data source (database)
+  database agnostic - any database you want (SQL - postgres, no-sql - mongodb)
+  sequelize is an ORM - Object Relational Mapper (like AR) - attatched in the resolver 
+    used sequelize(ORM) in resolver to interact with GraphQL mutations and queries
+  alternative to REST
+  typed syntax - must include dataType - strings/arrays...
+node.js - PLATFORM built ontop of chrome V8 engine
+  runtime environment that JS can run in
+express - FRAMEWORK = RAILS
+  is middleware for node 
+MVC - 
+REST - representational state transfer - ARCHITECTURE - pattern - convention - many people can use it - exists outside of rails
+
+JS - needs an environment to run in (browser)

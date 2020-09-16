@@ -1,0 +1,8 @@
+general
+-------
+print(value)
+
+x = 'abc'
+y = 123
+type(x) => <type 'str'>
+type(y) => <type 'int'

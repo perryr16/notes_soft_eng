@@ -1,0 +1,66 @@
+Big O / big-o / bigO
+* * * * * * * * * * * * * * * * * * * * * * * * *
+
+- O(1) 
+  - constant time
+  - array[6]
+- O(n) 
+  - linear time 
+  - iterating over an array 
+  - array.map
+- O(log n) 
+  - logarithmic time 
+  - biaray tree 
+  - divide and conquer 
+  - split in half. split in half. ...
+- O(n log n) 
+  - linearithmic time
+  - most sorting functions
+- O(n * m)
+  - nested iteration over arrays of different lengths
+- O(n^2) 
+  - quadratic time 
+  - nested iteration 
+  - brute force 
+  - array.each --> array_element.each
+- O(2^n)
+  - exponential time
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+a way to matmatically represent the complexity of an algorithm
+allows you to compare/contrast different solutions or approaches
+a way to categorize different algorithms 
+speed is not related to computing, it is related to the amount of steps to complete. BigO is not strictly tied to *actual time*, more of a way to categorize based on potential time (worst case scenario)
+
+Big O is a way to describe the time an dspace complexity of an algorithm. Or, how long and how much memory could be taken up by that function being run
+
+FACTORS
+* Time Complexity
+  - O(n)
+  - assume worst case scenario
+* Space Complexity
+  - the number of complex data structures you create during an algorithm 
+    - creating a new array or hash increases space complexity
+      - added data strcutres increase our space complexity (1x, 2x, 3x)
+    - creating strings, integers, symbols do NOT increase space complexity
+  - memory 
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+example: 
+array.each    - O(n)
+  array.each  - O(n)
+  some math   - O(1)
+
+TOTAL : O(n) * O(n) * O(1) = O(n * m)
+
+example: different array lengths  
+array1.each     - O(n)
+  array2.each   - O(m)
+
+TOTA: : O(n) * O(m) = O(n * m)
+
+n * m IS BETTER THAN n * m, becasuse you have to assume n is a larger array than m
+
+

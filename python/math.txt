@@ -1,0 +1,25 @@
+math operators 
+------------
+** = exponent
+// = floor division (round down) 99//10 = 9
++=
+-=
+*-
+/=
+%=
+//=
+**=
+&= --> x &= 3 --> x = x & 3
+|= --> x |= 3 --> x = x | 3
+^+
+>> --> bit shift 
+<< --> bit shift (2<<1 = 4(10), 2<<2 = 8(100))
+
+== equal 
+!= not equal
+>=
+<=
+
+can use 'and' 'or' 'not'
+can use 'is' x is y --> are x and y equal?
+can use 'in' x in y --> does x exisit inside the array, string, hash of y

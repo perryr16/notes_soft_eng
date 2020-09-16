@@ -1,0 +1,32 @@
+PYTHON TASK QUES 
+1. Celery - Powerful
+2. Redis Queue - Simple
+
+RQ
+$ pip install rq 
+
+communication btn app and RQ worker with Redis message que 
+Redis server needs to be running 
+$ brew install redis 
+start service 
+$ redis server 
+
+ensure the server is running
+A TASK IS A PYTHON FUNCTION
+
+create a tasks.py inside the app (src) folder 
+
+``` 
+import time 
+
+def example(seconds):
+  print('Starting task')
+  for i in range(seconds)
+    print(i)
+    time.sleep(1)
+  orint('task completed')
+
+inside the enviornment run 
+$ rq worker <task name> OR <queue name>
+
+.enqueue() to add a job to the queue 
