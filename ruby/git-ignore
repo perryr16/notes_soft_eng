@@ -1,4 +1,5 @@
-remove coverage from git ignore
+Add File to Git ignore
+----------------------
 
 touch .gitignore #create git ignore file in main directory
 #add .coverage/ to .gitignore file
