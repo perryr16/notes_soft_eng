@@ -1,0 +1,16 @@
+its just like ruby map
+ruby is:
+x_array.map {|block_v| condition}
+python is:
+list(filter(function, x_list))
+where function can be a big function, or a lamda function
+
+def duplicate_count(text):
+    # Your code goes here
+    count = {}
+    for t in text:
+        count[t] = count.get(t, 0) + 1
+    vals = list(count.values())
+    uniqs = list(filter(lambda val : val > 1, vals ))
+    return len(uniqs)
+    

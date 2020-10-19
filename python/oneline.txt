@@ -1,0 +1,5 @@
+I think you just use brackets
+
+to find all 4 letter words in a list x_list
+
+return [val for val in x_list if len(val) == 4]

@@ -8,6 +8,9 @@ a = {
   "var": b
 }
 
+list(x_dict.keys()) --> return list of keys
+list(x_dict.values()) --> return list of values
+
 a["key"] --> "value"
 a.get("key") --> "value"
 
@@ -18,3 +21,23 @@ a.get("key") --> "value"
 >>> e = dict({'three': 3, 'one': 1, 'two': 2})
 >>> a == b == c == d == e
 True
+
+#build a dictionary 
+res = {}
+for i, key in enumerate(keys):
+  res[key] = vals[i]
+return res
+
+# to iterate with index, use the 'enumerate(list)' operator
+
+iterate through dict 
+for key in dict:
+  key = key 
+  dict[key] = value
+
+# build a count of values 
+res = {}
+for i in seq:
+  res[i] = res.get(i, 0) + 1
+# .get allows you to specify a default value 
+# .get(key, default if it DNE)

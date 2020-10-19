@@ -1,14 +1,14 @@
 functions or methods?
 ----------
-def function() :
+def function():
   print("THIS")
 
-def function2(arg) :
+def function2(arg):
   print(f'THIS {arg}')
 
 if the number of args is not knowns, use *arg 
 
-def function3(*val)
+def function3(*val):
   print(f'look at all these {args})
 
 need to use a `return` statement 
