@@ -5,6 +5,11 @@ a[1] --> 't'
 a[1:4] --> 'trin'
 a[-1] --> 'c' (last value)
 
+character.isalnum()
+character.isalpha()
+character.isnum()
+character.isdecimal()
+
 interpolation:
 a = 'dog'
 b = f'sub {a}'

@@ -29,3 +29,7 @@ nested loops are fine
 can use PASS - why?
 for x in range(20)
   pass
+
+REVERSE
+for x in range(10, 0, -1)
+for x in range(start, stop, step)
