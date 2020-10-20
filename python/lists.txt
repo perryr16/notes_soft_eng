@@ -15,23 +15,36 @@ list1[-2:] = c,d
 'c' in list1 --> True 
 'x' in list1 --> False
 
+sorted
+=-=-=-
+sorted(x_list, key=if true, its at the end, reverse=True)
+sorted(x_list, key=lowercase or a[2]...)
 
-list1.append(value) --> adds to end of list
-list1.insert(index_pos, value) --> insert value at index pos
-list1.remove(value) --> remove value
-list1.pop(index) --> removes index. IF NONE GIVEN remove last element
-del list1[index] --> remove index pos 
-del list1 --> delete whole variable
-list1.clear() --> empty the list
-new = list1.copy() --> coppies list1, must have assignment
-new = list(list)var --> copies list1
+x.append(value) --> adds to end of list
+x.insert(index_pos, value) --> insert value at index pos
+x.remove(value) --> remove value
+x.pop(index) --> removes index. IF NONE GIVEN remove last element
+del x[index] --> remove index pos 
+del x --> delete whole variable
+x.clear() --> empty the list
+new = x.copy() --> coppies x, must have assignment
+new = list(list)var --> copies x
 c = a + b --> create new list
-list1.extend(list2) = adds list2 to end of list1 (not a new var)
+x.extend(list2) = adds list2 to end of x (not a new var)
 list2 = list((1, 2, 3)) --> create new list with vals, need (( ))
 sum(list) --> sum of a list
-list1.count(value) --> number of times value appears in a list
+x.count(value) --> number of times value appears in a list
+''.join(x) --> list to string
+
+uniq values 
+-----------
+list(set(x))
+a,b = set(list_of_2) where a is the first value, and b is the second
+a,b,c = set(list_of_3)
 
 =======
+
+
 
 Method	Description
 ------  -----------

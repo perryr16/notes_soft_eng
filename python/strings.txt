@@ -29,6 +29,10 @@ txt.format(quantity, total)
   * can also specify position --> txt = 'I have {1} quarters worth {0} cents'
     txt.format(total, quantity)
 
+list to string
+''.join(list1)
+', '.join(list1)
+
 everything.... 
 Method	Description
 capitalize()	  -->     Converts the first character to upper case
