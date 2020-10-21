@@ -31,9 +31,9 @@ return res
 # to iterate with index, use the 'enumerate(list)' operator
 
 iterate through dict 
-for key in dict:
+for key in dict_x:
   key = key 
-  dict[key] = value
+  dict_x[key] = value
 
 # build a count of values 
 res = {}

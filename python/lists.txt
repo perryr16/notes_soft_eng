@@ -20,6 +20,9 @@ sorted
 sorted(x_list, key=if true, its at the end, reverse=True)
 sorted(x_list, key=lowercase or a[2]...)
 
+min(x_list)
+max(x_list)
+
 x.append(value) --> adds to end of list
 x.insert(index_pos, value) --> insert value at index pos
 x.remove(value) --> remove value
