@@ -1,0 +1,15 @@
+to setup a project
+-----------------
+$ mkdir app_name
+$ cd app_name 
+$ npm init
+* creates the package.json
+$ npm install 
+* creates the package-lock.json 
+* creates node modules
+* note: wont create node_modules if there are no dependancies
+$ knex install
+* if using objection and knex, creates a knexfile.js that holds db info 
+$ psql
+=# CREATE DATABASE app_name_db;
+
