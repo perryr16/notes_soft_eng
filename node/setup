@@ -13,3 +13,15 @@ $ knex install
 $ psql
 =# CREATE DATABASE app_name_db;
 
+
+Start Server
+-------------
+$ npm install nodemon --save-dev 
+$ nodemon
+
+NPX offers some magic
+--------------------
+npx express-generator api
+cd api
+npm install
+npm start

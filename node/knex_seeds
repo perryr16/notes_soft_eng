@@ -1,0 +1,3 @@
+knex seed:make table_name
+
+knex seed:run
