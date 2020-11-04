@@ -1,12 +1,24 @@
 has to be done on the webpage (localhost or production)
-ing
-can always console.log 
+* incognito mode will make life easier
+
+can always use console.log() for small stuff
 
 use chrome dev tools
-ctrl + opt + i
-
+------------------
+cmd + opt + i
 > sources tab
-> navigate
+> navigate to page in question
+> click the line number you are interested in
+> or use the event listener breakpoints (ex: mouse > click)
+> refresh, or click, or whatever
+> can use the console to see the values
+> to make changes, edit in the editor, then cmd + s
+
+
+'play' button to advance/pause 
+'over the dot' to advance one line 
+'down to dot' to advance to next fxn 
+'up to dot' to go back to fxn
 
 good youtube 
 https://www.youtube.com/watch?v=H0XScE08hy8&ab_channel=GoogleChromeDevelopers
