@@ -1,0 +1,6 @@
+vagrant up
+vagrant halt <id>
+vagrant suspend --> less setup
+
+its a virtual machine 
+things will be setup on it

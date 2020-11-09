@@ -1,0 +1,28 @@
+docker
+vagrant
+digital ocean
+uses sublime editor
+terminal - iTerm
+keep terminal windows 
+
+BLUSH
+branches : create a ross branch
+use deploy for production deploy
+all bugs are logged
+
+dev staging production
+
+domains purchased from go daddy
+go daddy / gigital ocean is dns manager
+
+droplet = server associated with ip address
+
+admin tool = forest
+
+staing = net 
+production = com 
+managed database
+
+
+in the future we'll use just docker (run the docker file)
+  moving away from vagrant

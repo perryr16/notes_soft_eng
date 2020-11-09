@@ -1,0 +1,57 @@
+braiden is partner 
+------------------
+moving blush towards dmc 
+function over class
+
+adapters = building of url
+
+context = higher order component 
+can use apis from anywhere
+maintians its own state 
+
+server side rendered = better for search egnienrs - SEO search engine opt
+vs client side rendered
+
+index > app > 
+
+routes handled by a router file 
+
+store: handles global state of app
+
+
+! hooks !
+moving away from class and to function
+
+migrate the components directory
+
+move away from imports, to iecxports
+
+dashboard - activities, activity list, 
+
+basics are bootstrap
+
+all model based except
+
+app-section is good
+
+alphabetical is prefered
+
+route - loader - list
+route - list - card 
+
+state v props
+
+** const { constructor stuff } = props;
+also values that are passed in from the dashboard component 
+  i.e. <AlalyiticsPreview 
+          type='preview'
+          provider={provider}
+        />
+  provider was used in this case
+
+  component is used with class
+  useEffect useState is used with functions 
+  useEffect like componentDidMount
+
+  this.prop not needed in a functional component
+isLoading > loading

@@ -1,0 +1,60 @@
+https://vincit.github.io/objection.js/guide/query-examples.html#find-queries
+
+QUERY/SELECT
+------------
+const thisQuery = await Users.query()
+  .select('age', 'firstName', 'lastName')
+  .where('age', '>', 40)
+  .where('age', '<', 60)
+  .where('firstName', 'Jennifer')
+  .orderBy('lastName');
+
+.where(builder => builder.where('age', '<', 4).orWhere('age', '>', 60))
+
+ADD
+---
+const jennifer = await Person.query().insert({
+  firstName: 'Average',
+  lastName: 'Person',
+  age: Person.query().avg('age')
+});
+
+UPDATE 
+------
+const numUpdated = await Person.query()
+  .findById(1)
+  .patch({
+    firstName: 'Jennifer'
+  });
+
+UPDATE AND FETCH 
+-----------------
+const updatedPerson = await Person.query().patchAndFetchById(246, {
+  lastName: 'Updated'
+});
+
+DELETE 
+------
+await Person.query()
+  .delete()
+  .whereIn(
+    'id',
+    Person.query()
+      .select('persons.id')
+      .joinRelated('pets')
+      .where('pets.name', 'Fluffy')
+  );
+
+  // This is another way to implement the previous query.
+await Person.query()
+  .delete()
+  .whereExists(Person.relatedQuery('pets').where('pets.name', 'Fluffy'));
+
+
+DB RELATIONS (one to many, many to many)
+------------
+const dogs = await person
+  .$relatedQuery('pets')
+  .where('species', 'dog')
+  .orderBy('name');
+
