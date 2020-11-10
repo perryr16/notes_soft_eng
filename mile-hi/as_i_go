@@ -1,0 +1,11 @@
+flash messages
+-------------
+store.handleSuccess('message')
+store.handleErrors(err)
+
+class methods dont need arrow function
+class X {
+  method1() {
+    do this
+  }
+}

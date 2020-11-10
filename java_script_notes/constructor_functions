@@ -1,0 +1,32 @@
+usually named with uppercase letters 
+blueprint for creating many objects with the same type
+
+different objects can be created the same way 
+---------------------------------------------
+const Person = (firstName, lastName, age) => {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+}
+const dad = new Person('jon', 'jones', 40)
+const mom = new Perosn('pam', 'jones', 39)
+
+to add a new value
+------------------
+dad.name = () => {
+  return this.firstName + ' ' + this.lastName;
+};
+
+-or- 
+const Person (firstName, lastName, age) => {
+  ...
+  this.name = () => { return this.firstName + ' ' + this.lastName };
+}
+
+-or- (PROTOTYPE)
+Person.prototype.name = () => { return this.firstName + ' ' + this.lastName };
+Person.prototype.nationality = 'USA'
+
+'this'
+------
+'this' is like 'self' in ruby

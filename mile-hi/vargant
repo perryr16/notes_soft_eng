@@ -1,6 +1,20 @@
 vagrant up
 vagrant halt <id>
-vagrant suspend --> less setup
+vagrant suspend --> less setup --> vagrant resume
 
 its a virtual machine 
 things will be setup on it
+
+*database
+psql -d blush_dev
+
+BLUSH SERVER
+----------
+vagrant up
+vagrant ssh 
+cd /vagrant 
+npm start 
+
+BLUSH WEB
+--------- 
+npm start

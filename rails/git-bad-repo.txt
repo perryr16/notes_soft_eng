@@ -22,3 +22,19 @@ $ git remote -v
 => git@github.com:perryr16...
 
 PUSH IT
+
+dmc - toast-component
+not creating a context
+not needed to create a higher order componetnt
+mixin only comms with current component
+context carries over to all components 
+line 63 
+const x = Basecompnent => function(BaseCompnent)
+  return (props) = {
+
+  }
+
+remove this.state 
+to 'wrap' is to inherit
+
+avoid loaders

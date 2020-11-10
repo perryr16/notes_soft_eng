@@ -1,0 +1,27 @@
+MIXIN: a class containing methods that can be used by other classs without a need to inherit from it 
+
+in JS you can only inherit from a single object 
+there can only be one [[Prototype]]
+a class can only extend one other class 
+
+
+//mixin 
+const sayHiMixin = {
+  sayHi() {
+    alert(`Hello ${this.name}`);
+  }
+  sayBye() {
+    alert(`Bye ${this.name}`);
+  }
+};
+
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+Object.assign(User.prototype, sayHiMixin);
+
+new User('ross').sayHi(); 
+//--> Hello ross

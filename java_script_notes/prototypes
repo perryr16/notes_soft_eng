@@ -1,0 +1,4 @@
+All js objects inherit properties and method from a prototype
+
+[[prototype]]
+the names of internal properties are enclised in double square brackets
