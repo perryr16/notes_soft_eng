@@ -1,0 +1,8 @@
+show databases
+\l
+
+show users 
+\du
+
+show tables 
+\dt

@@ -9,3 +9,54 @@ class X {
     do this
   }
 }
+
+COMPONENTS: split the UI into indepdendant reusable pieces. 
+- accepts a single 'props'
+- returns a react element
+functional component
+------------
+const Welcome = (props) => {
+  return <h1> hello, {props.name} </h1>;
+}
+class component 
+----------------
+class Welcome extends React.Component {
+  render() {
+    return <h1> hello, {this.props.name}</h1>;
+  }
+}
+PROPS: stands for properties
+
+can do:
+const element = <Welcome name="sara" />;
+
+STATE is similar to props
+- is private 
+- fully controlled by the component
+
+class components should alwys call the base constructor with 'props'
+
+
+Context 
+--------------
+a way to pass data through the component tree without having to pass props down manually
+typically data is passed top-down (parent-child) via props
+context share values
+
+Hooks
+-----
+a special function that lets you 'hook into' react features
+related to removing classes - classes are confusing
+'this' is werid
+related to props, state, context, refs, and lifecycle
+
+useState(<initial>);
+------------------
+useState allows you to set values between function calls - normally values disappear
+returns 
+- current state (loading)
+- function that updates it (setLoading)
+second variable (fxn) can be called anything: setLoading, updateLoading...
+
+Higher Order components
+-----------------------

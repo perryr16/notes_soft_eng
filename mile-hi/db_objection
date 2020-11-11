@@ -1,0 +1,28 @@
+to run seeds
+============
+/vagrant on server
+npm run seeds 
+
+modify database 
+================
+/ vagrant
+npm run console
+
+query
+-----
+p = await Provider.query().first();
+
+patch
+-----
+* if p is already set
+p.$query().patch({ status: 'active' })
+
+query() vs $query()
+===================
+query() is used on the entire table
+$query() is used on a specific instance 
+
+use query() to find the specific instance 
+then use $query to modify it 
+
+

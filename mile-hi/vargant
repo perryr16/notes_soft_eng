@@ -5,7 +5,11 @@ vagrant suspend --> less setup --> vagrant resume
 its a virtual machine 
 things will be setup on it
 
-*database
+DATABASE ACCESS
+---------------
+vagrant up 
+vagrant ssh 
+cd /vagrant 
 psql -d blush_dev
 
 BLUSH SERVER
