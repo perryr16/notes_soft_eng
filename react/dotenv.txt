@@ -3,8 +3,8 @@ create a .env file
 variables must begin with `REACT_APP_` to avoid confusion (like what?)
 
 ex: 
-REACT_APP_MAP_KEY=bW5J6NVA1gT64FrRBRViGqTYVcfkUq7F
-REACT_APP_RAPID_KEY=cc670b05f4msh6a6e141718aa225p1d2171jsn22e5689cf60b
+REACT_APP_MAP_KEY=
+REACT_APP_RAPID_KEY=
 
 as a test, you can ALWAYS CHECK 
 process.env.NODE_ENV = 'development' or 'test' or 'production'
