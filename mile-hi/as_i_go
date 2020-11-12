@@ -60,3 +60,20 @@ second variable (fxn) can be called anything: setLoading, updateLoading...
 
 Higher Order components
 -----------------------
+
+:::::::::
+11.12.20
+:::::::::
+
+useEffect Hook
+-------------
+lets you perform side effects in function components
+similar to componentDidMount / componentDidUpdate / componentWillUnmount
+run code after React has updated the DOM
+DO SOMETHING AFTER RENDER 
+by putting it in a component we have access to variables
+
+side effect examples
+- data fetching
+- setup a subscription 
+- changing the dom
