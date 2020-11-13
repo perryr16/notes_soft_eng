@@ -77,3 +77,19 @@ side effect examples
 - data fetching
 - setup a subscription 
 - changing the dom
+
+stripe webhooks
+---------------
+server > webhooks controller 
+https://api.blush-now
+comes in as a post 
+stripe method 
+
+provider model  
+bypass the payout 
+stripeBalance
+updateBalance
+
+
+webhooks
+=========

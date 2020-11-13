@@ -1,0 +1,18 @@
+ListMixin
+=========
+import ListMixin .../list-mixin'
+
+useEffect()
+doesnt use isEmpty
+use the values from booking-section
+if properties are called (this.property) then add to useEffect() []
+if functions are called (() => this.function) then add to useEffect []
+
+export ListMixin(Component)
+
+* note
+toggleProp 
+toggleState 
+toggle={() => this.toggleState('showPreview')}
+--- becomes --- 
+toggle={() => setShowPreview(!showPreview)}

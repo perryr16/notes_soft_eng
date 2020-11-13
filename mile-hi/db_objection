@@ -1,3 +1,11 @@
+query() vs $query()
+===================
+query() is used on the entire table
+$query() is used on a specific instance 
+
+use query() to find the specific instance 
+then use $query to modify it 
+
 to run seeds
 ============
 /vagrant on server
@@ -6,6 +14,14 @@ npm run seeds
 modify database 
 ================
 / vagrant
+npm run console
+
+DATABASE ACCESS
+--------------- 
+psql -d blush_dev
+
+MODIFY DATABASE
+===============
 npm run console
 
 query
@@ -17,12 +33,25 @@ patch
 * if p is already set
 p.$query().patch({ status: 'active' })
 
-query() vs $query()
-===================
-query() is used on the entire table
-$query() is used on a specific instance 
-
-use query() to find the specific instance 
-then use $query to modify it 
+relationships
+-------------
+user = await User.query().findById(2)
+card = await user.$relatedQuery('cards')
 
 
+update balance
+--------------
+prov = Provider.query().findById(2)
+bal = await prov.stripeBalance()
+await prov.updateBalance(bal)
+
+new Promo
+=========
+Promo belongs to PromoCode
+Promo belongs to User
+therefore it cant exist without their IDs (foreign keys)
+
+pC = await PromoCode.query().insert({status: 'active', amount: 0.25, code: 'test'})
+u = await User.query().first()
+pObj = {status: 'active', amount: 0.25, code: 'test', promoCodeId: pc.id, userId: u.id}
+p = await Promo.query().insert(pObj)
