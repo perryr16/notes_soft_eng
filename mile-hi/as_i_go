@@ -94,4 +94,7 @@ updateBalance
 webhooks
 =========
 
-react vs react
+react vs react native 
+=====================
+react is that JS that compiles to HTML
+native compiles to native IOS
