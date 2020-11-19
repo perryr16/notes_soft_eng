@@ -16,3 +16,30 @@ toggleState
 toggle={() => this.toggleState('showPreview')}
 --- becomes --- 
 toggle={() => setShowPreview(!showPreview)}
+
+
+----------
+STATEMIXIN
+==========
+refreshData()
+see bank-form
+- refreshData is a prop 
+- use refreshData() as expected
+
+where its being called - 
+refreshData = {() => this.fetchData(provider.id)}
+becomes => 
+refreshData = {() => fetchData(provider.id)}
+
+-or-
+refreshData = {() this.fetchData()}
+becomes => 
+refreshData = {() => refreshData()}
+and 
+const refreshData = () => {
+  setShowForm(false);
+  fetchData();
+}
+
+onFocus()
+see search-wrapper
