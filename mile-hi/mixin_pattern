@@ -43,3 +43,34 @@ const refreshData = () => {
 
 onFocus()
 see search-wrapper
+
+==========
+FormMixin
+==========
+
+similar to store helpers (util)
+- remove formMixin from 'extends Components'
+- import { } from 'utils/store-helpers';
+- if a method is being used, bring it in. remove 'this' from the method
+-
+FormMixins is equal to utils/helpers
+remove StateMixins from components file
+delete StripeMixins
+
+----------
+list mixin methods
+----------
+timeout
+alias
+min 
+max 
+sum 
+diff 
+avg
+addObject 
+removeObject
+truncate 
+capitalize 
+isEmpty 
+logger 
+randomString
