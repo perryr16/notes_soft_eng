@@ -1,0 +1,122 @@
+CustomerActivtyJob.js
+calls static queue(queue, id, action)
+  sets data, and options 
+  add queue to queue with 'Activity' distinction
+------ then --------
+CustomerQueue.js
+  inherits from AppQueue 
+
+handled inside bull-service.js
+------ then --------
+customer.js
+activtyJobs(action)
+  instantiate a CustomerQueue()
+- called within -
+scheduleJobs(action)
+------ then --------
+customer-transactions.js
+(requires Customer)
+CustomerTransactions.create(data)
+  uses a model method `transaction`
+  let customer equal a created model with data
+  checks the provider (inhereited from AppModel)
+  schedules jobs
+------ then --------
+provider-customers-controller.js
+method: create(req, res)
+trigger: post /providers/:providerId/customers
+check authorized, create a customer model with this.data 
+createSearchRecord from AppModel --> find model data, serialize it, create it
+on the response send a new CustomerSerializer
+
+------ elsewhere ------
+booking.js
+setCustomer()
+-customer present?
+-find customer
+-build customer --> assign  photo, name, email...
+create a customer transaction with that info
+
+----- TASK -------
+remove customer activity and slack job from customer.js
+creat an activty queue 
+ (copy from cusotmer queue)
+ constructor() 
+ super('Activty') 
+
+customer activity 
+ ----
+ remove first method and requires 
+
+customer needs to require new ActivityQueue 
+namedQueue = 'Activity' for example
+
+customer - schedule jobs 
+CustomerActivtyJob becomes 
+let queue = new ActivityQueue();
+queue.addJob('Customer', this.id, action) 
+
+
+
+------
+tesitng /vagrant 
+npm run console 
+c = await Customer.query().first() 
+c.activityJob('created')
+nada... 
+>> localhost:3000
+queue not shown on dashboard (bull board)
+app.js (app app)
+initializer file .init() 
+inside that bullInitializer.init();
+GET FAMILIAR WITH THE PACAKAGES 
+'global listeners' 
+via the bull project 
+listeners should be on queues
+
+activity queue 
+bull initializer (check localhost)
+add activity que to que index
+
+
+------------------
+1. create a new queue (slackQueue)
+    inherits from AppQueue, the super is the `namedQueue`
+2. in Customer Jobs, rewrite the slackJob method 
+  import form the queues index {}
+3. bullInitializer
+  import from the app/queues index {}
+  instantiate in the init()
+4. customer-Slack-Job.js
+  remove unused imports
+  remove static queue 
+
+
+test it :
+$ npm run console
+// find a customer
+c = await Customer.query().first 
+// run a queue 
+c.activityJob('created')
+
+
+----- new process ------
+1. start with a model 
+  replace import queues and jobs 
+  modify the jobs at bottom (dont forget status over action in slackqueue)
+2. model-slack-job / model-activity-job / notification-job
+  remove the `static queue` method
+3. activity-queue / slack-queue
+  add const require
+  add line in constructor
+4. test 
+  restart server 
+  npm run console 
+  m = Model.query().first() 
+  m.activityJob('created')
+  > Activity Queue Succeeded 
+  m.notificationJob('requested')
+  > Slack Sent! 
+  > Notification Queue Succeeded 
+  m.slackJob('modelName')
+  > Slack Queue Succeeded
