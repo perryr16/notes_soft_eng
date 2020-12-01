@@ -1,9 +1,14 @@
+
 Strings 
 ======
 a = 'string abc'
 a[1] --> 't'
 a[1:4] --> 'trin'
 a[-1] --> 'c' (last value)
+
+int(x) to string
+------------
+str(x)
 
 character.isalnum()
 character.isalpha()
@@ -12,7 +17,7 @@ character.isdecimal()
 
 interpolation:
 a = 'dog'
-b = f'sub {a}'
+b = f'sup {a}'
 
 a = 'abcd'
 ------------------------

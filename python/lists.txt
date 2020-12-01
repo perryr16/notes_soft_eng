@@ -19,6 +19,11 @@ sorted
 =-=-=-
 sorted(x_list, key=if true, its at the end, reverse=True)
 sorted(x_list, key=lowercase or a[2]...)
+sort by 2 conditions
+------------------
+where l is a list and sorting by first name last name 
+l = [[first1, last1], [first2, last2]]
+l = sorted(l, key=lambda f: (f[1], f[0]))
 
 min(x_list)
 max(x_list)

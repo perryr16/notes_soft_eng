@@ -2,9 +2,9 @@ anonymous functions
 small functions
 
 return true if length of f is 4
-lamda f : len(f) == 4
+lambda f : len(f) == 4
 
 then to use this...
 
 return list(filter(lambda f : len(f) == 4, sequence))
-where sequence is a iterable list
+where sequence is an iterable list
