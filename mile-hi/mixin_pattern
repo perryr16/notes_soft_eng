@@ -60,17 +60,13 @@ delete StripeMixins
 ----------
 list mixin methods
 ----------
-timeout
-alias
-min 
-max 
-sum 
-diff 
-avg
-addObject 
+
+inputProp
+inputCurrency
+setProp
+setRelation
+toggleProp
+pushProp
+pushRelation
 removeObject
-truncate 
-capitalize 
-isEmpty 
-logger 
-randomString
+addObject
