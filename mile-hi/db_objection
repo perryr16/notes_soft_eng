@@ -51,7 +51,7 @@ Promo belongs to PromoCode
 Promo belongs to User
 therefore it cant exist without their IDs (foreign keys)
 
-pC = await PromoCode.query().insert({status: 'active', amount: 0.25, code: 'test'})
+pC = await PromoCode.query().insert({status: 'active', amount: 0.25, code: 'test', description: 'test desc'})
 u = await User.query().first()
-pObj = {status: 'active', amount: 0.25, code: 'test', promoCodeId: pc.id, userId: u.id}
+pObj = {status: 'active', amount: 0.25, code: 'test', promoCodeId: pC.id, userId: u.id}
 p = await Promo.query().insert(pObj)
