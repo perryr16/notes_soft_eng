@@ -2,13 +2,14 @@ Rails setup
 ==========
 rails _5.1.7_ new set_list_2003
 -T : dont use minitest
-postgresql: always gonna use this database
+-d="postgresql": always gonna use this database
+--api : comnsumes an api
 skip--spring: spring tries to help but it hurts
 
 group :development, :test do
 	gem 'rspec-rails' 
 	gem 'capybara'
-	gem 'launchy' /* what is this?
+	gem 'launchy' 
 	gem 'pry'
 	gem 'simplecov'
 end

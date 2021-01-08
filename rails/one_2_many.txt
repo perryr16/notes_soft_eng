@@ -4,6 +4,14 @@ in reference to setlist
 One Artist - Many Songs
 (Need shoulda-matchers)
 
+rails-helper **********
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+
 SPEC *******************
 spec/models/artist_spec.rb
 	 it { should have_many :songs }

@@ -1,2 +1,2 @@
 rename master to main
-$ git branch -m main
+$ git branch -M main
