@@ -1,0 +1,25 @@
+BULL
+====
+a node LIBRARY that implements a queue system based on REDIS 
+can use Redis alone, but bull takes care of low-level detials
+allows for more complex uses
+USES: 
+  - smoothing process peaks
+  - creating robust comm channels between microservices 
+  - offloading heavy work from one server to many others
+
+next version is written in TypeScript
+
+usage:
+-------
+`job.data` contains the custom data passed when the job was created
+we dont use 'done();' becuase its a promise 
+
+can have 3 main roles but usually divided into different instances
+  - job producer 
+  - job consumer 
+  - event listener
+  
+queues provide async communication
+
+add a job. a job is just a JS object

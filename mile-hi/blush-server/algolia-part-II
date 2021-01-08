@@ -1,0 +1,173 @@
+================
+ALGOLIA = SEARCH 
+================
+- search implementation 
+- search analytics 
+
+questions
+---------
+what are search records? vs records? (see model/app vs. search-service)
+  are searchRecords just a record of what a user has searched for?
+in the create/update/destory methods, whats the difference between this.data and req.data? 
+  what data is it?
+  I'd like to see where its passed 
+
+
+-------------------
+use in Blush-Server
+-------------------
+`app/services/serach-service` imports from `algoliasearch`
+  defines 'createRecord','updateRecord','destroyRecord'
+    look at response, save data, add to the index
+`models/app.js` imports from `SearchService`
+  defines 'createSearchRecord','updateSearchRecord','destroySearchRecord'
+    which each use 'createRecord','updateRecord','destroyRecord'
+      data is a table query with associated tables (['provider, customer'])
+      serialize it, update it
+`transactions` import necessary `models`
+  can call 'createSearchRecord' on any model bc of `models/app.js`
+
+create, update and destroy all use THE SAME code 
+------
+create
+------
+check authorized, 
+create a model with passed data 
+create a seach record with `included` models 
+send the serialized data in the response 
+
+------
+update
+------
+check authorized,
+find the model with the request id and data
+update the serach record with `indcluded` models 
+send the serialized data in the response 
+
+------
+detroy
+------
+check authorized,
+destroy the model with the passed id and data 
+destroy the search record with request id 
+send the serialized data in the response
+
+=-=-=-=-=-=-=-=-=-=
+  WHAT I WOULD DO 
+=-=-=-=-=-=-=-=-=-=
+Create a new queue (or job?)
+
+
+
+=-=-=-=-=-
+create a new queue
+constructor gives access to static methods
+anytime a thirdparty is activated, it should be done in a backgorund task 
+slows down user experience
+payments and auth user should wait
+  create algolia queue 
+  add to app model 
+  176 - onward - something about new queue 
+  model still calls create/update/destroy 
+  app model now triggers a background worker (quue) instead of actually doing it
+
+move controller actions to model hooks 
+no job, all queue 
+
+look at payout queue
+
+=========
+-------------
+Hooks
+https://vincit.github.io/objection.js/guide/hooks.html#instance-query-hooks
+used in booking.js 
+$before...
+$after...
+$around...
+not before insert 
+async $afterInsert(queryContext) {
+  // copy over super 
+  await super.$afterinsert(queryContext) //overide inheriting class //over to app model line 49 ($afterInsert)
+  await this.createSearchRecord(['[customer, provider']])
+  // get rid of the second use of model
+}
+in app -> remove model, use this.$query
+
+super is what we are inheriting from
+
+after delete need ID but, its been deleted... keep in the controller?
+id is on req.params.id 
+GET RID OF MODEL this. instead 
+can reaplce it with tableName
+
+search for createSearchRecord updateDestroy
+
+use this. instead of model. Id is on req.params.id
+
+need to actually change a model before updating 
+app model changes out 
+
+things that are in: 3 books on booking model
+
+MODEL / CONTROLLER / APP MODEL 
+===============================
+model/app:
+- remove model 
+- replace with `this.`
+  - for destroy: might just need tableName
+
+model:
+  update hooks
+  - $afterInsert = this.createSearchRecord(..)
+  - $afterUpdate = this.updateSearchRecord(..)
+  - $afterDelete = this.destroySearchRecord(..)
+
+controller:
+  remove line for create/updateSearchRecord 
+
+TESTING:
+--------
+npm run console 
+find an instance 
+change it 
+m.$query().patch({title:'new title'})
+- see if it changed?
+
+createSearchRecord
+------------------
+x (auth) user
+x booking,
+x provider-bookings,
+x provider-customers,
+x provider-payouts,
+providers,
+user-bookings => cant access user.bookings... not a relationship
+
+
+updateSearchRecord
+-----------------
+provider-bookings 
+provider-customers 
+provider-payouts 
+user-bookings
+
+destroySearchRecord
+-------------------
+photos 
+provider-booking 
+provider-customer 
+provider-payout 
+providers
+user-booking 
+user 
+
+
+create a new model:
+await Model.query().insert(newModelObject)
+
+update a model 
+await m.$query().patch({title: 'newTitle'})
+update a related model
+await p.$relatedQuery('bookings').findById(37).patch({amount: 101.01})
+
+> p = await Provider.query().findById(2).withGraphFetched('bookings')

@@ -50,6 +50,8 @@ related to removing classes - classes are confusing
 'this' is werid
 related to props, state, context, refs, and lifecycle
 
+hooks exicute behind the scenes
+
 useState(<initial>);
 ------------------
 useState allows you to set values between function calls - normally values disappear
@@ -112,3 +114,33 @@ this is in DMC - house development - department of defence ->
 like a CRM...?
 
 -------------
+Hooks
+https://vincit.github.io/objection.js/guide/hooks.html#instance-query-hooks
+used in booking.js 
+$before...
+$after...
+$around...
+not before insert 
+async $afterInsert(queryContext) {
+  // copy over super 
+  await super.$afterinsert(queryContext) //overide inheriting class //over to app model line 49 ($afterInsert)
+  await this.createSearchRecord(['[customer, provider']])
+  // get rid of the second use of model
+}
+in app -> remove model, use this.$query
+
+super is what we are inheriting from
+
+after delete need ID but, its been deleted... keep in the controller?
+id is on req.params.id 
+GET RID OF MODEL this. instead 
+can reaplce it with tableName
+
+search for createSearchRecord updateDestroy
+
+use this. instead of model. Id is on req.params.id
+
+need to actually change a model before updating 
+app model changes out 
+
+things that are in: 3 books on booking model

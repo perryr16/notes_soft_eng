@@ -1,0 +1,109 @@
+500 weekly downloads might be bots or something
+Freddy has not updated blush against it 
+no longer a store helpers file 
+updated with the webpack config 
+  - always the packer for react 
+  - good now 
+
+api documentation
+
+dan is redux and redux author 
+mob x 
+
+construct store, pass it around, carry it around 
+other platforms its decoupled but still have access 
+track changes to a store 
+those platforms are complex, and require setup and config 
+ 
+performance is the biggest indicator 
+fetch data from server - 20-40 ms 
+store side: start of fetch to return 200 ms 
+
+clean it out if you dont need it, otherwise it contines to grow 
+
+webpack is compression tool that builds and stores 
+package file dictates scripts
+compiles in lib file for download (lib/react-data.js)
+run the webpack config and send to the lib directory  
+
+helpers : deploy and deploy:test
+
+release file is historical 
+lib file is only the most recent 
+
+going to have a linter (eslint) 
+
+run the tests, and dont publish until they pass 
+
+build a test suite that just tests against src directory: 
+  concern: dont do that  
+
+build a test suite in the demos 
+  build a test script 
+
+do research: what is the best way to test an npm package 
+  test against demo package
+  test against native demo package 
+
+freddy to handle documentation and eslint 
+
+need a test environment to do tests 
+----------------------------------
+demo 
+----
+cd into react data demo
+npm install 
+npm start 
+
+-------
+demos are pointed at a dev server on local, eventually live on the internet 
+library service on docker 
+need to install docker 
+`docker compose up`
+config file that start 3 servers, main, redis, db 
+first time through need to run migrations 
+docker is quicker than vagrant 
+container = configuration 
+run this project off this config 
+pull image off web, run locally 
+or backwards, 
+
+-----
+book model
+author model  
+publisher (not used)
+category (not used) 
+
+----
+store helpers 
+setProp, inputProp
+
+.set updates the store
+
+current demo doesnt showcase all functionality 
+build some tests of what it currently uses 
+.save 
+.destory
+.set 
+
+!!!
+store.{anythign}
+!!!
+needs testing
+
+network calls
+
+important other methods to test 
+.normalize 
+.serialize
+
+start reserach 
+test suite 
+where should it go? 
+src directory or react demo?
+in the src directory or outside 
+
+react != react native 
+
+
+-

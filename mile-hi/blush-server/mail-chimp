@@ -1,0 +1,76 @@
+Mail Chimp on Blush Server 
+--------------------------
+there is 1 list called: AllContacts 
+each contact should have associated tags with them
+tags:
+  Environment [development, staging, production]
+  Types       [user, provider, guest]
+
+Will use a webhook and a queue
+  definetly a queue 
+  addJob() triggers the mailchimpService
+the queue will be similar to AlgoliaQueue
+only on USER and PROVIDER models 
+
+when a USER or PROVIDER gets CREATED/UPDATED/DESTROYED add to mailChimp 
+
+member = contact 
+audience = list 
+=================
+to call mailchimp 
+import MailChimp = require('mailchimp-api-v3');
+
+this.mailChimp = new MailChimp(MailchimpKey);
+---------------
+==============
+-------------
+user updates
+/models/user
+------------
+- scheduleJobs triggers mailchimpJob
+? OR $afterUpdate, $afterInsert
+  - scheduleJobs is called: UserTransactions.create(data) action='created
+    - called for auth2, or register 
+    ? no update or delete?
+- mailchimpJob triggers MailchimpQueue.addJob
+
+
+queues/mailchimpQueue
+---------------------
+import the user-mailchimp-job 
+on creation (constructor) add the process with the tag 'User' 
+? addJob(modelTag, action)?
+
+
+jobs/users/user-mailchimp-job 
+-----------------------------
+class UserMailchimpJob 
+need config, user, and mailchimpService (existing)
+switch statement for action (created/updated/destroyed)
+? What happens in this switch statement?
+  - triggers MailchimpService.createMember(data, list)
+                             .updataeMemeber
+                             .deleteContact
+                             .updateOrCreateMember
+  - data = firstName, lastName, email 
+  ? data also includes tags?
+  ? why update a member id?
+  - buildMember(data, status, tags)
+  ? need to add to tags or should it be passed through data?
+  ? createMember gets passed this.data, also tags?
+
+  =========
+  console file 
+  function loadCOntext 
+  services 
+  console:
+  m = new MailchimpService()
+  u = await User.query().first()
+  m.fretchMember(u)
+  (list = this.listId)
+  this.lists[this.listId] => this.listId 
+  404 = not created 
+  await m.fetchMembers()
+  careful on delete - dont delete active users, only my users 
+  console statements if you want
+  look at api docs for tagging

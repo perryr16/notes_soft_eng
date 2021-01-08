@@ -1,0 +1,21 @@
+12/7
+----
+just finished modifying search records
+
+the `singleton` pattern
+overwriting variable `this.queue`
+`object.freeze` 
+singleton for each queue 
+dont inherit from the app queue
+
+router  middleware
+app.use
+pass in req
+old: currentUser = await new CurrentUser(req).authenticate(req)
+new: new CurrentUser(req).authenticate(req)
+
+track the code 
+
+current-user 
+
+middleware to use init () instead of .format, or .authenticate

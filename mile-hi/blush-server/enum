@@ -1,0 +1,30 @@
+----------------
+ActivityJob Used
+----------------
+*bank = created, updated, destroyed
+booking - accpeted, cancelled, denied, finished, requested, 
+charge - created
+customer - created, destroyed, updated
+license - uploaded
+payout - cancelled, failed, paid, processing
+photo - created, updated
+provider - activated, created, disabled, pending, unverified, verified
+review - created
+
+---------------
+NotificationJob
+---------------
+booking - accpeted, cancelled, denied, finished, requested
+card - created, deleted
+*card = created, destroyed, updated
+charge - created
+promo - created, redeemed
+refund - created
+review - created, updated
+user - created, destroyed
+
+---------------------
+tracking isAuthorized 
+---------------------
+UserControllers extends AppController
+isAuthorized is a method in AppController

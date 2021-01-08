@@ -103,7 +103,7 @@ c.activityJob('created')
 ----- new process ------
 1. start with a model 
   replace import queues and jobs 
-  modify the jobs at bottom (dont forget status over action in slackqueue)
+  modify the jobs at bottom 
 2. model-slack-job / model-activity-job / notification-job
   remove the `static queue` method
 3. activity-queue / slack-queue
@@ -112,7 +112,7 @@ c.activityJob('created')
 4. test 
   restart server 
   npm run console 
-  m = Model.query().first() 
+  m = await Model.query().first() 
   m.activityJob('created')
   > Activity Queue Succeeded 
   m.notificationJob('requested')
