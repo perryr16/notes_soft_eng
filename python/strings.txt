@@ -10,6 +10,11 @@ int(x) to string
 ------------
 str(x)
 
+REVERSE A STRING 
+---------------
+a = 'abcd'
+a[::-1]
+
 character.isalnum()
 character.isalpha()
 character.isnum()

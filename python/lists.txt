@@ -15,6 +15,17 @@ list1[-2:] = c,d
 'c' in list1 --> True 
 'x' in list1 --> False
 
+LIST FROM STRING 
+---------------
+a = 'abcd'
+list(a) = ['a', 'b', 'c', 'd']
+
+a = 'ab cd ef'
+a.split() = ['ab', 'cd', 'ef']
+
+a = 'abcd'
+a.split('b') = ['a', 'cd']
+
 sorted
 =-=-=-
 sorted(x_list, key=if true, its at the end, reverse=True)
