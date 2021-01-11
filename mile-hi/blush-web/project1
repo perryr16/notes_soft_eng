@@ -57,25 +57,3 @@ also values that are passed in from the dashboard component
 isLoading > loading
 
 
--------------------
-getting going 
-1. need to have docker running 
-  cd into library server
-  `docker compose up`
-  (ctrl c to exit) 
-2. enter a specific docker library 
-  cd into library server 
-  `docker container exec -it library-server_server_1 bash`
-3. enter the react-data demo file 
-  cd into demo 
-  npm start 
-  running on localhost:4200
-
-to populate books or clear it out, enter the console session
-1. enter a specific docker library 
-  cd into library server 
-  `docker container exec -it library-server_server_1 bash`
-2. npm run console 
-3. enter commands 
-  `> await Book.query()`
-  `> await DbInitializer.buildDb('Lord of the Rings')`

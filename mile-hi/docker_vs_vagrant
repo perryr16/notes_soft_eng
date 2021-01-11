@@ -1,0 +1,22 @@
+DOCKER VS vagrant
+
+well what is vagrant 
+--------------------
+works on my machine, doesnt work in production or someone elses.
+enviormnets are not the same! 
+vagrant saves settings in a virtual enviroment and then push that to github 
+
+
+DOCKER 
+-------
+run off containers 
+dockerfiles are small (20 lines)
+dockerfiles build docker images 
+docker image contains project code, installation of node.js, installments of programs, complete project image. designed to sit ontop of a machine 
+VM contains docker image, run an image as a container, can run as many containers as I want
+
+dont put code in enviroments, actually build enviorments
+if I have docker on my machine, it will work. if you have docker on your machine, it will work
+docker image is saved to docker hub (like github )
+
+apps run as docker containers

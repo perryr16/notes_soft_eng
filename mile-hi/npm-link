@@ -1,0 +1,22 @@
+npm link 
+npm-link 
+
+symlink - 'symbolic' or 'soft' link. Similar to a shortcut. A file that points to another file
+  - like a windows shortcut
+
+`npm link` in a package folder will create a symlink in the global folder (`/lib.node_modules/<package>`)
+this will link the package to where the npm link command was executed 
+`cd <package dir>`
+`npm link` // creates a symlink to the global folder
+`npm link <@scope>/<pkg>` // creates symlink from globally installed package to node_modules 
+aka 
+`npm link @mile-hi-labs/react-data`
+
+note: bin = binary = executables
+
+From Freddy: 
+  'You remove the @mile-hi-labs/react-data line from the package.json file 
+  and then run npm install. That removes react-data from the demo project. 
+  Then, you run npm link from root (that creates a local symlink to the package 
+  on your machine) then you run npm link @mile-hi-labs/react-data from the demo 
+  project directory (linking the demo to the src package)'
