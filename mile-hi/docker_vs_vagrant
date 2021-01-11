@@ -20,3 +20,32 @@ if I have docker on my machine, it will work. if you have docker on your machine
 docker image is saved to docker hub (like github )
 
 apps run as docker containers
+
+---------
+'dockerize'
+------------
+container management software 
+docker image: blueprint of a container - instructions for building 
+  - snapshot of a container 
+  - made up of layers
+    - base - ubuntu
+    - software files 
+    - dependencies 
+    ... layers 
+
+contianer:  a running instance of a docker image 
+when a blue print is run it becomes a container 
+
+EASY INSTALL! collaboration, flexibility, totality
+
+VM vs container: 
+  - vm has a complete opperation system on it
+  - hardware is virtualized through a hypervisor 
+
+  -container virtualizes the operating system, no guest operating system. 
+
+  DIFF: container virtualizes operating system
+  VM : complete operating system on it, virtuizes hardware
+
+containers are FAST, more portable
+
