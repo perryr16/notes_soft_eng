@@ -1,0 +1,44 @@
+check versions
+$ python --vesion 
+$ pip --version 
+
+Virtual Environments
+--------------------
+run your commands inside the virtual environment 
+pip and virtualenv are basically the same 
+
+new project:
+$ cd one_below_project_root
+$ virtualenv -p python project_name
+$ cd project_name 
+$ source bin/activate
+
+to exit: $ deactivate
+
+Install Django 
+-------------
+go in the env 
+$ pip install django 
+
+CHECK DJANGO 
+-----------
+a) $ python -m django --version
+b) $ python 
+>>> import django 
+>>> print(django.get_version())
+
+START SERVER 
+------------
+in folder with app AND manage.py
+$ pyhton manage.py runserver 
+$ cntrl c to exit
+
+MIGRATE as it says
+-------------------
+creates a bunch of admin tables that are necessary
+
+
+Create super user 
+---------------
+allows us to access the admin dashboad
+$ pyhton manage.py createsuperuser
