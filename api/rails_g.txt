@@ -1,6 +1,8 @@
 CREATE MODEL
-$  rails g model modelName column1:datatype column2:datatype OtherTable:references
-$ rails g model modelName name description ***if all strings, no need for datatype **
+$  rails g model modelNames column1:datatype column2:datatype OtherTable:references
+$ rails g model modelNames name description ***if all strings, no need for datatype **
+
+ex: $ rails g model comments user:references comment image_url
 
 CREATE CONTROLLER
 $ rails g controller controllerName index show

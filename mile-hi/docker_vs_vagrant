@@ -49,3 +49,42 @@ VM vs container:
 
 containers are FAST, more portable
 
+--------
+DOCKER USE 
+-------------
+docker image = blueprint 
+container = run the blueprint 
+
+hub.docker.com 
+
+can pull images into your container 
+
+how do you build the image
+--------------------------
+always check hub.docker.com
+
+look at "anatomy of a docker file" or just docker documentation
+
+Need a FROM 
+RUN executes commands 
+WORKDIR working directory
+COPY package.json . (to workdir)
+
+Feels a lot like heroku or travis CI
+
+COPY . . or COPY . /app/src
+
+EXPOSE 3000 (browser port that container listens on)
+
+CMD ["npm", "start"] 
+
+TO BUILD THE image 
+-------------------
+$ docker build <current directory> -t <name of image>
+$ docker images --> show all images
+
+
+or cmd shft p -> docker images: build images, docker, name, enter
+
+$ docker images
+
