@@ -1,3 +1,71 @@
+NEW PYTHON DJANGO PROJECT
+-------------------------
+$ mkdir project_name 
+$ cd project_name_root
+$ virtualenv project_name_env
+$ source project_name_env/bin/activate 
+$ pg_config
+$ which pg_config 
+$ pip install psycopg2 
+$ pip install django 
+$ django-admin.py startproject project_name
+
+change settings.py for DATABASE
+```DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'project_name_db',
+        'USER': 'rossperry'
+        'PASSWORD':'',
+        'HOST': 'localhost',
+        'PORT':'',
+    }
+}```
+
+$ createdb project_name_db
+$ createdb project_name_db_test
+
+$ pythion manage.py makemigrations #
+> No changes detected 
+$ python manage.py migrate # create default schema
+$ python manage.py createsuperuser
+$ python manage.py runserver
+!BOOM!
+===============================
+
+CREATING APPS - features of the project 
+$ python manage.py startapp app_name
+Add app_name to INSTALLED_APPS in /project_name/settings.py
+
+CREATING MODELS 
+in /app_name/models define models 
+```class Driver(models.Model):
+  name = models.TextField()
+
+class Car(models.Model):
+  make = models.TextField()
+  model = models.TextField()
+  owner = models.ForeignKey("Driver", on_delete=models.SET_NULL, null=True)
+```
+$ python manage.py makemigrations app_name 
+$ python manage.py migrate app_name
+** now you have the tables created in the db
+$ psql 
+=# \c project_name_db 
+=# \dt
+>> app_name_car
+>> app_name_driver
+
+CREATING VIEWS (like controlers -  link model to tempalte)
+always return render(request, '<template>/html', context) 
+where context is the model data
+
+CREATING TEMPLATES 
+
+CREATE urls.py in app
+
+===============================
+
 check versions
 $ python --vesion 
 $ pip --version 
@@ -27,6 +95,13 @@ b) $ python
 >>> import django 
 >>> print(django.get_version())
 
+CREATE THE PROJECT 
+-----------------
+this will create another project file, but thats the way these people do it
+django-admin startproject project_name_backend
+
+
+
 START SERVER 
 ------------
 in folder with app AND manage.py
@@ -42,3 +117,47 @@ Create super user
 ---------------
 allows us to access the admin dashboad
 $ pyhton manage.py createsuperuser
+
+APPS
+-----
+app referes to a piece of functionality
+ex: weather 
+$ python manage.py startapp weather
+touch weather/urls.py 
+add weather to the INSTALLED_APPS in settings.py
+
+TEMPLATES
+----------
+html file 
+
+VIEWS
+-----
+functions or classes 
+render(request, 'template/path')
+
+URLS.py
+-------
+then call out the view we wanted
+
+API REQUESTS
+-----------
+need to install requests to we can call API from inside the app 
+$ pip install requests
+
+.ENV FILE 
+----------
+$ pip install -U python-dotenv
+$ touch .env # in root
+/.env
+KEY=value 
+file of interest 
+import os 
+key = os.getenv('KEY')
+
+
+POSTGRES
+---------
+need psycopg2 
+check the pg_congif
+$ pg_config 
+$ pip intsall psycopg2

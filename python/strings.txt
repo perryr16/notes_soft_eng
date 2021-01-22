@@ -44,6 +44,9 @@ txt.format(quantity, total)
   * can also specify position --> txt = 'I have {1} quarters worth {0} cents'
     txt.format(total, quantity)
 
+a = 'dog'
+b = f'a {a} says woof'
+
 list to string
 ''.join(list1)
 ', '.join(list1)

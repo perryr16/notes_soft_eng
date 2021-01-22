@@ -1,6 +1,10 @@
 Port in use?
 ------------
 
+POSTGRES?
+$ brew services stop postgresql
+$ brew services start postgresql (seems to be useful for running rails apps)
+
 Run 
 $ ps aux | grep ruby
 -- or --
