@@ -6,3 +6,6 @@ show users
 
 show tables 
 \dt
+
+connect to db **** DO THIS FIRST
+\c 

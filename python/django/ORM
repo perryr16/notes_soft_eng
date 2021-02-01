@@ -1,0 +1,23 @@
+SQL QUERIES 
+
+model = Dog
+GET ONE 
+Dog.objects.get(pk=2)
+# where pk is primary key, and 2 is dog id
+
+GET ALL 
+Dog.objects.all()
+
+CREATE ONE 
+spot = Dog(name='Spot')
+spot.save()
+
+many-many 
+dave = Owner(name='Dave')
+spot.owner = dave 
+spot.save(
+
+g
+UPDATE ONE 
+
+DELETE ONE 

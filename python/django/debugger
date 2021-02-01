@@ -1,0 +1,6 @@
+USE THE ! WHEN DEBUGGER IS ANNOYING
+(Pdb) values = set([1, 2, 3, 4, 5])
+(Pdb) list(values)
+*** Error in argument: '(values)'
+(Pdb) !list(values)
+[1, 2, 3, 4, 5]
