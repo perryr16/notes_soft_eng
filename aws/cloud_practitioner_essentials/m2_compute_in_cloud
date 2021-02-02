@@ -76,3 +76,18 @@ EC2 Pricing
 
 Scaling EC2
 -----------
+  - average utlization is a problem 
+  - provision workload for every peak and trough 
+  - if one instance fails, just boot another one 
+  - make it REDUNDANT = no single point of failure
+
+Auto Scaling 
+  - time outs when website has more requests than it can handle
+  - automaically add or remove EC2 in response to demanad
+  - dynamic (responds) or predictive (schedules) scaling 
+  - use both!
+  - scale up = more power! 
+  - scale out = more instances
+  - settings: minimum, desired, maximum
+  
+computing power is a programmatic resource
