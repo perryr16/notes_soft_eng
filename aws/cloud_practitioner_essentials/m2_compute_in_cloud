@@ -1,0 +1,78 @@
+Amazon elastic compute cloud - EC2 
+----------------------------------
+raw compute capacity 
+need servers
+aws servers are virtual 
+flexible, cost effective, quick
+long time to get it up and running 
+delivery, installation, rack and stack, etc... = long time 
+
+with aws..
+not stuck with servers you dont need
+only pay for running instances, not stopped or terminated
+sharing host with other instances (virtual machine)
+hypervisor - responsible for coordinating the mulitenancy - managed by aws 
+mulitenancy - sharing underlying hardware between virtual machines 
+
+EC2 instances are secure even though they share
+  - instances are unaware 
+  - choose windows or linux for EC2 config
+  - you choose software 
+  - resizable - virtual scaling
+  - control the networking aspect (requests) public or private 
+  - ease of provisioning
+  - Compute as a Service (CaaS)
+
+Launch, Connect, Use
+
+EC2 Instances 
+-------------
+  - grouped by instance family
+  - varied types of CPU, storage, networking capactiy
+    - general purpose 
+      - balanced
+      - gaming 
+      - backend for enterprise 
+      - small and medium dbs
+    - compute optimized 
+      - high performance processors
+      - gaming
+      - web
+      - scientific modeling
+    - memory optimeized 
+      - ideal for high-performance databases
+      - lots of data that needs to be loaded
+      - memory is temp space, programs are loaded from storage into memory
+      - big db 
+    - accelerated computing - floating points, pattern, graphing
+    - storage optimized
+      - suituble for data warehousing
+      - high sequential read and write access ot large datasets
+      - input / output per second (IOPS)
+
+EC2 Pricing 
+-----------
+  - on-demand
+    - short term, irregular
+    - cant be interuppted
+  - savings 
+    - low prices in exchange for consistent usage
+    - 1-year or 3-year 
+    - 72% less than on-demand
+  - reserved instances 
+    - 75% off for a big term (1-3 years)
+    - at the end of the term its on-demand unless you terminate, or purcahse a new one
+  - spot instances 
+    - aws an take it back. 2 min warning 
+    - batch workloads 
+    - flexible start and end times
+    - use unsued EC2s
+    - 90% off
+    - background worker
+    - not always available
+    - no contract/commitment
+  - dedicated hosts - physical hosts 
+    - usually for regulations
+
+Scaling EC2
+-----------
