@@ -14,5 +14,32 @@ with permissions, server fulfills request
 Server = amazon elastic compute cloud (EC2) 
   - virtual server 
 
-'you only pay for what you use'
+'you only pay for what you use' - Pay for what you need
 no capacity constraints 
+
+m1.2 - Cloud Computing
+----------------------
+cloud computing - the on-deamand delviery of it resources over the internet with pay-as-you go pricing
+on demand delivery - aws has the resources you need, no need to request ahead of time 
+IT Resources  - get servers or storage when you need them 
+why? businesses need them 
+the engine is just the engine 
+undiffereentiated heavy lifting of IT - just busy work. let aws do it 
+Over the Internet 
+
+three models of cloud computing
+- cloud based deployment 
+  - run it all in the cloud, migrate to the cloud, design and build on the cloud
+- on-premises deployment 
+  - private cloud deployment 
+  - deployed using virtualization and resource management tools
+- hybrid deployment
+  - connect cloud based to on-premise or legacy IT
+  - gov regulations
+
+Benefit fo Cloud Computing
+variable expenses 
+dont need to maintain data centers
+dont need to guess (capacity)
+benifits of mass production - lower cost - economies of scale
+faster and more flexible 
