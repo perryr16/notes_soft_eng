@@ -10,3 +10,26 @@ infrastructure as a service
 WHY IS IT POPULAR?
 billing is per hour 
 easy sign up process 
+stable 
+trusted vendor 
+
+SERVICE OVERVIEW 
+EC2 - elastice compute cloud 
+  - machine to launch software 
+VPC - virtual pricate cloud 
+  - chunks of their cloud 
+  - create networks and run servers in networks 
+S3 - simple storage service 
+  - file storage and sharing service 
+RDS - relational database service 
+  - run your database on the cloud
+  - SQL 
+Route 53 - DNS Service 
+ELB - Elastic Load Balancing 
+  - ability to load balance to different machines 
+AutoScaling 
+  - website never down due to a load 
+
+DATA CETNERS
+  300 to 500 thousand servers per center 
+  
