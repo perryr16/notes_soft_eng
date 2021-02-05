@@ -91,3 +91,43 @@ Auto Scaling
   - settings: minimum, desired, maximum
   
 computing power is a programmatic resource
+
+Directing Trafic with Elastic Load Balancing (ELB)
+--------------------------------------------
+  - a host can direct customer traffic
+  - goal: even distribution of workload = load balancing 
+  - many off the shelf load balancers 
+  - aws Load Balancing = high performance, cost-efficient, highly available, auto scaling 
+  - elastic load balancing (ELB)
+  - its a regional construct (runs at the region level)
+  - very available
+  - scalable 
+  - terminates after the requests are finished
+  - ELB keeps it simpler 
+  - Front end doesnt know or care about backend Instances
+  - DECOUPLED Architecture 
+
+Messaging and Queuing 
+--------------------
+  - if one is busy, it cant return for more work 
+  - process can degrade 
+  - queuing can prevent slow downs 
+  - tightly coupled - if a single component fails - it causes failures elsewhere
+  - loosely coupled - isolated to prevent cascading failures 
+    - if one fails, they pile up in the queu
+  - Amazon Simple Notification Service (SNS)
+  - Amazon Simple Queue Service (SQS)
+
+SQS
+-----
+  - send / store 
+  - where messages are placed until they are processed
+
+SNS 
+-----
+  - similar
+  - pub sub = publish subscribe 
+  - web hooks 
+  - fan out notifications to end users 
+  
+
