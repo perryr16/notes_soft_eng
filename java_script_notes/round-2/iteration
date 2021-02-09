@@ -29,3 +29,11 @@ const c = b.map((x, y, z) => {
 });
 
 console.log(c)
+
+
+-----------
+FILTER
+-----------
+const a = [1,2,3,1,2,3]
+a.filter(num => num == 2)
+>> [2,2]
