@@ -1,7 +1,29 @@
+--------------
 STRING TO INT 
+--------------
+parseInt("10") 
+>> 10
 
+--------------
 INT TO STRING
+--------------
+const a = 155
+a.toString()
+>> '155'
 
-STRING TO ARRAY 
+--------------
+STRING TO ARRAY
+-------------- 
+const a = '123 abe dog'
+a.split()
+>>['123 abe dog']
 
-STRING TO OBJECT 
+a.split('')
+>>['1', '2', '3', ' ', 'a', 'b', 'e', ' ', 'd', 'o', 'g']
+
+a.split(' ')
+>>['123', 'abe', 'dog']
+
+--------------
+STRING TO OBJECT
+--------------
