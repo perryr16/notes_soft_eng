@@ -1,0 +1,23 @@
+typeof(10)
+>> number 
+typeof(10.1)
+>> number
+typeof('str')
+>> string
+typeof([1,2])
+>> object 
+tyoeof({'a':1})
+>> object 
+typeof(true)
+>> boolean
+
+
+Number.isInteger(10)
+>> true 
+Number.isInteger(10.1)
+>> false
+
+Array.isArray([1,2])
+>> true 
+Array.isArray({'a':1})
+>> false

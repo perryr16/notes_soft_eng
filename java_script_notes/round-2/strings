@@ -15,6 +15,7 @@ a.toString()
 STRING TO ARRAY
 -------------- 
 const a = '123 abe dog'
+
 a.split()
 >>['123 abe dog']
 
@@ -24,6 +25,20 @@ a.split('')
 a.split(' ')
 >>['123', 'abe', 'dog']
 
+a = 'dog'
+[...a] // will include spaces
+>> ['d', 'o', 'g']
+
+
 --------------
 STRING TO OBJECT
 --------------
+
+
+--------------
+SUBSTRING
+--------------
+a.substring(startIndex, endIndex) // non inclusive
+a.substring(0, length) // whole string
+a = 'dog'
+a.substring(1,3) >> 'og'
