@@ -4,6 +4,10 @@ LOOPS
 Increment: i++
 Every other: i += 2
 
+forEach
+a = [1,2,3,4]
+a.forEach(num => console.log(num)) 
+
 *FOR
 
 for (initialization; condition; final expression)
