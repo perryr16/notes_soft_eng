@@ -1,0 +1,31 @@
+----------
+FOR LOOPS
+-----------
+a = [1,2,3,4]
+const fxn_for = (a) => {
+  for (i = 0; i < a.length; i++) {
+    console.log(a[i])
+  }
+}
+fxn_for(a)
+
+----------
+FOR EACH 
+----------
+const fxn_forEach = (x, y, z) => { 
+  // 1st = element, 2nd = index, 3rd = array
+  console.log(x + `${y}` + `${z}`)
+};
+b = ['a', 'b', 'c', 'd'];
+b.forEach(fxn_forEach)
+// fxn_forEach is a CALLBACK FUNCTION
+
+----------
+MAP 
+----------
+const c = b.map((x, y, z) => {
+  // 1st = element, 2nd = index, 3rd = array
+  return `${x}`+'new'+`${y}`+ `${z}`
+});
+
+console.log(c)

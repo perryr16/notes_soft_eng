@@ -1,0 +1,5 @@
+** place a break point **
+node --inspect <filename.js>
+
+debug console 
+ctrl + shft + y

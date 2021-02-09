@@ -1,2 +1,0 @@
-** place a break point **
-node --inspect <filename.js>
