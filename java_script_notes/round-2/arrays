@@ -48,12 +48,12 @@ SUM/AVG/MIN/MAX
 -----------------------
 const a = [1,2,3,4]
 
-const sum = arr => arr.reduce((total, current) => total + current, 0) // 0 is starting value
+const sum = arr => arr.reduce((a, v) => a + v, 0) // 0 is starting value, a = accumulator, v = currentValue
 const res = sum(a) 
 >> 10
 
 OR  
-const sum = a.reduce((total, current) => total + current, 0)
+const sum = a.reduce((a, v) => a + v, 0)
 >> sum = 10
 
 const avg = arr => arr.reduce((a, b) => a + b, 0) / arr.length
@@ -79,3 +79,9 @@ UNIQ
 uniq = [...new Set(a)]
 
 
+------------
+SORT 
+------------
+a.sort() will return based on alpha value (1000 is less than 2)
+a.sort((a,b) => a - b) // ASCENDING 
+a.sort((a,b) => b - a) // DESCENDING

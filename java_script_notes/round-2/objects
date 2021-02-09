@@ -5,3 +5,8 @@ object = {}
 arr.forEach((element, i, array) => {
   object[element] ? object[element] +=1 : object[element] = 1
 }
+
+OR 
+arr.forEach((element, i, array) => {
+  object[element] = (object[element] || 0) + 1;
+}
