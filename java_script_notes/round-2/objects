@@ -1,0 +1,7 @@
+------------
+BUILD FROM ARRAY 
+------------
+object = {}
+arr.forEach((element, i, array) => {
+  object[element] ? object[element] +=1 : object[element] = 1
+}
