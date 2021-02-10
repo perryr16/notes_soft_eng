@@ -1,0 +1,17 @@
+{% code block %}
+{% for x in y %}
+  <h1> {{ x.name }} </h1>
+{% endfor %}
+
+----------------------------------
+shared/inherited templates
+----------------------------------
+base tempalte
+{% block content %}{% endblock %}
+
+uniq tempalte 
+{% extends "layout.html" %} 
+{% block content %}
+  new stuff....
+  new stuff....
+{% endblock %}

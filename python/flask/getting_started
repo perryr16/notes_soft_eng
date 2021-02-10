@@ -1,0 +1,9 @@
+`app` runs the python project 
+
+from flask import Flask 
+app = Flask(__name__)
+
+if __name__ == '__main__':
+  app.run(debug=True) 
+  // this will constantly refresh the server, showing new changes 
+  

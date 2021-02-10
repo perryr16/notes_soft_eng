@@ -1,0 +1,14 @@
+from flask import Flask, render_template
+
+app.route('/')
+def home():
+  return '<h1>home page</h1>'
+
+info = {
+  'abc':123
+}
+
+@app.route('/splash')
+@app.route('/about')
+def about():
+  return render_template('about.html', info=info)

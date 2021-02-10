@@ -1,0 +1,57 @@
+SQL_ALCHEMY is an ORM 
+object relational mapper 
+
+INSTALL
+-----------------
+pip install flask-sqlalchemy 
+
+MODEL FILE 
+--------------
+from datetime import datetime
+
+from flask_sqlalchemy import SQLAlchemy
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db' /// = relative path
+
+db = SQLAlchemy(app)
+
+class User(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  username = db.Column(db.String(20), unique=True, nullable=False)
+  email = db.Column(db.String(120), unique=True, nullable=False)
+  image_file = db.Column(db.String(20), default='default.jpg')
+  password = db.Column(db.String(60), nullable=False)
+  posts = db.Relationship('Post', backref='author', lazy=True)
+
+  def __repr__(): //DUNDER METHOD how the object is printed, perhaps when looking at data 
+    return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+
+class Post(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  title = db.Column(db.String(100), nullable=False)
+  date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+  content = db.Column(db.Text, nullable=False)
+  user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) //user.id is lowercase becuase its a table name, not a model
+
+  def __repr__():
+    return f"Post('{self.title}', '{self.date_posted}')
+
+
+COMMAND LINE (inside virtual env)
+---------------------------------
+python 
+import flaskblog import db //where flaskblog is app name 
+db.create_all()
+>> creates db 
+// sql lite stuff... 
+from flaskblog import User, Post 
+user1 = User(username='x', email='x@com', password='xyz') // user object not in the db
+db.session.add(user1) // have a change that we want to make
+db.session.commit() // commit the changes
+
+User.query.all() // returns all users
+User.query.first() // first user 
+User.query.filter_by(username='x').all() // all users with that name 
+User.query.get(2) // get user with id = 2 
+
+
