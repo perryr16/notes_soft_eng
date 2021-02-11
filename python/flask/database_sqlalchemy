@@ -41,7 +41,7 @@ COMMAND LINE (inside virtual env)
 ---------------------------------
 python 
 import flaskblog import db //where flaskblog is app name 
-db.create_all()
+db.create_all() // run migrations
 >> creates db 
 // sql lite stuff... 
 from flaskblog import User, Post 
@@ -54,4 +54,5 @@ User.query.first() // first user
 User.query.filter_by(username='x').all() // all users with that name 
 User.query.get(2) // get user with id = 2 
 
-
+db.drop_all()
+db.create_all() // like creating migrations 

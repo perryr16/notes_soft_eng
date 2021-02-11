@@ -1,0 +1,11 @@
+circular imports are confusing
+------------------------------
+from __main__ import db 
+
+better solution
+---------------
+__init__.py // a package!
+
+ROUTES
+--------
+routes.py in its own 
