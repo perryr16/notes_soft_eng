@@ -127,7 +127,77 @@ SNS
 -----
   - similar
   - pub sub = publish subscribe 
+    - create a single topic, post a message there, and then its sent to all subscribers
+    - subscribers can be web servers, email addresses, AWS Lambda functions, or several other options
   - web hooks 
   - fan out notifications to end users 
-  
 
+
+ADITIONAL COMPUTE SERVICES
+--------------------------
+EC2 is the standard - reliable, flexible, scalable 
+more convienent from a management perspective 
+'serverless' options: you cannoy see or access the underlying infrastructure
+AWS Lambda - serverless option
+  - allows you to upload to a lambda function
+  - configure a trigger 
+  - code is run a managed enviornment 
+  - designed to run code in under 15 minutes (not deep learning)
+Container Orchestration tools - docker 
+  ECS - Amazon Elastic Container Service
+  EKS - Amazon Elastic Kubernetes Service
+
+container - package for your code
+  - containers run ontop of EC2 instances , independantly 
+  - host is an EC2 instance 
+
+Cluster - number of containers 
+
+EC2 
+  - Traditional apps
+  - full access to the OS
+
+AWS Lambda
+  - Run without needing to provision or manage servers
+  - short running fxns 
+  - Trigger based
+  - service oriented apps
+  - event driven apps 
+
+- ECS or EKS ?
+- EC2 instances or serverless Fargate (that is managed for you)
+
+----------------
+SUMMARY
+----------------
+Cloud computing
+  - On demand delivery of IT resources over the internet with pay-as-you-go pricing
+
+EC2 
+  - dynamically spin up or down EC2 instances 
+  - choose the instance family 
+    - general 
+    - compute optimized
+    - memory optimized
+    - accelerated computing
+    - storaige optimized
+  - Horizontal or Vertial Scaling 
+
+ELB 
+  - elastic load balancer 
+  - useful for many EC2 instances
+  - options
+    - On demand 
+    - spot instances 
+    - reserved instances 
+    - savings plans
+
+SQS 
+  - decouple 
+  - messages remain in queue until consumed or deleted 
+
+SNS 
+ECS - container Orchestration
+EKS - container Orchestration
+AWS Fargate - no need to manage 
+AWS Lambda - run based on triggers 
