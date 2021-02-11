@@ -1,3 +1,101 @@
 m3
 
-HIGH AVALIABILITY
+HIGH AVALIABILITY & FAULT TOLERANCE
+-----------------------------------
+
+REGIONS 
+-------
+natural disasters... 
+2nd data center? too expensive 
+data centers organized in large groups aka REGIONS 
+multiple data centers per region 
+regions are connected via fiber 
+data in X region never leaves X region 
+  - unless you request it is exported 
+  - data is subject to local laws 
+
+CHOOSE A REGION 
+  1. Compiance 
+    - ex: must run in UK boundaries
+  2. Proximity
+    - speed of light is a bit slow from NYC to Sigapore 
+  3. Feature Availability 
+    - build out hardware features on region at a time
+  4. Pricing 
+    - some locations are more expensive 
+    - regional taxes
+
+AMAZON BRACKET 
+  - quantum computing platform 
+
+AVALIABILITY ZONE - A-Zed 
+  - is a single data center or a group of data centers within a Region
+  - Regions have many 
+  - redundant servers 
+  - well spaced to avoid natural disasters 
+
+Run multiple EC2 instances as far apart as latency allows 
+10s of miles = single digit miliseconds 
+
+best practice
+  - run arccorss atleast two a-zeds
+
+EDGE LOCATIONS 
+---------------
+caching copies in a remote location 
+
+CDN - content delivery network 
+  - AMAZON CLOUDFRONT
+    - low latency 
+    - high transfer speeds
+    - in edge locations 
+
+EDGE Locations also run DNS 
+  - ROUTE 53 
+
+AWS OUTPOSTS 
+  - aws will install a mini region in your data center 
+  - not what most customers need 
+  - if you need to stay in your building - no problem 
+
+HOW TO PROVISION AWS RESOURCES 
+------------------------------
+APIs - EVERYHING AWS IS AN API CALL 
+AWS Management console 
+  - browser based 
+  - test enviornments 
+  - viewing bills 
+  - non technical resources 
+  - point and click
+  - bad for duplication
+
+AWS CLI - Command Line Interface
+  - scripts 
+  - repeatable 
+  - no human error 
+  - trigger based 
+  - automation
+
+AWS SDKs - software development kits 
+  - write programs
+  - interact with various software languages 
+  - write programs
+
+other tools
+AWS Elastic Beanstalk 
+  - builds your enviornment for you 
+  - easy to save 
+  - easy to redeploy 
+  - conveinence of not having to provision and manage 
+  - still have visibility and contorl
+
+AWS CloudFormation
+  - automated and repeatd
+  - JSON or YAML = cloudl formation templates 
+  - define what you want to build without specifying 'how' 
+    - it deals with API rules 
+  - storage 
+  - dbs 
+  - machien learning 
+  - create identical environments in different regions 
+
