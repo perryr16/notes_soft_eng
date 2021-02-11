@@ -1,0 +1,87 @@
+m4
+ 
+AMAZON VPC - VIRTUAL PRIVATE CLOUD
+----------------------------------
+subnets - rage of ip address in my VPC
+public subnet 
+private subnet 
+your own private virtual network 
+  - place stuff inside 
+  - place them in specific subnets 
+  - authorization 
+
+Public facing resources 
+  - attatch an itnernet gateway 
+    - IGW 
+
+Private facing resources 
+  - no internet gateway 
+  - private gateway 
+    - coming from an approved gateway 
+    - virtual private gateway 
+      - authentication 
+      - encrypted 
+  - direct doorways 
+  - dedicated 
+  - lowest amount of latency 
+  - highest amount of security 
+AWS DIRECT CONNECT ^^^
+  - physical line (fiber)
+  - help meet regulatory needs 
+
+
+VPC 
+---
+network services from aws
+  - network hardening
+  - app security 
+  - user identity 
+  - authentication and authorization 
+  - distributed denial of service prevention 
+  - data integrity 
+  - encryption
+
+Network Hardening 
+  - subnets ?
+    - control access to gateways 
+    - private subnets to not 
+  - packet = message from internet 
+    - Network ACL
+    - packets are checked against network access control list (ACL)
+      - permission to enter or leave 
+    - check traffic 
+  - need instance level security as well 
+    - security groups 
+    - by default, all traffic is rejected 
+    - doesnt check on the way out 
+      - all traffic can leave
+SECURITY GROUP 
+  - stateful (remember)
+  - all can exit 
+  - inner
+  - EC2 instances
+  - virtual firewall
+NETWORK ACL
+  - stateless (dont remember)
+  - outer
+  - subnets
+  - default allow everything in and out
+
+GLOBAL NETWORKING 
+-----------------
+Route 53 
+  - DNS
+  - translation service 
+  - name >>> ip address 
+  - direct traffic to differnt endpoints 
+    - latency based 
+    - geolocation DNS 
+      - direct traffic baed on where traffic is located
+    - geoproximity routing 
+    - weighted round robin
+
+Amazon CloudFront 
+  - content delivery network (CDN)
+    - network that helps deliver edge content 
+  - cache content closer to your consumers
+  
