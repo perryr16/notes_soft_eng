@@ -1,0 +1,24 @@
+new project 
+-----------
+$ poetry new <project_name>
+populates with basic project scaffolding 
+- toml is the definition
+- readme
+- tests 
+- project folder
+
+no virtual env associated 
+poetry env use 3.9.1 <<< the python version
+
+
+$ poetry init >> interactive creation of .toml file 
+$ poetry install >> reads the pyprojec.toml and resolves the dependencies and installs them 
+$ poetry update >> latest versions of dependiencies and udpate poetry.lock
+$ poetry add <package name> >> adds the package
+$ poetry remove <package name> 
+$ poetry show >> list of all available packages 
+$ poetry show <package name> >> details of certain package
+$ poetry build >> builds the source and wheels archives
+$ poetry config  
+$ poetry run python -V >> executes teh given command inside the virtual env
+$ poetry shell >> spans a shell according to the env variable within the virtual env 
