@@ -6,4 +6,4 @@ touch .gitignore #create git ignore file in main directory
 git rm -r -f coverage/ #removes coverage/ from git tracking. 
 git add .gitignore
 git commit -m "some git ignore message"
-#run a test and see if coverage shows
+#run a test and see if coverage shows on 'git status'
