@@ -1,0 +1,14 @@
+$ psql
+psql: error: could not connect to server: No such file or directory
+        Is the server running locally and accepting
+        connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+
+$ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+
+or 
+
+$ brew services restart postgresql
+
+
+source
+https://stackoverflow.com/questions/13410686/postgres-could-not-connect-to-server
