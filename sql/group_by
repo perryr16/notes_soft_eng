@@ -1,0 +1,33 @@
+GROUP BY << used with aggregate functions and SELECT
+after WHERE 
+before ORDER BY 
+before LIMIT 
+
+Ex
+  SELECT year,
+    AVG(imdb_rating)
+  FROM movies
+  GROUP BY year
+  ORDER BY year;
+
+is the same as 
+
+  SELECT AVG(imdb_rating)
+  FROM movies
+  WHERE year = 1999;
+  
+  SELECT AVG(imdb_rating)
+  FROM movies
+  WHERE year = 2000;
+  
+  SELECT AVG(imdb_rating)
+  FROM movies
+  WHERE year = 2001;
+
+MULTI GROUP
+  SELECT category, 
+    price,
+    AVG(downloads)
+  FROM fake_apps
+  GROUP BY 1, 2   <<<<<< 1 is first column, 2 is second column...
+  ORDER BY 1 DESC, 2; 

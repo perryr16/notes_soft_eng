@@ -32,3 +32,6 @@ LIMIT <<<<<< Always at the end
   SELECT *
   FROM movies
   LIMIT 10;
+
+CAN JUST DO MATH
+  SELECT (517 + 309 + 304 + 282) / 6366.0;

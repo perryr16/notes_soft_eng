@@ -1,0 +1,25 @@
+
+COUNT 
+  SELECT COUNT(*)
+  FROM fake_apps
+  WHERE price = 0;
+
+SUM 
+  SELECT SUM(downloads)
+  FROM fake_apps;
+
+MAX / MIN 
+  SELECT MIN(downloads)
+  FROM fake_apps;
+
+AVG
+  SELECT AVG(downloads)
+  FROM fake_apps;
+
+ROUND
+  SELECT name, ROUND(price, 0) <<<< optional, 0 is number of decimals to round to
+  FROM fake_apps;
+
+COMBINATION 
+  SELECT ROUND(AVG(price), 2) 
+  FROM fake_apps;

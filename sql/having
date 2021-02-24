@@ -1,0 +1,13 @@
+WHERE = use on ROWS (name, id..) 
+HAVING = use on AGGREGATES (sum, avg...)
+
+after GROUP BY 
+before ORDER BY, LIMIT
+
+
+SELECT price, 
+   ROUND(AVG(downloads)) as avg_downloads,
+   COUNT(*) as count
+FROM fake_apps
+GROUP BY price
+HAVING count > 10;
