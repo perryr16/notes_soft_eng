@@ -1,0 +1,3 @@
+user input
+----------
+answer = input('what is the answer?')
