@@ -1,0 +1,5 @@
+DELETE FROM celebs 
+WHERE twitter_handle IS NULL;
+
+DELETE FROM dogs
+WHERE id = 4;

@@ -1,0 +1,34 @@
+AS
+  SELECT name AS 'Titles' <<<<< spaces are ok, if one word '' not needed
+  FROM movies;
+
+DISTINCT
+  SELECT DISTINCT genre 
+  FROM movies;
+
+WHERE =, !=, <, > ...
+  AND, OR
+    WHERE year BETWEEN 1990 AND 1999
+    AND genre = 'romance'
+    OR title = 'batman';
+
+LIKE 
+  '_' = wildcard
+    SELECT * 
+    FROM movies
+    WHERE name LIKE 'Se_en';
+
+  '%' = wildcard that matches 0+ missing letters, Case Sensitive
+    SELECT * 
+    FROM movies 
+    WHERE name LIKE '%man%';
+
+BETWEEN <<< inclusive
+  SELECT *
+  FROM movies
+  WHERE year BETWEEN 1990 AND 1999;
+
+LIMIT <<<<<< Always at the end
+  SELECT *
+  FROM movies
+  LIMIT 10;

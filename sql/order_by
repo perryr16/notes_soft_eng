@@ -1,0 +1,4 @@
+SELECT *
+FROM movies
+WHERE imdb_rating > 8
+ORDER BY year DESC; <<<<< ASC is default
