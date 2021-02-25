@@ -1,0 +1,37 @@
+JOIN <<<< by default its INNER JOIN  
+  SELECT o.order_id
+  FROM orders o
+  JOIN customers c
+    ON o.customer_id = c.customer_id;
+
+LEFT JOIN <<< Keeps unmatched data from left table (overwrites if necessary)
+  SELECT *
+  FROM newspaper n 
+  LEFT JOIN online o
+    ON n.id = o.id
+  ;
+  
+  ^^^has 10 more rows than below becuase it keeps when o.id is null
+
+  SELECT *
+  FROM newspaper n 
+  JOIN online o
+    ON n.id = o.id
+  ;
+
+CROSS JOIN <<< Dont care, just merge
+  SELECT month,
+    COUNT(*) as subs
+  FROM newspaper
+  CROSS JOIN months 
+  WHERE start_month <= month AND end_month >= month
+  GROUP BY month
+
+UNION <<< STACKING
+  SELECT *
+  FROM newspaper
+  UNION
+  SELECT *
+  FROM online;
+
+WITH << putting a whole first query inside the parentheses () and giving it a name. After that, we can use this name as if it’s a table and write a new query using the first query

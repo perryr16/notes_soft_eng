@@ -22,3 +22,14 @@ class create_person():
     self.address = address 
     self.phone = phone 
   
+MULTIPLE RETURNS 
+  def fxn(a, b):
+    x = a+b 
+    y = a-b 
+    return x,y 
+  
+  i = fxn(1,2)
+  >> (3,-1) type = tupple
+  i,j = fxn(1,2)
+  >>  3 type = int 
+  >> -1 type = int
