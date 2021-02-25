@@ -1,0 +1,13 @@
+$ pipenv --version
+$ cd project_directory 
+$ pipenv --three
+>> creates a Pipfile 
+$ pipenv install <library>
+>> creates a Pipfile.lock << dont edit this
+$ pipenv install <libaray==version>
+$ pipenv shell 
+>> access the enviornment
+  $ python 
+  >>> import <library>
+  >>> print(<library>.__version__)
+cntrl + d to exit

@@ -1,2 +1,4 @@
 import random 
 x = random.randint(start, end) # inclusive
+
+random.sample(collection_of_numbers, number_of_samples)
