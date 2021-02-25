@@ -53,3 +53,15 @@ WRITE
 --------------------------------------------
 JSON
 --------------------------------------------
+READ - json.load(json_object)
+  import json
+
+  with open('file.json') as file_json:
+    file_txt = json.load(file_json)
+    print(file_txt['text'])
+
+WRITE - json.dump(not_json_yet_object)
+  import json
+  
+  with open('output.json', 'w') as json_file:
+    json.dump(turn_to_json, json_file) << 2nd is optional I think
