@@ -1,0 +1,18 @@
+UPDATING THE APP
+-------------------------
+make changes 
+
+Update the image 
+    $ docker build -t getting-started . 
+        # same as before 
+
+Remove the old Container 
+    get the id 
+        $ docker ps
+    stop and remove it (could be done with 2 commands, `stop` and `rm`)
+        $ docker rm -f <the-container-id>
+    check it's not there
+        $ docker ps 
+
+Run it (no '.')
+    $ docker run -dp 3000:3000 getting-started

@@ -1,0 +1,21 @@
+DOCKER 101
+-----------
+docker run -d -p 80:80 docker/getting-started
+    -d = run the container in the background (DETATCHED mode)
+    -p 80:80 = map host_port:container_port (80:80)
+    docker/getting-started = the image to use
+
+can combine single character flags
+    -d -p 80:80 --> -dp 80:80
+
+CONTAINER: a process on your machine that has been isoated
+    leverages kerneal namespaces and cgroups (old magic linux features)
+
+CONTAINER IMAGE: provides the custom or isolated filesystem
+
+Namespaces: What you can see, create with syscalls 
+Change Root (Chroot):
+Control Group: can prevent never ending loop
+
+see BUILDING THE APPS CONTAINER IMAGE
+see UPDATING THE APP

@@ -1,0 +1,72 @@
+project structure
+-----------------
+Tap-Name << project root directory
+  tap_name << module
+
+
+RUN IT  
+    # Write the current schema to the catalog
+        python3 -m <tap_name>.__init__ -c config.json --discover > catalog.json 
+    # Run the singer tap view results in test.json
+        python3 -m <tap_name>.__init__ -c config.json -s state.json --catalog catalog.json  > test.json
+
+EDIT THE CATALOG AFTER GENERATION
+in catalog 
+    metadata
+        "id"... 
+        "inclusion" ...
+        *** enter 
+        "selected":true
+
+new schema, generate a new catalog 
+
+rate limits - python ratelimit 
+stick it above the sync method 
+
+FILE STRUCTURE 
+tap_name 
+    schema 
+        <tap_stream_id>.json
+    __init__.py
+    client.py 
+    discovery.py 
+    streams.py 
+    sync.py 
+
+1. client.py 
+    client operates similar to a `services` file in Ruby 
+    It is responsible for hitting the api and returning raw data 
+    it is easy to test
+    it is a sincel class
+        api keys are set through the __init__ fxn 
+
+2. streams.py
+    streams are classes that have methods that yield results
+    yield: when a loop runs and a value is yielded, 
+        it is pushed out after each loop. 
+        unlike a return statement that either brakes the loop, 
+        or waits until the very end to push data
+    
+    many classes that inherit from one another 
+    1st level: Stream 
+    2nd level: CatalogStream, FullTableStream 
+    3rd level: Tap Streams
+
+    a stream is made up of repeatable chunks of data, 
+    in reference to the asteroid data,
+    we only want the 'repeated chunks'
+        return asteroids (yield)
+        ignore page, element_count, links...
+
+
+3. __init__.py 
+    copy paste
+
+3. discovery 
+    the discovery file looks for steams and schemas
+    its copy paste, mind anything that looks tap specific 
+
+4. sync 
+    runs the whole thing
+    copy paste
+

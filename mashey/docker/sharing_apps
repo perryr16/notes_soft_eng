@@ -1,0 +1,22 @@
+SHARING THE APP 
+------------------------
+to share, you need to use a DOCKER REGISTRY
+Docker hub is the default registry 
+
+Create a repo 
+> docker hub > login > repositories > create repository > fill in blanks > create 
+
+$ docker push perryr16/getting-started:tagname
+
+check it 
+    $ docker image ls 
+        # perryr16/getting-started isnt there ...
+login to change the name 
+    $ docker login -u perryr16 
+change the tag 
+    $ docker tag getting-started perryr16/getting-started
+    $ docker image ls 
+push it 
+    $ docker push perryr16/getting-started
+
+can play with it at labs.play-with-docker.com

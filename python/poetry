@@ -20,5 +20,5 @@ $ poetry show >> list of all available packages
 $ poetry show <package name> >> details of certain package
 $ poetry build >> builds the source and wheels archives
 $ poetry config  
-$ poetry run python -V >> executes teh given command inside the virtual env
+$ poetry run <python -V> >> executes the given command inside the virtual env
 $ poetry shell >> spans a shell according to the env variable within the virtual env 

@@ -1,0 +1,22 @@
+BUILDING THE APPS CONTAINER IMAGE 
+------------------------------------
+need a DOCKERFILE 
+    - text-based script of instructions
+
+ex:
+------------------------------------
+#/Dockerfile
+FROM node:12-alpine                 # want to start from the node:12-alpine image, if it dne, it will download it
+WORKDIR /app                        # directory to work in
+COPY . .                            # copy everything into WORKDIR
+RUN yarn install --production       # install application dependencies 
+CMD ["node", "/app/src/index.js"]   # default cmd to run when starting the image
+
+Build it 
+--------
+$ docker build -t getting-started .
+    # -t = 'tag' the image with human readable name 
+
+Run it 
+------
+$ docker run -dp 3000:3000 getting-started

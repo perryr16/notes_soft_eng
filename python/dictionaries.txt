@@ -11,8 +11,8 @@ a = {
 list(x_dict.keys()) --> return list of keys
 list(x_dict.values()) --> return list of values
 
-a["key"] --> "value"
-a.get("key") --> "value"
+a["key"] --> "value" *** ERROR IF DNE
+a.get("key") --> "value" *** RETURNS NONE IF DNE
 
 >>> a = dict(one=1, two=2, three=3)
 >>> b = {'one': 1, 'two': 2, 'three': 3}
@@ -35,6 +35,12 @@ for key in dict_x:
   key = key 
   dict_x[key] = value
 
+
+for key value in dict_x.items():
+    key = key 
+    value = value 
+
+    
 # build a count of values 
 res = {}
 for i in seq:

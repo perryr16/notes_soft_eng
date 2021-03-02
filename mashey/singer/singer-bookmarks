@@ -1,0 +1,5 @@
+singer.write_bookmark(state, tap_stream_id, bookmark_key, string_to_print)
+
+singer.get_bookmark(state, tap_stream_id, bookmark_key) or replication_key)
+
+? What is the bookmark key? 

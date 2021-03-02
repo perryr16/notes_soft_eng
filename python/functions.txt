@@ -33,3 +33,6 @@ MULTIPLE RETURNS
   i,j = fxn(1,2)
   >>  3 type = int 
   >> -1 type = int
+
+
+dont use empty lists as default objects. it'll compound

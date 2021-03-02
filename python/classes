@@ -1,0 +1,13 @@
+always Capitalize
+  class Example:
+    class_var = 'class variable'
+
+    def __init__(self): <<<< 'DUNDER' method == double underscore
+      print('CONSTRUCTOR)
+
+    def a_method(self, arg1): <<<< a fxn in a class is a METHOD and it always takes atlest one argument (the 1st argument is the object that is calling the method)
+      print(self.class_var)
+
+new instance of a class
+  ex_1 = Example()
+

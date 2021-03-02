@@ -1,0 +1,18 @@
+ARGS
+  def fxn(*args):
+    for a in args:
+      ....
+
+
+KWARGS = keyword arguments
+  def fxn(**kwargs):
+
+  def create_products(**products_dict):
+    for name, price in products_dict.items():
+      create_product(name, price)
+
+  create_products(Baseball='3', Shirt= '14',Guitar= '70') <<< dont need to be established variables. it'll work
+
+ITERATE
+  for kwarg, replacement in kwargs.items():
+    text = text.replace(kwarg, replacement)
