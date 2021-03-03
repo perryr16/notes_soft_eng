@@ -1,0 +1,14 @@
+MULTI CONTAINER APPS 
+----------------------------
+each container should do 1 thing. AND DO IT WELL 
+
+create a network for all the containers to live on 
+    $ docker network create <network_name>
+
+to start a MySQL container on the network
+    $ docker run -d \
+        --network todo-app --network-alias mysql \
+        -v todo-mysql-data:/var/lib/mysql \
+        -e MYSQL_ROOT_PASSWORD=secret \
+        -e MYSQL_DATABASE=todos \
+        mysql:5.7

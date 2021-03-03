@@ -1,0 +1,26 @@
+PERSISTING OUT DB 
+------------------
+app should retain information form container to container 
+
+volumes 
+    named volumes : bucket of data
+
+create it 
+    $ docker volume create todo-db
+run it w/ the volume
+    $ docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
+
+
+
+
+
+
+
+"Scratch Space" is an area that wont be pushed from cont to cont 
+
+
+"exec" into a docker container 
+    $ docker exec <container-id> cat /data.txt 
+    # where data.txt is already defined...
+
+

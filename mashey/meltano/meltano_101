@@ -1,0 +1,35 @@
+MELTANO 101
+------------
+ELT (extract, load, transform)
+DataOps 
+Meltano = opensource
+Airbyte is competitor 
+FiveTran is competeitor is a company that builds custom connectors, there EXPENSIVE
+
+
+offers customizable methods 
+? What is a connector?
+    connecter is tap
+    pipeline has target and source
+    tap pulls from source 
+    target pushed to source
+    test.json is my target (or big query)
+
+
+Meltano is like rails. a framework 
+    handles dependencies 
+    airflow is an orchestrator 
+        run it once a day, hour, min...
+
+we dont do transform 
+meltano can handle transform 
+
+
+    A data pipeline, data integrations, ETL 
+? T is often left out?
+
+embraced singer (standard for connectors)
+new singer sdk coming 
+
+? What is the data source?
+    the 

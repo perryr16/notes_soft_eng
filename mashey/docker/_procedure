@@ -1,0 +1,6 @@
+1. create the Dockerfile 
+    a. build it 
+    b. $ docker build -t getting-started .
+2. create the docker-compose.yml 
+    a. build the yaml 
+    b. docker-compose up -d 

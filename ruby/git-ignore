@@ -2,8 +2,9 @@ Add File to Git ignore
 ----------------------
 
 touch .gitignore #create git ignore file in main directory
-#add .coverage/ to .gitignore file
-git rm -r -f coverage/ #removes coverage/ from git tracking. 
+# add file to .gitignore file (ex: .coverage/, tap_asteroids/__pycache__)
+git rm --cached <file> #removes coverage/ from git tracking but not the whole file
 git add .gitignore
 git commit -m "some git ignore message"
-#run a test and see if coverage shows on 'git status'
+# run a test and see if file (ex: coverage) shows on 'git status'
+

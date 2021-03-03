@@ -1,0 +1,3 @@
+if using a docker image all 'meltano' commands need to be run as
+$ docker run meltano/meltano <cmd...>
+$ docker run -v $(pwd):/projects -w /projects meltano/meltano <cmd...>

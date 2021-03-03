@@ -1,0 +1,29 @@
+flags & commands
+    -d = run the container in the background (DETATCHED mode)
+    -p 80:80 = map host_port:container_port (80:80)
+    docker/getting-started = the image to use
+    -c "yarn install && yarn run dev" = run command "yarn install" and "yarn run dev"
+    -v volume-name:/volume/path = specify a volume mount, will create if DNE
+    -w /app = set working directory that the command will run FROM
+    sh = start shell 
+    bash = start shell 
+    --network <network_name> = what network to run on
+    --network-alias <network_name> = use the name instead of an id
+    --no-trunc = dont truncate
+
+docker ps = show instances of docker 
+docker rm -f <container-id> = stop the contianer
+docker build -t <docker-name> . = build it the first time, '.' needed
+docker run -dp <host_port>:<container_port>
+docker logs -f <container-id> = stream logs 
+docker volume create <volume-tag>
+docker volume ls = see all volumes
+docker volume inspect <volume-tag> = look at a volume
+docker image ls = check images
+docker image histroy <image_name>
+docker login -u perryr16 = login
+docker network create <network_name>
+docker exec -it <contianer-id> mysql -p <db_name> = connect to database 
+docker-compose version 
+docker-compose up -d = start it in the background 
+docker-compose down = stop it 

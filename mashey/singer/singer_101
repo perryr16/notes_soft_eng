@@ -6,9 +6,15 @@ Tap-Name << project root directory
 
 RUN IT  
     # Write the current schema to the catalog
-        python3 -m <tap_name>.__init__ -c config.json --discover > catalog.json 
+python3 -m <tap_name>.__init__ -c config.json --discover > catalog.json 
     # Run the singer tap view results in test.json
-        python3 -m <tap_name>.__init__ -c config.json -s state.json --catalog catalog.json  > test.json
+python3 -m <tap_name>.__init__ -c config.json -s state.json --catalog catalog.json > test.json
+
+flags:
+-m = module name 
+-c = command 
+-s = dont add the user site-packages directory to sys.path ?
+
 
 EDIT THE CATALOG AFTER GENERATION
 in catalog 

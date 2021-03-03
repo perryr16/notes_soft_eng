@@ -8,8 +8,9 @@ ex:
 #/Dockerfile
 FROM node:12-alpine                 # want to start from the node:12-alpine image, if it dne, it will download it
 WORKDIR /app                        # directory to work in
-COPY . .                            # copy everything into WORKDIR
+COPY package.json yarn.lock ./      # copy dependencies 
 RUN yarn install --production       # install application dependencies 
+COPY . .                            # copy everything into WORKDIR
 CMD ["node", "/app/src/index.js"]   # default cmd to run when starting the image
 
 Build it 

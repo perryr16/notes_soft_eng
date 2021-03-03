@@ -1,0 +1,11 @@
+BIND MOUNTS 
+-----------
+specify db location 
+doesnt populate new volume w container contents 
+doesnt supoort volume drivers 
+
+Dev-Mode Container 
+-----------------
+mount source code inot container 
+install dependencies 
+start server 

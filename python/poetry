@@ -12,9 +12,10 @@ poetry env use 3.9.1 <<< the python version
 
 
 $ poetry init >> interactive creation of .toml file 
-$ poetry install >> reads the pyprojec.toml and resolves the dependencies and installs them 
+$ poetry install >> creates poetry.lock -> reads the pyprojec.toml and resolves the dependencies and installs them 
 $ poetry update >> latest versions of dependiencies and udpate poetry.lock
 $ poetry add <package name> >> adds the package
+$ poetry add <package name> -D >> adds the package to dev.dependencies
 $ poetry remove <package name> 
 $ poetry show >> list of all available packages 
 $ poetry show <package name> >> details of certain package

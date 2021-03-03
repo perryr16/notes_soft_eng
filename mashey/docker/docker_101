@@ -1,9 +1,8 @@
 DOCKER 101
 -----------
 docker run -d -p 80:80 docker/getting-started
-    -d = run the container in the background (DETATCHED mode)
-    -p 80:80 = map host_port:container_port (80:80)
-    docker/getting-started = the image to use
+
+
 
 can combine single character flags
     -d -p 80:80 --> -dp 80:80
