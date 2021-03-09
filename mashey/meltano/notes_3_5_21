@@ -1,0 +1,209 @@
+next week to be part of the whole deal 
+2 weeks working with ryan and jordan
+===================================
+docker pull meltano/meltano:latest-python3.8
+
+$ docker run --interactive -v $(pwd):/projects -w /projects meltano/meltano:latest-python3.8 asteroids-meltano
+
+ALIAS meltano = docker run --interactive -v $(pwd):/projects -w /projects meltano/meltano
+
+$ cd asteroid-meltano 
+$ code . 
+
+copy and paste into .toml 
+    [tool.poetry.scripts]
+    tap-s3 = 'tap_s2:main'
+
+    [tool.poetry]
+    packages = [
+        { include = 'tap_asteroids'}
+    ]
+
+$ meltano add --custom extractor tap-asteroids 
+
+(namespace) [tap_asteroids]: enter 
+(pip_url) [tap-asteroids]: git+https://github.com/Mashey/tap-asteroids.git
+(executable) [tap-asteroids]: enter
+(capabilities) [[]]: catalog,discover,state 
+    # anything in config json or .env 
+(settings) [[]]: api_key,next_env_thing
+>> installing extractor 'tap-asteroids'...
+
+gitignore .meltano 
+
+$ meltano add loader target-bigquery
+    # but want to transition to snowflake - cooler, nicer to work with, dont need to worry about azure 
+
+/yml 
+loaders: 
+    - name: target-bigquery 
+        variant: adswerve
+        pip_url: git+https://githib.comaswerve/target-bigquery.git@v0.10.2
+        config:
+            project_id: <project id from gcp> ex: playground-305019
+            add_metadata_columns: true # take the schema and build a bigquery table, then adds updated_at created_at 
+
+$ meltano add orchestrator airflow 
+/yml 
+        orchestractors
+            -name: airflow 
+            pip_url: apache-airflow==1.10.14 --constraint https://....../airflow/constraints-2.0.1/constraints-3.8
+            # becomes 
+            pip_url: psycopg2 apache-airflow==2.0.1 --constraint .... just copy and paste from an existing project 
+            -file:
+                - name: airflow 
+                pip_url: git+https://gitlab.com/meltano/files-airflow.git
+
+            # grab a schedules template and ignore transforms (ignore if manual)
+            # starttime neeeds to be a timestamp not a string: 2021-02-17T00:00:00Z
+            # OR run it via command line 
+
+$ meltano add schedule asteroid-to-bigquery tap-asteroids target-bigqurey @daily
+
+GCP = playground > left: api & services > library > search: kubernetes engine api > enable
+left > databases > sql > cloud sql instance > postgres > create > name: meltano > password: mashsql2021 > single zone > us central 1 > 10gb or whatever you need > go 
+^^^ ways to do it via command line 
+left > api > library > google container registry api > ebable
+
+        kube control 
+        install the sdk 
+
+# gcloud components install ... (see the gitlabl-meltano)
+make a cluster 
+kubernetes engine > clusters > create > name: meltano > (look at another project) > zonal: us-central-c 
+only 1 cluster 
+name: default-pool 
+    nodes: container-opyimized os with container (cos_contined)
+    machine type: as small as possible (e2 medium)
+    cpu: SSD 
+    SECURITY: 
+    METADATA: 
+AUTOMATION: 
+NETOWRKIGN: disable vpc-native traffic routing 
+SECURITY: enable shielded 
+METADATA: 
+FEATURES: enable compute engine persistant data csi driver 
+> create
+
+    # future run via script 
+    # install gcloud sdk and kube control
+    # future of dev ops: infrastructure as code 
+
+$ touch asteroids-app.yml 
+    # copy and paste from another project 
+    # rename stuff 
+$ gcloud container cluster get-credentials cluster-name --zone=<zone>
+$ gcloud container clusters get-credentials meltano --zone=us-central1-c
+# if error about project location
+$ gcloud config set project <project-id-from-gcp> 
+
+gcp > IAM & admin > service accounts 
+
+TO GERNEATE JOSN keys
+
+gcp > IAM & admin > service accounts > create service account > name: bq-service > description: Bigquery playground service account > create (not done) > select role: bigquery data editor, bigquery job user, bigquery user > continue > 3: not necessary > done 
+click on new service > keys > add key: create new key > JSON > create > downloadsa file > import into one-passowrd 
+onepassword > logo > all vaults > playground > + in bottom > login or document > title: take bq service account > show in finder > drop it in > save
+drag it into project root, update gitignore bq_service.json 
+$ touch .dockerignore > ignore the same stuff 
+# turn it into a secret in the k8 cluster
+# if its a file, need to mount into a volume 
+/yml 
+# ALL CAPS = ENV KEY 
+- name: ALL KAPS KEYS 
+  value: /secrets/bq/bq_service.json
+  ... at bottom ...
+  volumes: 
+    - name: k8s-bigquery 
+      secret: 
+        secretName: bigquery 
+
+$ kubectl create secret generic bigquery --from-file=bq_service.json=./bq_service.json 
+>> secret/bigquery created 
+# avaliable in the k8 extension 
+$ kubectl create secret generic tap-asteroids --from-literal=api_key=hYU35lMn2XbBVHEKgTGIWlRgXcJeZwZmHe0EhBig
+# dbs for cloud sql database 
+# optn + enter  =  new line
+$ kubectl create secret generic postgres --from-literal=username=postgres \
+    --from-literal=password=mashsql2021 \
+    --from-literal=database=meltano 
+>> secret/postgres created 
+
+create the db
+gcp > sql > meltano > databses > create > meltano-db
+gcp > sql > meltano > databses > create > postgres
+gcp > sql > meltano > databses > create > airflow 
+
+$ kubectl create secret generic meltano --from-literal=db_conneciton=postgresql://postgres:plsql2021@localhost:5432/meltano-db 
+$ kubectl create secret generic meltano --from-literal=db_conneciton=postgresql://postgres:plsql2021@localhost:5432/airflow 
+
+gcp > sql > meltano ? > connection name > copy 
+paste in /asteroids-app.yml under command: and above securityContext: near the bottom 
+
+add cloud_sql_service.json
+add to gitignore 
+
+$ kubectl create secrete generic cloud-sql --from-file=service_account.json=./cloud_sql_service.json
+
+# build it, push it, run it
+$ meltano add files docker 
+/Dockerfile 
+# copy and paste from purple lotus and update a few 
+
+$ docker build --no-cache --tag meltano-asteroids:production .
+>> takes a bit 
+# tag it and push it 
+$ docker tag meltano-asteroids:production gcr.io/<gcp-project-id>/meltano-asteroids:production
+$ docker push gcr.io/<gcp-project-id>/meltano-asteroids:production
+>> success 
+# may need to authenticate 
+
+# apply to k8
+$ kubectl apply -f ./asteroids-app.yml 
+>> deployment created 
+
+gcp > k8 engine 
+
+take it down ?
+workload delete, NOT CLUSTER DELETE
+
+gcp$ kubectl exec asteroids-production-<id or numbers> meltano elt tap-asteroids target-bigquery
+
+
+# nifty command 
+$ history | <cmds>
+$ !number
+
+
+
+
+
+===================
+Random notes:
+===================
+extracter = tap 
+loader = target
+get some aliases 
+add 2 factor to github
+get the launch file from mashey getting started 
+gotta use python 3.8.7 => 3.9 has good fxnality, but as of now, meltano doesnt support 3.9, also circle ci doesnt support it 
+current documentation in gitlab/meltano
+feel free to just edit the yml file 
+config = public 
+settings = secret
+duplicates are ok - serve as version control and dbt will clean it up
+airflow is apache opensource
+airflow schedule is a .DAG
+tableplus is new to the stack - hook into cloud sql dbs from our machines and see the data
+look up standard yml syntax
+get prettier on vscode extension 
+
+Service accounts: enable google services to talk to eachother WITHOUT oauth
+    give it permissions to work with something like bigquery 
+    download a keyset for it 
+    then that goes into k8 project 
+
+create a private vault for my own stuff on onepassword
+gcr = google container registry
+
+if you need to make changes, you have to rebuild and push 

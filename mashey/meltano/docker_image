@@ -1,3 +1,11 @@
 if using a docker image all 'meltano' commands need to be run as
 $ docker run meltano/meltano <cmd...>
 $ docker run -v $(pwd):/projects -w /projects meltano/meltano <cmd...>
+
+if launching the UI, need to speficy the port as docker is a 'fake computer' and needs access to the real one 
+$ docker run -v $(pwd):/projects -p 5000:5000 -w /projects meltano/meltano ui
+
+Error: Already running on PID 16 (or pid file '/projects/.meltano/run/gunicorn.pid' is stale)
+$ rm /Users/rossperry/Documents/mashey/sandbox/meltano-projects/gitlab_pg/.meltano/run/gunicorn.pid
+
+gitlab token = 1ELnY5VswzDAW4g5NfrU

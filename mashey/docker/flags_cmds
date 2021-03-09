@@ -1,6 +1,6 @@
 flags & commands
     -d = run the container in the background (DETATCHED mode)
-    -p 80:80 = map host_port:container_port (80:80)
+    -p 80:80 = map <host_port>:<container_port>
     docker/getting-started = the image to use
     -c "yarn install && yarn run dev" = run command "yarn install" and "yarn run dev"
     -v volume-name:/volume/path = specify a volume mount, will create if DNE

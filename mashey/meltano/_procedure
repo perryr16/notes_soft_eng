@@ -1,0 +1,19 @@
+$ cd <projet_directory>
+$ docker run -v $(pwd):/projects -w /projects meltano/meltano init <project_name>
+$ cd <project_name>
+    # launch the ui 
+$ docker run -v $(pwd):/projects -p 5000:5000 -w /projects meltano/meltano
+    # discover extractors 
+$ docker run -v $(pwd):/projects -w /projects meltano/meltano discover extractors
+    # add extractor (adds to meltano.yml)
+$ docker run -v $(pwd):/projects -w /projects meltano/meltano add extractor <plugin_name>
+    # add loader 
+$ docker run -v $(pwd):/projects -w /projects meltano/meltano add loader <plugin_name>
+    # confirm it works 
+$ docker run -v $(pwd):/projects -w /projects meltano/meltano invoke <tap-plugin> --help
+    # see the config 
+$ docker run -v $(pwd):/projects -w /projects meltano/meltano config tap-gitlab list
+    # set config 
+$ docker run -v $(pwd):/projects -w /projects meltano/meltano config tap-gitlab set <name> <value>
+    # unset when you make a typo
+$ docker run -v $(pwd):/projects -w /projects meltano/meltano config tap-gitlab unset <name> 
