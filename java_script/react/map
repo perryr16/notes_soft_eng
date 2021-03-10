@@ -1,0 +1,13 @@
+.map()
+------
+BEST WAY TO MAKE LISTS 
+
+WITH INDEX 
+.map((block_var, index_var) => {<code...>})
+
+USAGE
+-----
+const strings = ['Home', 'Shop', 'About Me'];
+const listItems = strings.map(string => <li>{string}</li>);
+<ul>{listItems}</ul>
+

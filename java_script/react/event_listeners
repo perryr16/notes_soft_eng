@@ -1,0 +1,28 @@
+
+HTML = alllowercase
+JSX = camelCaseNames
+<img onClick={myFunc} />
+
+https://reactjs.org/docs/events.html#supported-events
+
+
+const animalList = [];
+for (const animal in animals) {
+  animalList.push(
+    <img
+    key={animal}
+    className='animal'
+    alt={animal}
+    src={animals[animal].image}
+    aria-label={animal}
+    role='button'
+    />
+  )
+};
+
+const displayFact = (e) => {
+  // e referes to the objec that was clicked. in this case its a <img/> tag
+  const selectedAnimal = e.target.alt; //e.target = img, then find the alt tag
+  const animalInfo = animals.selectedAnimal;
+  const randIndex = Math.floor(Math.random()) * animalInfo.facts.length)
+};

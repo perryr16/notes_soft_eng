@@ -1,0 +1,14 @@
+Components are created when a new class is createded and extends the React.Component 
+
+USAGE:
+------
+class NewComponent extends React.component {
+    render() {
+        return <p>paragraph</p>
+    }
+}
+
+ReactDOM.render(
+    <NewComponent />,
+    document.getElementById('ID')
+)

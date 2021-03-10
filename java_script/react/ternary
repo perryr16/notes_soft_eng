@@ -1,0 +1,6 @@
+
+if (x) {y} else {z}
+x ? y : z 
+
+if (x) {y} else {nothing}
+x && y

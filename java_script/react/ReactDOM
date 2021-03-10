@@ -1,0 +1,22 @@
+ReactDOM is a react specific javascript library
+===============================================
+DOM = document object model 
+    tree of objects (<head>, <body>)
+
+USAGE
+-----
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(<jsx_emelent_to_appear>, <jsx_element_to_be_appended_to>)
+
+ReactDOM.render(<h1>hi</h1>, document.getElementById(<element_id>, document.getElementById(<id>))
+
+NOTES
+------
+- only updates the DOM elements that have changed => double render wont effect anything
+    - most js frameworks update the DOM more than they need to 
+    - VIRTUAL DOM: for every DOM there is a corresponding virtual DOM > a lightweight copy 
+        - a blue print, not the physical house 
+    - DIFFING: comparing the DOM to the VIRTUAL DOM and updating based on DIFFERENCES 
+    

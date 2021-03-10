@@ -1,0 +1,20 @@
+jsx
+---
+RULE: MUST HAVE ONE OUTERMOST ELEMENT (not 2...)
+RULE: NO IF STATEMENTS as injections
+
+if a jsx expression takes up more than one line, than wrap it in '( )'
+(
+  <a href="https://www.example.com">
+    <h1>
+      Click me!
+    </h1>
+  </a>
+)
+
+CODE INJECTION => { }
+<h1> {3 + 2} </h1>
+
+'key' = html 'id' for a list
+    usage: if the list has memory/ remember
+    usage: if order matters, or if shuffled
