@@ -1,0 +1,13 @@
+only used in classes
+refers to THIS INSTANCE OF A CLASS 
+similar to self in python 
+
+class AComp extends React.Component {
+    get name () {
+        return 'bob'
+    }
+
+    render() {
+        return <h1>{this.name}</h1>
+    }
+}

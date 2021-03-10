@@ -1,10 +1,23 @@
-Components are created when a new class is createded and extends the React.Component 
+A component class PRODUCES components aka, the instance is a component
 
 USAGE:
 ------
-class NewComponent extends React.component {
+class NewComponent extends React.Component {
+    constructor(props) {
+        <initialize method>
+    }
+    newFxn (<vars>) {
+        <code ...>
+    }
+
     render() {
-        return <p>paragraph</p>
+        <logic_here> // dont put it above the render....
+
+        return (
+            <p 
+                onClick={this.newFxn}>
+                paragraph text
+            </p>)
     }
 }
 
@@ -12,3 +25,9 @@ ReactDOM.render(
     <NewComponent />,
     document.getElementById('ID')
 )
+
+
+React.Component is a js class, thus to reate a new one, you must subclass it 
+write them in ES2015 not arrow fxns
+components are <Capitalized />
+calling methods or event handlers in the render need to use THIS

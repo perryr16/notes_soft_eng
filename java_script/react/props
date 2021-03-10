@@ -1,0 +1,33 @@
+props = params 
+a way to pass data from one component to another 
+every component has props
+props = {object}
+
+HOW TO PASS:
+-----------
+<MyExample property1={value1} property2={value2}/>
+
+doesnt have to be defined beforehand, pass anything you want
+
+ACCESS IT or EXPECT IT:
+------------------------
+this.props.propName
+-----------------------
+class A1 extends React.Component {
+    render(){
+        return (
+            <h1>Hi {this.props.name}</h1>
+        )
+    }
+}
+
+class B2 extends React.Component {
+    render() {
+        return (
+            <div>
+                <A1 name='bob'>
+                <p>Whats up</p>
+            </div>
+        )
+    }
+}

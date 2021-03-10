@@ -1,0 +1,12 @@
+npm = Node Package Manager 
+$ node -v 
+
+upgrade to latest version of npm 
+$ sudo npm install -g npm@latest
+
+setup react , yes uninstall first
+$ npm uninstall -g create-react-app
+$ npx create-react-app myfirstreactapp
+
+
+https://www.codecademy.com/courses/react-101/articles/how-to-create-a-react-app
