@@ -1,7 +1,17 @@
 props = params 
+props = {object}
 a way to pass data from one component to another 
 every component has props
-props = {object}
+
+STATE IS NOT PASSED
+
+this.props.children = everything between a components opening and closing tags
+    LISTS 
+
+DEFAULT PROPS 
+ClassName.defaultProps = {text: 'yo'};
+
+
 
 HOW TO PASS:
 -----------

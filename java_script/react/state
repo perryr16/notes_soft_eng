@@ -1,0 +1,34 @@
+dynamic values 
+similar to props 
+not passed like props 
+declare it in a constructor method
+
+this.state = {}
+this.state.propertyName <<< access it
+this.setState({name:value}) <<< set it
+
+BIND THIS
+if function body contains 'this', use 
+    this.propertyName = this.propertyName.bind(this)
+        whenever you define an event handler that uses this, 
+        you need to add this.methodName = this.methodName.bind(this) 
+        to your constructor function.
+
+
+
+REACT COMPONENTS ALWAYS NEED TO CALL SUPER IN CONSTRUCTOR 
+USAGE
+------
+class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { mood: 'decent' };
+  }
+ 
+  render() {
+    return <div></div>;
+  }
+}
+ 
+<Example />
+

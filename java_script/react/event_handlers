@@ -1,0 +1,21 @@
+EVENT 
+If you are listening for a “click” event, 
+then you name your event handler handleClick. 
+If you are listening for a “keyPress” event, 
+then you name your event handler handleKeyPress:
+
+PROP
+Your prop name should be the word on, plus your event type. 
+If you are listening for a “click” event, then you name your prop onClick. 
+If you are listening for a “keyPress” event, then you name your prop onKeyPress:
+
+
+class Xyz extends React.Component {
+    handleHover(){
+        alert('text')
+    }
+    render(){
+        return <button onHover={this.handleHover}>Hover Here</button>
+
+    }
+}
