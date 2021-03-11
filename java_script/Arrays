@@ -9,8 +9,8 @@ ENUMERATION
 .some(element => element.condition)     // atleast one? true/false
 .every(element => element.condition)    // all? true/false
 .find(element => element.condition)     // find first element that meets condition
-.filter(element => element.condition)   // find a subset that meets the condition
-.map(element => element.condidiont)     // map... 
+.filter((element, opt_index) => element.condition)   // find a subset that meets the condition
+.map((element, opt_index => element.condidiont)     // map... 
 .sort((a, b) => a.condition > b.condition ? 1 : -1) // if a > b move it up the list, else move it down (ternerary statement)
 .reduce((sum, element) => {
   return sum + element.value;

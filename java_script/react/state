@@ -14,6 +14,9 @@ if function body contains 'this', use
         you need to add this.methodName = this.methodName.bind(this) 
         to your constructor function.
 
+setState((previousState, props) => new_state)
+setArray((prev) => ([new_element, ...prev]));
+// where previousState is always known, just make up the block variable name
 
 
 REACT COMPONENTS ALWAYS NEED TO CALL SUPER IN CONSTRUCTOR 
@@ -32,3 +35,48 @@ class Example extends React.Component {
  
 <Example />
 
+
+
+===
+  const handleChange = ({ target }) => {
+    const {name, value } = target;
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      [name]: value
+    }));
+  };
+
+
+///////
+EXAMPLE 
+///////
+export default function AppFunction() {
+  const [newTask, setNewTask] = useState({});
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+    setNewTask((prev) => ({ ...prev, id: Date.now(), [name]: value }));
+    };
+
+  const [allTasks, setAllTasts] = useState([]);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!newTask.title) return;
+    setAllTasts((prev) => [newTask, ...prev]);
+    setNewTask({});
+  };
+  const handleDelete = (taskIdToRemove) => {
+    setAllTasts((prev) => (prev.filter((task) => task.id !== taskIdToRemove)));
+  };
+
+  return (
+      <main>
+        <h1>Tasks</h1>
+        <NewTask
+          newTask={newTask}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+        />
+        <TasksList allTasks={allTasks} handleDelete={handleDelete} />
+      </main>
+    );
+}

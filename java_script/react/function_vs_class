@@ -1,0 +1,17 @@
+CLASS
+------------------------
+export class NewFriend extends React.Component {
+	render() {
+		return (
+        <img src={this.props.src} />
+    );
+	}
+}
+
+FUNCTION
+------------------------
+export const NewFriend = (props) => {
+  return (
+      <img src={props.src} />
+  );
+}

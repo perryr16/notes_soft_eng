@@ -1,0 +1,28 @@
+HOOKS solve a problem 
+Hooks allow function components to act like class components 
+Hooks manage internal state of componetns and handle post rendering side effects
+Only work in functions, not classes 
+
+useState()
+useEffect()
+useContext()
+useReducer()
+useRef()
+
+useState()
+==========
+- most common 
+- need to import 
+import React, { useState } from 'react';
+const [value, setValue] = useState(<default_value>);
+<button onClick={() => setColor('blue')} />
+<p>The color is {color}</p>
+
+THESE ARE ALL THE SAME 
+----------------------
+const handleChange = (event) => {
+  const newEmail = event.target.value;
+  setEmail(newEmail);
+}
+const handleChange = (event) => setEmail(event.target.value);
+const handleChange = ({target}) => setEmail(target.value);

@@ -1,0 +1,68 @@
+Life cycle methods are called at different times of a components life 
+========================================================================
+MOUNTING = initialized and put in DOM
+UPDATING = updated as a result of changed state or updated props
+UNMOUNTING = removed from the DOM
+
+render() = mounting and updating phase
+constructor() = mounting phase
+componentDidMount() = mounting phase (its last in the mounting phase)
+componentWillUnmount() = unmounting phase, but before its destroyed. prevent component from running while not on the DOM
+getDerivedStateFromProps() = between constructor() and render() *** RARELY USED ***
+componentDidUpdate() = updating phase
+setState() = updating phase 
+change props = updating phase
+
+
+
+
+
+USAGE 
+------------------------
+import React from 'react';
+
+export class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  }
+  render() {
+    return (
+      <div>
+        {this.props.isPrecise
+          ? this.state.date.toISOString()
+          : this.state.date.toLocaleTimeString()}
+      </div>
+    );
+  };
+  
+  // when its mounted, this is called and run continuously (bc setInterval runs evety x seconds)
+  componentDidMount() {
+    this.startInterval();
+  };
+  
+  // called when the DOM is updated (toggle clock)
+  componentDidUpdate(prevProps) {
+    if (this.props.isPrecise === prevProps.isPrecise) {
+      return ;
+    };
+    clearInterval(this.intervalID);
+    this.startInterval();
+    }
+
+  // when its removed from DOM, stop the interval, otherwise it runs forever
+  componentWillUnmount() {
+    clearInterval(this.intervalID);
+  };
+
+  // just in charge of setting up the interval
+  startInterval() {
+    const delay = this.props.isPrecise ? 100 : 1000;
+    this.intervalID = setInterval(() => {
+      this.setState({date: new Date() })
+      }, delay);
+    };
+}
+********
+this.intervalID = setInterval(() => {action, interval_in_mili_seconds})
+clearInterval(this.intervalID)
