@@ -3,6 +3,10 @@ Hooks allow function components to act like class components
 Hooks manage internal state of componetns and handle post rendering side effects
 Only work in functions, not classes 
 
+ONLY CALL HOOKS AT THE TOP LEVEL - no loops, conditions, or nested functions
+    useEffect(() => { if(condition) {response}}), not>>> if(condition) {useEffect}
+ONLY CALL HOOKS FROM REACT FUNCTIONS - ala not react classes
+
 useState()
 useEffect()
 useContext()

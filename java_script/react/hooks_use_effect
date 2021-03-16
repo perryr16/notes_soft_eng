@@ -11,7 +11,12 @@ useEffect(() => {
 }, <second_argument> )
 
 
-TO ONLY CALL WHEN COMPONENT MOUNTS, pass '[]' as 2nd argument
+TO ONLY CALL WHEN COMPONENT MOUNTS, pass '[]' as 2nd argument 'the dependancy array'
+TO CALL AFTER A VARIABLE UPDATES, pass it in the dependancy array 
+    useEffect(() => {
+        document.title = `You clicked ${count} times`;
+    }, [count]); // Only re-run the effect if the value stored by count changes
+
 
 USAGE
 import React, { useEffect } from 'react';
