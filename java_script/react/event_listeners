@@ -26,3 +26,6 @@ const displayFact = (e) => {
   const animalInfo = animals.selectedAnimal;
   const randIndex = Math.floor(Math.random()) * animalInfo.facts.length)
 };
+----
+
+document.addEventListener('event', function)

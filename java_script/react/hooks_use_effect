@@ -1,0 +1,54 @@
+useEffect()
+no return value 
+used to call another function 
+
+1st argument is a callback function to call after each time the component renders 
+return function is a 'clean up' function -> called before a re-render
+
+useEffect(() => {
+    <the_effect_after_each_render>;
+    return () => <optional_callback_before_re-render>
+}, <second_argument> )
+
+
+TO ONLY CALL WHEN COMPONENT MOUNTS, pass '[]' as 2nd argument
+
+USAGE
+import React, { useEffect } from 'react';
+useEffect(() => {
+    alert(<value>)
+})
+where value is called
+
+
+useEffect(() => {
+document.addEventListener('mousedown', increment); // on render
+return () => {
+    document.removeEventListener('mousedown', increment) // before re-render
+})
+
+*** note 
+when you add event listeners its important to then remove them 
+
+----
+export default function Timer() {
+  const [time, setTime] = useState(0);
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime((prev) => prev + 1)
+    }, 1000);
+    return () => {
+      clearInterval(intervalId);
+      }
+  },[])
+
+  const handleChange = ({target}) => setName(target.value)
+  return (
+    <>
+      <h1>Time: {time}</h1>
+      <input value={name} onChange={handleChange} type='text'/>
+    </>
+  );
+}
