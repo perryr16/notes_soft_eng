@@ -13,7 +13,7 @@ ClassName.defaultProps = {text: 'yo'};
 
 
 
-HOW TO PASS:
+HOW TO PASS: to pass a prop, a component must render it. dont forget to export
 -----------
 <MyExample property1={value1} property2={value2}/>
 

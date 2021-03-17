@@ -1,3 +1,7 @@
+EVENT LISTENERS ALWAYS PASS EVENT OBJECTS 
+    onChagne 
+    onSubmit
+    ...
 
 HTML = alllowercase
 JSX = camelCaseNames
