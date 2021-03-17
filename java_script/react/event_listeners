@@ -29,3 +29,6 @@ const displayFact = (e) => {
 ----
 
 document.addEventListener('event', function)
+
+PREVENT REFRESH ON INPUT SUBMIT 
+event.preventDefault() // prevents the default action, which is to refresh the page
