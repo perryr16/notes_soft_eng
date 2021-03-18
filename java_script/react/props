@@ -42,3 +42,22 @@ class B2 extends React.Component {
         )
     }
 }
+
+WHAT IS MY PROP CALLED WHEN PASSED AROUND?
+class Parent extends React.Component {
+    render(){
+        return(
+            <Child 
+                parentValue={childValue}
+                />
+        )
+    }
+}
+
+class Child extends React.Component {
+    render(){
+        return(
+            <input value={childValue}/>
+        )
+    }
+}

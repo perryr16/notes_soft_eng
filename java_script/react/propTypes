@@ -1,0 +1,14 @@
+ClassName.propTypes = {
+    expectedProp1: PropTypes.string,
+    expectedProp2: PropTypes.object,
+    expectedProp2: PropTypes.bool,
+    expectedProp2: PropTypes.number,
+    expectedProp2: PropTypes.func,
+    expectedProp2: PropTypes.array.isRequired, // console warning if not present 
+    ...
+}
+
+FunctionName.propTypes = {
+    expectedProp: PropTypes.string.isRequired
+    ...
+}
