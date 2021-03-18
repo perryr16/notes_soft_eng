@@ -1,0 +1,30 @@
+React = CamelCase 
+Javascript = hyphen-lowercase
+
+could just toss it in a style.scss file 
+h1 style={{ color: 'red' }}>Book Store</h1>
+outer { } inject JS into the JSX file 
+inner { } create a JS object 
+
+for ease, store style attributes in a variable 
+OK TO CALL IT IN TOP LEVEL 
+
+values can be in string, or if number, px is assumed
+EX: 
+
+const styles = {
+  color: 'darkcyan',
+  background: 'mintcream',
+  marginTop: '100px'
+  marginBottom: 25
+};
+
+export class StyledClass extends React.Component {
+  render() {
+    return (
+      <h1 style={styles}>
+        Book Store
+      </h1>
+    );
+  }
+}

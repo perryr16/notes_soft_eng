@@ -1,3 +1,14 @@
+CONTROLLED VS UNCONTROLLED INPUTS 
+UNCONTROLLED: maintains its own internal state 
+CONTROLLED: does not maintain its own internal state (you'll have to go through props)
+    * most react components are controlled 
+
+
+
+
+
+
+=============
       <form
         action="#">
         <input 
