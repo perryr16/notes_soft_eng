@@ -1,0 +1,16 @@
+tsconfig.js
+   -file is always placed at the root
+
+{
+  "compilerOptions": {
+    "target": "es2017", // use EcmaSript standards (ES6)
+    "module": "commonjs", //syntax to import and export
+    "strictNullChecks": true // variables can only be null or undefined if explicitly assigned
+  },
+  "include": ["**/*.ts"] // compiler looks for all .ts files 
+}
+
+having one allows you to run $ tsc 
+
+$ tsc             // transcompile all files 
+$ tsc fileName.ts // transcompile specific file

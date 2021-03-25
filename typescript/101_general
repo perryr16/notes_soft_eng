@@ -1,0 +1,30 @@
+TYPESCRIPT 
+==========
+   - extension .ts 
+   - run through the TypeScript transcompiler - makes sure its all good
+   - output is a .js file, if its all good
+
+************************************
+transcompiler - RUN IT - the magic
+$ tsc
+************************************
+
+once a variable is declared, you cannot change data type 
+- boolean, number, null, string, undefined 
+
+TS knows 'shapes':
+   - knows what methods should or shouldnt be on an object 
+   - strings have .length or .toLowerCase()
+   - really nice error messages 
+
+type 'ANY': unprotected
+   let x_var; 
+   // ^^ this is now type 'any'
+   x_var = 1;
+   x_var = false;
+
+type annotations / declarations:
+   let x_var : string; 
+   x_var = 'abdc'; 
+   x_var = 1234; <<< Error: Type 'number' is not assignable to type 'string'
+
