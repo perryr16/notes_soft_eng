@@ -1,0 +1,38 @@
+functions can be type annotated aswell 
+   - if not annotated, default = 'any'
+
+```
+const greet = (name: string) => {
+   console.log(`hello ${name}`);
+}
+```
+
+optional arguments: add '?' --> argument is allowed to be 'undefined'
+   cost greet = (name?: string) => {
+      console.log(`hello ${name || 'Anonymous'}`);
+   }
+
+default arguments: infer type equal to passed value 
+- BETTER
+   const greet = (name = 'Anonymous') => {
+      console.log(`hello ${name}`);
+   }
+
+infers type from the return function:
+   const randomNum = () => {
+      return Math.random()
+   }
+   const x_var = randomNum();
+   // x_var is now type 'number' 
+
+RETURN TYPE 
+
+Define the return type (after arguments):
+   const plus10 = (num: number): string => {
+      return `number: ${num + 10}`;
+   }
+
+If it doesnt return anything, VOID 
+   const greet = (name: string): void {
+      console.log(`Hello ${name}`)
+   }
