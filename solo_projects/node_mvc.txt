@@ -1,7 +1,0 @@
-Node Start
-create package.json
-$ npm init -y
-add packages to dependencies (--save = -S) (install = i)
-$ npm i -S express body-parser ...
-start server 
-$ npm run start:dev

@@ -1,0 +1,32 @@
+ARRAYS in TYPESCRIPT 
+--------------------
+put '[]' after the data type:
+   let array_x : string[] = ['abc', 'def']
+
+Array<T> syntax where T is 'type': (Less popular)
+   let array_x : Array<string> = ['abc','def']
+
+Nested Arrays 
+   let array_x : number[][] = [[1,2,3], [4,5,6]]
+   let array_y : number[][][] = [ [ [1], [2,3] ], [ [7], [6]] ]
+
+TUPLE: array is typed with elements of specific types
+   let ourTuple: [string, number, string, boolean] = ['Is', 7 , 'our favorite number?' , false]; 
+   // an array cannot be assinged to a TUPLE
+
+rest parameters (...args) are written like an array:
+   const fxn_x = (arg1:stirng, ...args: string[]) {
+      <code>
+   }
+
+EXAMPLE 
+let danceMoves: [string, number, boolean][] = [
+  ['chicken beak', 4, false],
+  ['wing flap', 4, false],
+  ['tail feather shake', 4, false],
+  ['clap', 4, false],
+  ['chicken beak', 4, true],
+  ['wing flap', 4, true],
+  ['tail feather shake', 4, true],
+  ['clap', 4, true],
+];

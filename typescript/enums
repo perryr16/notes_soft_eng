@@ -1,0 +1,41 @@
+NUMERIC ENUMS - (default)
+==============
+- list all possible expected values
+   enum Direction {
+      North, South, East, West
+   }
+
+- values are assigned to a numeric value 
+- to change the starting value:
+   enum Direction {
+      North = 7, South, East = 10, West
+   }
+
+- Assign type to variable with enum 
+enum Letter = {a,b,c,d}
+
+let letterOfTheDay: Letter = Letter.c
+letterOfTheDay == 2
+
+
+STRING ENUMS - (recommended)
+=============
+enum StringEnum {Value = 'VALUE', Value2 = 'VALUE2'}
+
+let x: stringEnum;
+x = StringEnum.Value2    // OK 
+x = StringEnum.NotAValue // type error 
+x = 'VALUE'              // type error
+
+EXAMPLE: 
+---------
+enum Pet {
+  Hamster = 'HAMSTER', Rat = 'RAT', Chinchilla = 'CHINCHILLA', Tarantula = 'TARANTULA'
+}
+let petOnSaleTS: Pet = Pet.Chinchilla
+let ordersArrayTS: [Pet, number][] = [
+  [Pet.Rat, 2],
+  [Pet.Chinchilla, 1],
+  [Pet.Hamster, 2],
+  [Pet.Chinchilla, 50]
+]

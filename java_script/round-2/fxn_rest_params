@@ -1,0 +1,10 @@
+unknown number of arguments 
+like *args in python 
+
+const fxn_with_many_args = (arg1, ...args) => {
+   let x = arg1 
+   args.forEach(arg => {
+      x += arg
+   })
+   return x
+}

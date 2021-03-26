@@ -9,4 +9,4 @@ arr.forEach((element, i, array) => {
 OR 
 arr.forEach((element, i, array) => {
   object[element] = (object[element] || 0) + 1;
-}
+})

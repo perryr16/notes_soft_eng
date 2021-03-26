@@ -1,0 +1,22 @@
+OBJECT LITERALS 
+---------------
+let aPerson: {name: string, age: number};
+aPerson = {name: 'Ross', age: 29} // ok 
+aPerson = {name: 'Ross', age: 'ten'} // type error
+
+ex: 
+--- 
+let aCompany: {
+  companyName: string, 
+  boss: {name: string, age: number}, 
+  employees: {name: string, age: number}[], 
+  employeeOfTheMonth: {name: string, age: number},  
+  moneyEarned: number
+};
+
+let ArrayOfObjects: {key1: string, key2: number, key3: boolean}[];
+ArrayOfObjects = [
+   {key1: 'abcd', key2: 123, key3: false},
+   {key1: 'efgh', key2: 456, key3: true },
+   {key1: 'wxyz', key2: 789, key3: false}
+   ]

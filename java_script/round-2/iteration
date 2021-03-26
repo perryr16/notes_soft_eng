@@ -20,6 +20,10 @@ b = ['a', 'b', 'c', 'd'];
 b.forEach(fxn_forEach)
 // fxn_forEach is a CALLBACK FUNCTION
 
+b.forEach((x,y,z) => {
+  console.log(x + `${y}` + `${z}`)
+})
+
 ----------
 MAP 
 ----------
