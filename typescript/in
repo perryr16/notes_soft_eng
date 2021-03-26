@@ -1,0 +1,27 @@
+USE 'in' to see if a method exists on  a type 
+------------------------------------------------
+// objects can have return methods 
+a = {aa: 'abc', aaa: () => 'DOG', aaaa: () => this.aa + '!!!'}
+a.aa --> 'abc
+a.aaa() --> 'DOG'
+a.aaaa() --> 'abc!!!'
+
+EX:
+
+type Tennis = {
+  serve: () => void;
+}
+ 
+type Soccer = {
+  kick: () => void;
+}
+ 
+function play(sport: Tennis | Soccer) {
+  if ('serve' in sport) {
+    return sport.serve();
+  }
+ 
+  if ('kick' in sport) {
+    return sport.kick();
+  }
+}

@@ -4,6 +4,16 @@ let aPerson: {name: string, age: number};
 aPerson = {name: 'Ross', age: 29} // ok 
 aPerson = {name: 'Ross', age: 'ten'} // type error
 
+WITH ALIASES
+   type Person = { name: string, age: number };
+   let aCompany: {
+      companyName: string, 
+      boss: Person, 
+      employees: Person[], 
+      employeeOfTheMonth: Person,  
+      moneyEarned: number
+   };
+
 ex: 
 --- 
 let aCompany: {
@@ -20,3 +30,4 @@ ArrayOfObjects = [
    {key1: 'efgh', key2: 456, key3: true },
    {key1: 'wxyz', key2: 789, key3: false}
    ]
+

@@ -1,0 +1,33 @@
+TYPE VS INTERFACE
+
+TYPE: 
+   type Mail = {
+   postagePrice: number;
+   address: string;
+   }
+   
+   const catalog: Mail = ...
+
+INTERFACE: (no '=' sign) 
+- only for use on OBJECTS (classes are objects)
+   interface Mail {
+      postagePrice: number;
+      address: string;
+   }
+
+   const catalog: Mail = ...
+
+INTERFACE WITH CLASSES: 'implements'
+   interface Robot {
+      identify: (id: number) => void;
+   }
+   
+   class OneSeries implements Robot {
+   identify(id: number) {              // MUST HAVE AN idenfity method AS DECLARED BY INTERFACE
+      console.log(`beep! I'm ${id.toFixed(2)}.`);
+   }
+   
+   answerQuestion() {                  // but add as many new methods as you like
+      console.log('42!');
+      }
+   }

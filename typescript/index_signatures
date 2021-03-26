@@ -1,0 +1,11 @@
+When you dont know what the name of the object keys will be 
+---------------------------------------------------------------
+interface SolarEclipse {
+  [latitude: string]: boolean;
+} 
+
+let coords: SolarEclipse = {
+  '40.712776': true;
+  '41.203323': true;
+  '40.417286': false;
+}

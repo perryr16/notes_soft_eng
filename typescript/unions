@@ -1,0 +1,21 @@
+Unions '|' 
+==============================
+let ID: string | number;
+
+ID = 1;
+ID = '001';
+console.log(`The ID is ${ID}.`);
+
+--- or --- 
+function getMarginLeft(margin: string | number) {
+  return { 'marginLeft': margin };
+}
+
+UNIONS WITH ARRAYS :
+   const dateNumber = new Date().getTime(); // returns a number
+   const dateString = new Date().toString(); // returns a string
+   
+   const timesList: (string | number)[] = [dateNumber, dateString];
+
+----------------------------------------
+type Color = 'green' | 'yellow' | 'red';

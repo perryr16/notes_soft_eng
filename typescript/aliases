@@ -1,0 +1,74 @@
+ALIASES 
+--------
+can be used to prevent repitition 
+
+type MyString = string; 
+let MyVar: MyString = 'string';
+
+Useful with Objects 
+---------------------
+ORIGINAL 
+   let aCompany: { 
+      companyName: string, 
+      boss: { name: string, age: number }, 
+      employees: { name: string, age: number }[], 
+      employeeOfTheMonth: { name: string, age: number },  
+      moneyEarned: number
+   };
+
+WITH ALIASES
+   type Person = { name: string, age: number };
+   let aCompany: {
+      companyName: string, 
+      boss: Person, 
+      employees: Person[], 
+      employeeOfTheMonth: Person,  
+      moneyEarned: number
+   };
+
+----------
+type Coord = [number, number, string, number, number, string];
+
+let aCoordinates: Coord = [40, 43.2, 'N', 73, 59.8, 'W'];
+let bCoordinates: Coord = [25, 0 , 'N' , 71, 0, 'W'];
+
+\
+--
+---
+----
+-----
+------
+-------
+--------
+---------
+FUNCTIONS 
+-----------
+type StringsToNumberFunction = (arg0: string, arg1: string) => number;
+let myFunc: StringsToNumberFunction;
+myFunc = function(firstName: string, lastName: string) {
+  return firstName.length + lastName.length;
+};
+ 
+myFunc = function(whatever: string, blah: string) {
+  return whatever.length - blah.length;
+};
+
+EX2: 
+function getFilledArray<T>(value: T, n: number): T[] {
+  return Array(n).fill(value);
+}
+
+let stringArray: string[];
+let numberArray: number[];
+let personArray: {name: string, age: number}[];
+let coordinateArray: [number, number][];
+
+// Write your code below:
+stringArray = getFilledArray<string>('hi', 6);
+numberArray = getFilledArray<number>(9, 6);
+
+type Person = {name: string, age: number}
+personArray = getFilledArray<Person>({name:'J. Dean', age: 24}, 6);
+
+type Coordinate = [number, number]
+coordinateArray = getFilledArray<Coordinate>([3,4], 6);
