@@ -1,0 +1,18 @@
+Actions: 
+   - JS object 
+   - MUST HAVE A 'type' w/ string value 
+   - typically a 'payload'
+   - When an action is called its 'DISPATCHED'
+   - examples:
+      const action1 = {
+         type: 'todos/addTodo',
+         payload: 'Walk',
+      }
+      const action2 = {
+         type: 'todos/removeAll'
+      }
+      const action3 = {
+         type: 'todos/removeTodo',
+         payload: 'Pack snacks'
+      }
+   

@@ -21,7 +21,7 @@ DELETE
 -------------------------
 a.splice(index, howMany, new1, new2, ..., newX )
 a.splice(index, 1) // removes that index
-a.splice(index, 1, 'DOG', 'CAT') // replaces index with CAT , DOG
+a.splice(index, 1, 'DOG', 'CAT') // replaces index with [..., CAT , DOG, ...]
 * note * it returns the removed objects
 
 

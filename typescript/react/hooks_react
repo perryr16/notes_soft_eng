@@ -1,0 +1,39 @@
+TYPESCRIPT WITH REACT 
+---------------------
+
+import React from 'react';
+
+interface Person {
+   firstName: string;
+   lastName: string;
+}
+interface Props {
+   text: string;
+   ok?: boolean;
+   i?: number;
+   fn?: (bob: string) => void;
+   person: Person;
+   handleChange: (event: React.ChangeEvent<HMLInputElemebt>) => void;
+}
+
+interface TextNode {
+   text: string
+}
+
+export const TextField: React.FC<Props> = ({handleChange}) => {
+   const [count, setCount] = useState<number | null | undefined>(5);
+   const [text, setText] = useState<{ text: string }>({text: 'abcd'})
+   const [textA, setTextA] = useState<{ TextNode}>({text: 'efgh'})
+
+   setCount(null);
+   setCount(23);
+
+   setText({text})
+   setTextA
+
+   return (
+      <div>
+         <input onChange={} />
+      </div>
+   )
+}

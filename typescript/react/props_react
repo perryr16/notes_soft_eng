@@ -1,0 +1,37 @@
+TYPESCRIPT WITH REACT 
+---------------------
+
+import React from 'react';
+
+interface Person {
+   firstName: string;
+   lastName: string;
+}
+interface Props {
+   text: string;
+   ok?: boolean;
+   i?: number;
+   fn?: (bob: string) => void;
+   person: Person;
+}
+
+export const TextField: React.FC<Props> = () => {
+   return (
+      <div>
+         <h1></h1>
+      </div>
+   )
+}
+
+---- or -----
+import React from 'react';
+
+export const TextField: React.FC<{ propName: type } = () => {
+   return (
+      <div>
+         <h1></h1> 
+      </div>
+   )
+}
+
+O

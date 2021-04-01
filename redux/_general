@@ -1,0 +1,40 @@
+ REDUX in GENERAL 
+******************
+shared data is the state of the app 
+process of sharing and updating state is STATE MANAGEMENT 
+
+REDUX is a State Management Library 
+   - follows Flux Architeture
+   - data stored in a single object 
+   - data not stored in components 
+   - components can request data through `actions`
+
+similar tools:
+   - Recoil, MobX, Apollo Client
+
+3 parts:
+   - State - the data (model)
+   - View - UI (view)
+   - Actions - events to chagne state (controller - not really)
+
+State: 
+   - any data type 
+
+Actions: 
+   - JS object 
+   - MUST HAVE A 'type' w/ string value 
+   - typically a 'payload'
+   - When an action is called its 'DISPATCHED'
+   - examples:
+      const action1 = {
+         type: 'todos/addTodo',
+         payload: 'Walk',
+      }
+      const action2 = {
+         type: 'todos/removeAll'
+      }
+      const action3 = {
+         type: 'todos/removeTodo',
+         payload: 'Pack snacks'
+      }
+   
