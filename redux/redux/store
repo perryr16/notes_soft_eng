@@ -1,0 +1,40 @@
+STORE 
+   - a special object 
+   - a container for state 
+   - a way to dispatch actions 
+   - only one! 
+
+data flow -> ONE WAY 
+   - store initializes state w default value 
+   - view displays state 
+   - user does something 
+   - dispatched action and state are combined in the store's reducer 
+   - view is updated 
+
+useful methods:
+   createStore(rootReducer) 
+   store.getState()
+   store.dispatch(action) <--- most common, implied that state is store.getState()
+   store.subscribe(listener) <--- action occurs every time its called
+   store.replaceReducer(nextReducer) <--- pretty advanced stuff
+
+could manually exicute a reducer ... but DONT, that's the stores responsibility
+   let state = 'on';
+   state = lightSwitchReducer(state, { type: 'toggle' });
+   console.log(state); // Prints 'off'
+
+DO THIS: 
+   import { createStore } from 'redux'
+ 
+   const initialState = 'on';
+   const lightSwitchReducer = (state = initialState, action) => {
+   switch (action.type) {
+      case 'toggle':
+         return state === 'on' ? 'off' : 'on';
+      default:
+         return state;
+      }
+   }
+   
+   const store = createStore(lightSwitchReducer);
+   store.dispatch({type: toggle})

@@ -1,0 +1,52 @@
+# index.js 
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import { App } from './app/App.js';
+import { store } from'./app/store'
+
+const render = () => {
+  ReactDOM.render(
+    <App 
+      state={store.getState()}
+      dispatch={store.dispatch}
+    />,
+    document.getElementById('root')
+  )
+}
+render();
+store.subscribe(render)
+
+###########################
+# app.js
+
+import React from 'react';
+
+import { AllRecipes } from '../features/allRecipes/AllRecipes.js';
+import { SearchTerm } from '../features/searchTerm/SearchTerm.js';
+
+export function App(props) {
+  const {state, dispatch} = props;
+
+  const visibleAllRecipes = getFilteredRecipes(state.allRecipes, state.searchTerm);
+  const visibleFavoriteRecipes = getFilteredRecipes(state.favoriteRecipes, state.searchTerm);
+
+  return (
+    <main>
+      <section> 
+      .
+      .
+      .
+
+##############3
+genreal process:
+   1. Import the Components App.js file.
+   2. Render each component and pass slice of state & dispatch method as props.
+   3. Within each component:
+      3a. Extract the slice of state and dispatch from props.  
+      3b. Render the component using data from the slice of state.
+      3c. Import any action creators from the associated slice file.
+      3d. Dispatch actions in response to user inputs within the component.
+
+when dispatch is passed around as a prop, you dont need 'store.dispatch(...)' just 'dispatch(...)

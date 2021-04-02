@@ -1,0 +1,21 @@
+Selectors
+   - select data from the Redux Store 
+   - a pure function (output the same data given the same input -> no random, or side effect)
+   - argument: state 
+   - returns needed state data
+   - starts with 'select...'
+
+EXAMPLE:
+state = {
+   dogs: [
+      {id: 0, name: 'walter', color: 'white'},
+      {id: 1, name: 'sadie',  color: 'brown'},
+      ],
+   filter: 'SHOW_ALL'
+}
+
+export const selectFilter = (state) => state.filter; 
+export const selectDogsNames = (state) => state.map(dog => dog.name)
+export const selectBrownDogs = (state) => state.filter(dog => dog.color == 'brown')
+export const selectWhiteDogs = (state) => state.filter(dog => dog.color == 'white')
+export const selectWhiteDogIds = (state) => state.filter(dog => dog.color == 'white').map(dog => dog.id)

@@ -1,0 +1,28 @@
+src/
+|-- index.js
+|-- app/
+    |-- store.js --> rootReducer and createStore()
+|-- features/
+    |-- featureA/
+        |-- featureASlice.js
+    |-- featureB/
+        |-- featureBSlice.js
+
+src/
+|-- index.js
+|-- app/
+    |-- App.js (+)
+    |-- store.js
+|-- components/
+    |-- FavoriteButton.js (+)
+    |-- Recipe.js (+)
+|-- features/
+    |-- allRecipes/
+        |-- AllRecipes.js (+)
+        |-- allRecipesSlice.js
+    |-- favoriteRecipes/
+        |-- FavoriteRecipes.js (+)
+        |-- favoriteRecipesSlice.js
+    |-- searchTerm/
+        |-- SearchTerm.js (+)
+        |-- searchTermSlice.js

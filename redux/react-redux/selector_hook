@@ -1,0 +1,23 @@
+useSelector hook 
+   - subscribes a child component to changes in the store 
+   - react (not redux) will re-render the component when data changes 
+
+# /dogs.js
+import { useSelector } from 'react-redux';
+import { selectDogs }  from './dogsSlice';
+
+export const Dogs = () => {
+   const dogs = useSelector(selectDogs);
+
+   return(
+      <p>{dogs}</p>
+   )
+}
+
+
+or -- 
+const dogs = useSelector( state => state.dogs )
+
+or -- 
+const dogs = useSelector (state => state.dogs[props.id])
+

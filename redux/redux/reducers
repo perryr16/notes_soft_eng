@@ -1,0 +1,97 @@
+Reducers 
+   - JS functions that define how the state and action are used to create a NEW STATE 
+   - arguments: (current_state, action)
+   - returns a default initial state if no action is given 
+   - returns current state if action isnt recognized
+
+ROOT REDUCERS ---> line 52
+
+write as many as you need.
+
+Rules: 
+   - only calculate new state value based on the state and action arguments - no new variables
+   - not allowed to modify the existing state, they must copy and make changes to the copy 
+   - no asynchronous logic or have 'side effects'
+      - no console.log, Math.random()........
+   aka 
+   - immutable updates - makes copies, not changes
+   - pure functions - same outputs given same inputs
+
+example: 
+   const initialState = [ 'Print trail map', 'Pack snacks', 'Summit the mountain' ];
+ 
+   const todoReducer = (state = initialState, action) => {
+   switch (action.type) {
+      case 'todos/addTodo': {
+         return [ ...state, action.payload];
+      }
+      case 'todos/removeTodo': {
+         return state.filter(todo => todo != action.payload)
+      }
+      case 'todos/removeAll': {
+         return [];
+      }
+      default: {
+         return state;
+      }
+   }
+   }
+
+-----
+const initialState = 'on';
+const lightSwitchReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'toggle':
+      return state === 'on' ? 'off' : 'on';
+    default:
+      return state;
+  }
+}
+
+**************
+ROOT REDUCERS:
+**************
+const initialDogs = [
+   {id: 0, name: 'walter'},
+   {id: 1, name: 'sadie'},
+]
+const dogsReducer = (dogs = initialDogs, action) => {
+   switch (action.type) {
+      case 'dogs/addDog':
+         return [...dogs, action.payload]
+      case 'dogs/removeDog':
+         return dogs.filter(dog => dog.id != action.payload.id)
+      default: 
+         return dogs
+   }
+}
+const searchTermReducer = (searchTerm = '', action) => {
+   switch (action.type) {
+      case 'setSearchTerm':
+         return action.payload 
+      case 'clearSearchTerm':
+         return ''
+      default: 
+         return searchTerm
+   }
+}
+
+//// NEW WAY ////
+import combineReducers from 'redux';
+
+const store = createStore(combineReducers({
+   dogs: dogsReducer,
+   searchTerm: searchTermReducer,
+}))
+
+
+//// OLD WAY ////
+
+const rootReducer = (state = {}, action) => {
+   const nextState = {
+      dogs: dogsReducer(state, action),
+      searchTerm: searchTermReducer(state, action),
+   }
+   return nextState
+}
+const store = createStore(rootReducer)

@@ -1,0 +1,32 @@
+Slices are top level 'keys'
+* SLICES = dogs and cats
+
+state = {
+   dogs: [
+      {name: 'walter', color: 'white'},
+      {name: 'sadie', color: 'orange'},
+   ]
+   cats: [
+      {name: 'matice', color: 'white},
+      {name: 'baloo', color: 'black'}
+   ]
+}
+
+
+actions should only effect one slice at a time 
+
+   const newDogAction = (dog) => {
+      type: 'dog/addDog',
+      payload: dog
+   }
+
+example actions:
+   allRecipes/allRecipe - index 
+   allRecipes/getRecipe - show 
+   allRecipes/addRecipe - add 
+   allRecipes/deleteRecipe - destroy 
+   allRecipes/updateRecipe - edit 
+   favoriteRecipes/addRecipe
+   favoriteRecipes/delteRecipe
+   searchTerm/setSearchTerm
+   searchTerm/clearSaerchTerm

@@ -1,0 +1,9 @@
+useDispatch()
+   - import it 
+   - assign it inside the component 
+   - assign it to 'dispatch' w/ no arguments
+
+import { useDispatch } from 'react-redux';
+ 
+ const dispatch = useDispatch()
+ dispatch({type: 'dogs/addDog'}

@@ -3,6 +3,21 @@ Actions:
    - MUST HAVE A 'type' w/ string value 
    - typically a 'payload'
    - When an action is called its 'DISPATCHED'
+
+action creators:
+   - reduce repitition | provide consistency 
+   - passed directly to store.dispatch()
+
+   const toggle = () => {
+      return {type: 'toggle'}
+   }
+   store.dispatch(toggle())
+
+
+
+
+
+
    - examples:
       const action1 = {
          type: 'todos/addTodo',
