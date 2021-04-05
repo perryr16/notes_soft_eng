@@ -1,4 +1,18 @@
 ----------
+FOR IN LOOPS
+-----------
+a = [11,22,33]
+for (const i in a) {
+  console.log(a[i])
+}
+>> 11, 22, 33
+b = {aa: 11, bb: 22, cc: 33}
+for (const key in b) {
+  console.log(b[key])
+}
+>> 11, 22, 33
+
+----------
 FOR LOOPS
 -----------
 a = [1,2,3,4]
@@ -33,7 +47,6 @@ const c = b.map((x, y, z) => {
 });
 
 console.log(c)
-
 
 -----------
 FILTER

@@ -1,0 +1,25 @@
+export it:
+   export default dogSlice.reducer 
+
+   ** default exports:
+         - only one per file 
+         - name doesnt matter when importing
+         - similar to default argument
+         - if importing and the name doesnt match, it'll return the default
+
+EXAMPLE:
+   const options = {
+   // options fields omitted.
+   }
+   const todosSlice = createSlice(options);
+   
+   /* Object returned by todosSlice */
+   {
+   name: 'todos',
+   reducer: (state, action) => newState,
+   actions: {
+      addTodo: (payload) => ({type: 'todos/addTodo', payload}),
+      toggleTodo: (payload) => ({type: 'todos/toggleTodo', payload})
+   },
+   // case reducers field omitted
+   }

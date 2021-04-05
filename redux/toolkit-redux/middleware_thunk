@@ -1,0 +1,56 @@
+const add = (x,y) => {
+  return () => {
+    return x + y; 
+  } 
+}
+
+// `add` returns a `thunk` that will perform `x+y`
+
+EXAMPLE:
+   const remindMeTo = task => {
+   return `Remember to ${task}!!!`;
+   }
+   console.log(remindMeTo('call mom'))
+
+   const remindMeLater = task => {
+   return () => {
+      return remindMeTo(task)
+      }
+   }
+
+   const reminder = remindMeLater('dog')
+   console.log(reminder())
+
+EXAMPLE: 
+   const incrementLater = async () => {
+   setTimeout(() => {
+      dispatch(increment())    
+   }, 1000)    
+   };
+   
+   const asyncIncrement = () => {
+   return incrementLater;
+}
+
+EXAMPLE: 
+   const loadRecipes = () => {
+   return async (dispatch, getState) => {
+      const payload = await fetchRecipes();
+      dispatch({type: 'allRecipes/addRecipes', payload: payload})
+   }
+
+   }
+
+EXAMPLE: 
+   import { fetchUser } from './api'
+   const fetchUserById = (id) => {
+   return async (dispatch, getState) => {
+      dispatch({type: 'users/requestPending'})
+      try {
+         const payload = await fetchUser(id)
+         dispatch({type: 'users/addUser', payload: payload})
+      } catch(err) {
+         dispatch({type: 'users/error', payload: err})
+      }
+   }
+   }

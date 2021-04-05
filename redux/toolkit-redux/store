@@ -1,0 +1,21 @@
+configureStore(config_object):
+   - config_object is either rootReducer, or an object of reducers 
+   - combines reducers to a rootReducer
+   - creates Redux Store --> no need to createStore()
+   - auto adds 'thunk' middleware 
+   - adds middleware for error checkign 
+   - auto sets up redux devtools extension
+
+# /dogs/store 
+import {configureStore} from '@reduxjs/toolkit'
+
+import dogsReducer   from './features/dogs/dogSlice'
+import ownersReducer from './features/owners/ownersSlice'
+
+const store = configureStore({
+   reducer: {
+      dogs:   dogsReducer,
+      owners: ownersReducer,
+   }
+})
+export default store 

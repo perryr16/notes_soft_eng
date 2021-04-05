@@ -1,0 +1,27 @@
+middleware:
+   - runs in the middle 
+   - receiving a request --> middleware --> producing a response 
+   - action dispatched   --> middlware  --> action passed to reducer 
+
+redux-thunk:
+   - asynchronous requests 
+   - included by default in RTK 
+
+apply middlware: 
+   import { createStore, applyMiddleware } from 'redux';
+   import {middleware1,...} from './middleware-file.js'
+   const store = createStore(
+      reducer1,
+      applyMiddleware(
+         middleware1,
+         ...
+      )
+   )
+
+higher-order function:
+   const exampleMiddleware = (storeAPI) => next => action => {
+      // code 
+      return next(action) // pass the action on to the next middleware in the pipeline
+   }
+
+each middlware has access to the storeAPI (dispatch, getState, and next middleware in pipeline)

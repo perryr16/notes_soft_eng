@@ -1,0 +1,13 @@
+Redux is too verbose 
+the toolkit makes life easier 
+issues it solves:
+   - store config is too complicated
+   - too many packages
+   - too much boilerplate 
+   - immutable updates are annoying
+
+install: (in root)
+   $ npm install @reduxjs/toolkit
+
+
+RDK = Redux ToolKit
