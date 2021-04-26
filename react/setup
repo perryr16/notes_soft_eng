@@ -10,3 +10,18 @@ $ npx create-react-app myfirstreactapp
 
 
 https://www.codecademy.com/courses/react-101/articles/how-to-create-a-react-app
+
+Old notes:
+---------
+create an app
+$ npx create-react-app app_name
+# creates a lot of files in the src, if you know what you're doing you can delete them
+
+#starts the server
+$ npm start
+
+
+ex:
+return React.createElement('div', {className: 'name'}, 'text')
+
+jsx = {}

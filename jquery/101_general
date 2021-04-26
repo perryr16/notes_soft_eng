@@ -1,0 +1,12 @@
+a javascript library
+instead of using many legos to build a city,
+jquery has preassembeled buildings, roads, cars...
+
+premade methods to HTML elements:
+  .hide()
+  .show()
+  .fadeIn()
+  .fadeOut()
+  .click()
+  .toggle()
+  ...

@@ -1,0 +1,184 @@
+m5
+
+STORAGE AND DATABASES 
+--------------------------
+
+EBS (Elastic Block Store) and Instance Stores
+----------------------------------------------
+Block Level Storage 
+  - place to store file 
+  - blocks stored on disc
+  - good for 
+    - dbs, enterprise, file storage 
+  - laptop storage = block level 
+  - JUST A HARD DRIVE
+  - if you cancel your EC2 instance, the instance store volume is also destroyed
+  - bc an EC2 can change location, the store volume gets left behind 
+
+** dont write important data to the drives of EC2 instnaces ** 
+
+AMAZON ELASTIC BLOCK STORE
+  - attacthed to EC2 instnaces
+  - separate drives 
+  - various types and sizes 
+  - configure how ever you want 
+  - data persists 
+  - configurable 
+  - up to 16 TiB
+  - solid state
+
+S3 - AMAZON SIMPLE STORAGE SERVICE
+------------------------------------
+S3 (BUCKETS)
+  - store data in objects
+  - store objects in buckets 
+  - unlimited storage
+  - version control 
+  - multiple buckets 
+  - 99.99... % of durability after 1 year 
+
+S3 Standard
+  - frequently accessed data
+  - stored in a min of 3 availability zones
+  - static website hosting
+  - 99.99... % of durability after 1 year 
+  - collection of HTML files 
+  - each file is a page on the site 
+  - upload data to bucket 
+  - check box to host as a website. BAM! 
+
+S3 Standard (IA) Infrequent Access 
+  - infrequent access 
+  - lower storage price 
+  - higher retrieval price 
+
+S3 (IA) Infrequent Access 
+  - less necessary 
+  - back up files 
+  - long term storage 
+
+S3 One Zone IA 
+  - stored in 1 availability zone 
+  - lower storage price than s3 standard IA
+
+S3 Intelligent Tiering 
+  - data with unknown or changin access patterns 
+
+S3 Glacier 
+  - good for archiving data 
+  - creates vaults 
+  - populate with archives 
+  - can 'lock' the vault 
+  - write and read config 
+  - retrieval within minutes or hours
+
+S3 Glacier Deep Archive
+  - lowest cost
+  - retrieval within 12 hours 
+
+
+S3 Lifecycle Management
+  - move data automatically btn tiers
+  - keep x in s3 Standard for 90 days, then move to s3 IA for 120 days, then move to s3 glacier
+
+Object Storage 
+  - each object has: DATA, METADATA, KEY
+  - when modified, the entire object gets updated
+
+
+EBS vs S3
+- EBS for lots of small changes to a large file 
+- S3 for lots of small files
+
+
+
+EFS - ELASTIC FILE SYSTEM 
+---------------------------
+EFS 
+  - managed file system (shared)
+  - historically: hosted on premise
+  - AWS handles scaling and replication 
+  - multiple instances accessing data at the same time
+  - auto scaling 
+
+EBS vs EFS 
+  EBS
+    - attach to EC2
+    - stored in a single AZ (availability zone)
+    - need to be in same AZ 
+    - volumes dont auto scale
+  EFS
+    - multiple instnaces reading and writing 
+    - linux file system 
+    - stores accross multiple AZ zones
+    - volumes auto scale
+
+RDS - RELATIONAL DATABASE SERVICE 
+---------------------------------
+RDBMS (Relational Database Management System)
+  what you're used to with SQL relational databases 
+  MySQL, postgreSQL, Oracle, Microsoft SQL Server
+  Lift and Shift 
+    - can move your db to the AWS cloud
+    - migrate with standard practice
+
+RDS - run relational dbs in the cloud
+  - automated patching 
+  - backups 
+  - redundancy 
+  - failover 
+  - disaster recovery
+  - less need to maintain the db, let AWS do it 
+
+Amazon Aurora (DB engine)
+  - managed database option 
+  - 5x faster than MySQL, 3x faster than postgres
+  - MySQL or PostgreSQL 
+  - 1/10 cost of most comm database 
+  - six copies of db across 3 AZs
+  - continuous backups for S3
+  - up to 15 something...
+  - select data related to time stamp
+
+
+AMAZON DYNAMO DB
+-----------------
+DynamoDB 
+  - Non-Relational NoSQL db
+  - Key-Value db
+  - fully managed
+  - highly scalable
+  - serverless database 
+  - Milisecond response time
+  - data organized in items 
+  - items have attributes 
+  - auto scaling 
+  - stored redundantly accross AZs 
+  - not every item has to have the same attributes 
+  - cant run complex SQL queries 
+  - query by keys 
+  - simpler queries 
+
+Non-Relational DB 
+  - key value pairs instead of columns 
+  - keys like ids 
+
+RDS vs DynamoDB
+  RDS  
+    - high availability
+    - customer ownership of data
+    - customer ownership of schema 
+    - customer control   of network
+  DynamoDB
+    - key-value 
+    - no complex schema (design) needed
+    - very fast 
+    - petabyte scale potential 
+    - granular API access 
+    - less overhead
+
+
+REDSHIFT 
+--------------
+Redshift
+  - 

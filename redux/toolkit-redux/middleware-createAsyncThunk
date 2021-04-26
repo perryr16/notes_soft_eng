@@ -19,3 +19,78 @@ EXAMPLE:
       return data
    }
    )
+
+EXAMPLE: 
+   import { createAsyncThunk } from '@reduxjs/toolkit'
+   import { fetchUser } from './api'
+   
+   const fetchUserById = createAsyncThunk(
+   'users/fetchUserById', // action type
+   async (userId, thunkAPI) => { // payload creator
+      const response = await fetchUser(userId)
+      return response.data
+   }
+   )
+
+   // PRODUCES 3 action types:
+   'users/fetchUserById/pending'
+   'users/fetchUserById/fulfilled'
+   'users/fetchUserById/rejected'
+
+EXTRA REDUCERS:
+   const usersSlice = createSlice({
+      name: 'users',
+      initialState: { 
+         users:  [], 
+         isLoading: false, 
+         hasError: false 
+      },
+      reducers: {
+         addUser: (state, action) => { 
+            state.users.push(action.payload) 
+         }        
+      },
+      },
+      extraReducers: {
+      [fetchUserById.pending]: (state, action) => ({
+         state.isLoading = true;
+         state.hasError = false;
+         }),
+      [fetchUserById.fulfilled]: (state, action) => ({
+         state.users.push(action.payload);
+         state.isLoading = false;
+         state.hasError = false;
+      }),
+      [fetchUserById.rejected]: (state, action) => ({
+         state.isLoading = false;
+         state.hasError = true;
+      })
+   }) 
+
+EXAMPLE: 
+   const sliceOptions = {
+      name: "allRecipes",
+      initialState: {
+         recipes: [],
+         isLoading: false,
+         hasError: false
+      },
+      reducers: {},
+      extraReducers: {
+         [loadRecipes.pending]: (state, action) => {
+            state.isLoading = true;
+            state.hasError = false;
+         },
+         [loadRecipes.fulfilled]: (state, action) => {
+            state.recipes = action.payload;
+            state.isLoading = false;
+            state.hasError = false;
+         },
+         [loadRecipes.rejected]: (state, action) => {
+            state.isLoading = false;
+            state.hasError = true;
+         }
+      }
+   }
+
+   export const allRecipesSlice = createSlice(sliceOptions);
