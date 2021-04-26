@@ -181,4 +181,50 @@ RDS vs DynamoDB
 REDSHIFT 
 --------------
 Redshift
-  - 
+  - data warehousing as a service 
+  - huge storage 
+  - biz intelligence 
+  - searching multiple databases is complex 
+  - data warehouses are for BIG DATA 
+  - historical analytics (how many yesterday?, not how many currently?)
+
+DATABASE MIGRATION SERVICE 
+--------------------------
+DMS 
+  - migrate existing database 
+  - source db remains funtional during migration 
+  - source and target db don't need to be the same type
+  - useful for testing against production data
+  - database consilidation 
+  - continuous data replication 
+    - recovery, or geo-restrictions
+
+Homogenous 
+  - dbs of same type 
+
+Heterogeneous 
+  - dbs of different type
+  - 2 step process 
+    1. aws schema conversion tool 
+    2. DMS to migrate 
+
+
+ADDITIONAL DB SERVICES
+-----------------------
+Amazon Document (with MongoDB compatibility)
+
+Amazon Neptune 
+  - graph database 
+  - good for social networking 
+
+Amazon Managed BlockChain 
+
+Amazon (QLDB) Quantum Ledger Databse
+  - supply chain 
+  - banking records 
+
+Database Accelerators 
+  - caching layers 
+  Amazon Elasticache 
+    - Memcache or Redis
+  DAX - accelerator for DynamoDB

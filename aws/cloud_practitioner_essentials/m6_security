@@ -1,0 +1,49 @@
+m6
+
+SECURITY IN THE AWS CLOUD 
+--------------------------
+
+Shared Responsibility Model 
+---------------------------
+
+AWS Responsibility
+  - Physical hardware 
+  - Network 
+  - Hypervisor 
+  - Security of the cloud
+
+Customer Responsibility
+  - Operating System 
+  - Application 
+  - Data  
+  - Security in the cloud
+
+
+User Permission and Access
+---------------------------
+User Permissions 
+  - on install you are given ROOT USER power 
+  - turn on MFA for security
+    - 2 factor authentication
+    - and a token 
+
+IAM (Identiy and Access Management)
+  - no permissions on creation 
+  - root user gives permissions 
+    - dont use root user for everyday tasks
+  - Prinicipal of Least Privilege
+  - IAM Policy  
+    - JSON detailing the permissions of a user
+    - Effect: "allow" or "deny"
+  - IAM Groups 
+    - groups of users 
+    - all members have the same permissions 
+  - IAM Roles 
+    - associated permissions 
+    - access to temperary permissions 
+    - no username or password 
+    - gain access for a period of time 
+    - assumes permissions of the role over a group 
+    
+
+
