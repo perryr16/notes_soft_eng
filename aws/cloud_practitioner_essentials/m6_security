@@ -46,4 +46,21 @@ IAM (Identiy and Access Management)
     - assumes permissions of the role over a group 
     
 
+AWS Organizations 
+---------------------
+Organizations
+  - a central location to manage several AWS Accounts
+  - share info between accounts 
+  - centralized management 
+  - consolidated billing 
+  - hierarchical groupings of accounts 
+  - AWS service amd API actions access control
+
+SCP (Service Control Policies)
+  - a way to centrally control organization account permissions 
+  - place restrictions on access to actions 
+
+OU (Organizational Unit)
+  - grouped accounts
+  - apply SCP to an OU
 

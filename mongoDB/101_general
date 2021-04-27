@@ -1,0 +1,12 @@
+start server: ** ALIAS for 'brew services start monogdb-community'
+$ mongostart 
+
+stop Server:  ** ALIAS for 'brew services stop mongodb-community'
+$ mongostop
+ 
+enter shell:
+$ mongo 
+
+check dbs: 
+* in shell * 
+$ show dbs
