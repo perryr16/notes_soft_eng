@@ -1,12 +1,16 @@
-start server: ** ALIAS for 'brew services start monogdb-community'
-$ mongostart 
 
-stop Server:  ** ALIAS for 'brew services stop mongodb-community'
-$ mongostop
- 
-enter shell:
-$ mongo 
+MongoDB Service:
+$ mongostart //start server: ** ALIAS for 'brew services start monogdb-community'
+$ mongostop //stop Server:  ** ALIAS for 'brew services stop mongodb-community'
 
-check dbs: 
-* in shell * 
-$ show dbs
+Shell:
+$ mongo //enter shell
+> show dbs //check dbs: * in shell * 
+> use <db_name> // switch to that db 
+> show collections 
+> use <collection_name> // not needed 
+> db.<collection_name>.find() // show all data in <collection_name>
+
+
+help: // in shell
+> helpdv

@@ -1,0 +1,29 @@
+- email_to_myself (53s)
+- email_to_myself (52s)
+- clicking_the_print_certificate (22s)
+- email_to_myself, clicking_the_print_certificate (52s)
+- clicking_the_print_certificate (22s)
+- share_badge_modal_opens (22s)
+- share_badge_modal_opens, email_to_myself (54s)
+- share_badge_modal_opens (22s)
+- share_badge_modal_opens, clicking_the_print_certificate (23s)
+- share_badge_modal_opens, email_to_myself (52s)
+* <test_file> --runInBand 
+- pass (23s)
+* --runInBand <test_file>
+- email_to_myself, clicking_the_print_certificate (52s)
+- share_badge_modal_opens, clicking_the_print_certificate (23s)
+* <test_file> --runInBand 
+- pass (22s)
+- pass (23s)
+
+RESULT: need to run individual test with `--runInBand` 
+
+Enable CANVAS_AUTH_TOKEN fxn by fxn
+------------------------------------
+getCourses() 
+  - email_to_myself, badge_certificate_link, clicking_the_print_certificate (197s)
+
+getUserEnrollments() 
+  - ALL OF THEM FAILED (545s)
+

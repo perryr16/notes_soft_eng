@@ -1,0 +1,6 @@
+NODE_ENV=production
+SESSION_SECRET=ed4humanity123
+SENDGRID_USERNAME=edforhumanity
+SENDGRID_PASSWORD=edforhumanity123
+EDX_URL=https://courses.edforhumanity.org/api/
+EDX_TOKEN=0d2beda47f8d88c960ecb0a5e85f85e24565e2e8

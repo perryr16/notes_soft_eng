@@ -1,0 +1,39 @@
+export NODE_ENV=development
+
+export EDX_TOKEN=0d2beda47f8d88c960ecb0a5e85f85e24565e2e8
+export EDX_URL=https://courses.edforhumanity.org/api/
+
+export HOSTNAME=http://localhost
+export SERVER_PORT=4000
+export CLIENT_PORT=8080
+
+export SESSION_SECRET=ed4humanity123
+export SENDGRID_USERNAME=edforhumanity
+export SENDGRID_PASSWORD=edforhumanity123
+
+export ENABLE_BADGR_CRON=true
+export ENABLE_CANVAS_CRON=true
+export ENABLE_EDX_CRON=true
+export ENABLE_EFSET_CRON=true
+
+
+export EFSET_TOKEN=c6a0fa10-8103-45af-8114-3263c237d498
+export BADGR_USERNAME=admin@edforhumanity.org
+export BADGR_PASSWORD=$undevils1
+export BADGR_ISSUER_ID=pLIGxpW2R86FBtdm8QIwxQ
+export LEN4_BADGE_CLASS=9kShr2vMRU-M7SXcRunrag
+export GEN_ENG_BADGE_CLASS=Plts3OfbSvWHG5zCDC_uJg
+
+export CANVAS_CLIENT_ID=4ab7653f-b05f-4d30-84e4-f1044d8211fe
+export CANVAS_CLIENT_SECRET="BcV?2='HEp%w;3Qk"
+export CANVAS_URL_TOKEN=https://api.cpe.asu.edu/oidc/oauth/token
+export CANVAS_URL_ENROLL=https://api.cpe.asu.edu/efh/user/enroll
+export CANVAS_URL_ENROLLMENTS=https://api.cpe.asu.edu/efh/user/enrollments
+export CANVAS_URL_COURSE=https://api.cpe.asu.edu/courses
+
+MAIL_HOST
+MAIL_PASS
+MAIL_PORT
+MAIL_SECURE
+MAIL_USER
+JWT_KEY

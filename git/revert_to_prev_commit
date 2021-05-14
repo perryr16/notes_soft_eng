@@ -1,0 +1,4 @@
+To revert a file to a previous commit 
+1. identify the commit string -- 850437b~1
+2. stay in the active branch 
+3. $ git checkout 850437b~1 -- <file/path> (tab completion will work here for a sanity check)

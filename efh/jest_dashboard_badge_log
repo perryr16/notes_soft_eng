@@ -1,0 +1,209 @@
+Last login: Wed May 12 14:29:18 on console
+bash refresh!
+-bash: rbenv: command not found
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+rossperry@Rosss-MacBook-Pro ~ $ cd Documents/devetry/projects/efh_asu_ed_for_hummanity/E-for-H/
+rossperry@Rosss-MacBook-Pro E-for-H (master) $ code .
+rossperry@Rosss-MacBook-Pro E-for-H (master) $ jest version
+^C
+rossperry@Rosss-MacBook-Pro E-for-H (test2) $ jest --version
+26.6.3
+rossperry@Rosss-MacBook-Pro E-for-H (test2) $ cd server/
+rossperry@Rosss-MacBook-Pro server (test2) $ jest --clearCache
+Cleared /private/var/folders/7m/kggsgkkx54790tr2p1n1ly840000gn/T/jest_dx
+rossperry@Rosss-MacBook-Pro server (test2) $ jest __tests__/e2e/dashboard_badges.test.js --runInBand
+Determining test suites to run...[TEST] Init test environment
+(node:22091) DeprecationWarning: collection.count is deprecated, and will be removed in a future version. Use Collection.countDocuments or Collection.estimatedDocumentCount instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+DeprecationWarning: collection.count is deprecated, and will be removed in a future version. Use Collection.countDocuments or Collection.estimatedDocumentCount instead
+    at NativeCollection.<computed> [as count] (/Users/rossperry/Documents/devetry/projects/efh_asu_ed_for_hummanity/E-for-H/server/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:217:28)
+    at NodeCollection.Object.<anonymous>.NodeCollection.count (/Users/rossperry/Documents/devetry/projects/efh_asu_ed_for_hummanity/E-for-H/server/node_modules/mquery/lib/collection/node.js:50:19)
+    at model.Query.<anonymous> (/Users/rossperry/Documents/devetry/projects/efh_asu_ed_for_hummanity/E-for-H/server/node_modules/mongoose/lib/query.js:2225:20)
+    at model.Query._wrappedThunk [as _count] (/Users/rossperry/Documents/devetry/projects/efh_asu_ed_for_hummanity/E-for-H/server/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at /Users/rossperry/Documents/devetry/projects/efh_asu_ed_for_hummanity/E-for-H/server/node_modules/kareem/index.js:370:33
+    at processTicksAndRejections (node:internal/process/task_queues:76:11)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  console.log
+    [EMAIL SERVICE] EMAIL SENT OK!
+
+      at app/services/email_service.js:248:17
+          at runMicrotasks (<anonymous>)
+
+ FAIL  __tests__/e2e/dashboard_badges.test.js (547.426 s)
+  Dashboard Badges
+    ✕ All of a users badges are displayed, but not other user's badges (60009 ms)
+    ✕ If a user has no program badges, a message is displayed (60006 ms)
+    ✕ If a user has no course badges, a message is displayed (60005 ms)
+    ✕ If a user has no badges at all, a message is displayed (60007 ms)
+    ✕ Displays correct program badge image for user (60006 ms)
+    ✕ Share badge modal opens and user can open badge in a new tab (60005 ms)
+    ✕ Email to myself button sends an email (60005 ms)
+    ✕ Badge certificate link works, even when user isnt logged in (60002 ms)
+    ✕ Clicking on the 'Print Certificate button' opens a new tab with the badge certificate (60006 ms)
+
+  ● Dashboard Badges › All of a users badges are displayed, but not other user's badges
+
+    : Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Error:
+
+      151 |   const badgeCertUrl = `${process.env.HOSTNAME}:${process.env.CLIENT_PORT}/badge-certificate/${programBadge1.badgr_assertion.entityId}`;
+      152 |
+    > 153 |   test("All of a users badges are displayed, but not other user's badges", async () => {
+          |   ^
+      154 |     const browser = await puppeteer.launch({ headless: true });
+      155 |     const page = await browser.newPage();
+      156 |
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.<anonymous> (__tests__/e2e/dashboard_badges.test.js:153:3)
+      at Object.<anonymous> (__tests__/e2e/dashboard_badges.test.js:149:1)
+
+  ● Dashboard Badges › If a user has no program badges, a message is displayed
+
+    : Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Error:
+
+      179 |   });
+      180 |
+    > 181 |   test('If a user has no program badges, a message is displayed', async () => {
+          |   ^
+      182 |     const browser = await puppeteer.launch({ headless: true });
+      183 |     const page = await browser.newPage();
+      184 |
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.<anonymous> (__tests__/e2e/dashboard_badges.test.js:181:3)
+      at Object.<anonymous> (__tests__/e2e/dashboard_badges.test.js:149:1)
+
+  ● Dashboard Badges › If a user has no course badges, a message is displayed
+
+    : Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Error:
+
+      213 |   });
+      214 |
+    > 215 |   test('If a user has no course badges, a message is displayed', async () => {
+          |   ^
+      216 |     const browser = await puppeteer.launch({ headless: true });
+      217 |     const page = await browser.newPage();
+      218 |
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.<anonymous> (__tests__/e2e/dashboard_badges.test.js:215:3)
+      at Object.<anonymous> (__tests__/e2e/dashboard_badges.test.js:149:1)
+
+  ● Dashboard Badges › If a user has no badges at all, a message is displayed
+
+    : Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Error:
+
+      247 |   });
+      248 |
+    > 249 |   test('If a user has no badges at all, a message is displayed', async () => {
+          |   ^
+      250 |     const browser = await puppeteer.launch({ headless: true });
+      251 |     const page = await browser.newPage();
+      252 |
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.<anonymous> (__tests__/e2e/dashboard_badges.test.js:249:3)
+      at Object.<anonymous> (__tests__/e2e/dashboard_badges.test.js:149:1)
+
+  ● Dashboard Badges › Displays correct program badge image for user
+
+    : Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Error:
+
+      279 |   });
+      280 |
+    > 281 |   test('Displays correct program badge image for user', async () => {
+          |   ^
+      282 |     const browser = await puppeteer.launch({ headless: true });
+      283 |     const page = await browser.newPage();
+      284 |
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.<anonymous> (__tests__/e2e/dashboard_badges.test.js:281:3)
+      at Object.<anonymous> (__tests__/e2e/dashboard_badges.test.js:149:1)
+
+  ● Dashboard Badges › Share badge modal opens and user can open badge in a new tab
+
+    : Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Error:
+
+      305 |   });
+      306 |
+    > 307 |   test('Share badge modal opens and user can open badge in a new tab', async () => {
+          |   ^
+      308 |     const browser = await puppeteer.launch({ headless: true });
+      309 |     const page = await browser.newPage();
+      310 |
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.<anonymous> (__tests__/e2e/dashboard_badges.test.js:307:3)
+      at Object.<anonymous> (__tests__/e2e/dashboard_badges.test.js:149:1)
+
+  ● Dashboard Badges › Email to myself button sends an email
+
+    : Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Error:
+
+      341 |   });
+      342 |
+    > 343 |   test('Email to myself button sends an email', async () => {
+          |   ^
+      344 |     const browser = await puppeteer.launch({ headless: true });
+      345 |     const page = await browser.newPage();
+      346 |
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.<anonymous> (__tests__/e2e/dashboard_badges.test.js:343:3)
+      at Object.<anonymous> (__tests__/e2e/dashboard_badges.test.js:149:1)
+
+  ● Dashboard Badges › Badge certificate link works, even when user isnt logged in
+
+    : Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Error:
+
+      370 |   });
+      371 |
+    > 372 |   test('Badge certificate link works, even when user isnt logged in', async () => {
+          |   ^
+      373 |     const browser = await puppeteer.launch({ headless: true });
+      374 |     const page = await browser.newPage();
+      375 |
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.<anonymous> (__tests__/e2e/dashboard_badges.test.js:372:3)
+      at Object.<anonymous> (__tests__/e2e/dashboard_badges.test.js:149:1)
+
+  ● Dashboard Badges › Clicking on the 'Print Certificate button' opens a new tab with the badge certificate
+
+    : Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 60000 ms timeout specified by jest.setTimeout.Error:
+
+      397 |   });
+      398 |
+    > 399 |   test('Clicking on the \'Print Certificate button\' opens a new tab with the badge certificate', async () => {
+          |   ^
+      400 |     const browser = await puppeteer.launch({ headless: true });
+      401 |     const page = await browser.newPage();
+      402 |
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Suite.<anonymous> (__tests__/e2e/dashboard_badges.test.js:399:3)
+      at Object.<anonymous> (__tests__/e2e/dashboard_badges.test.js:149:1)
+
+Test Suites: 1 failed, 1 total
+Tests:       9 failed, 9 total
+Snapshots:   0 total
+Time:        547.582 s
+Ran all test suites matching /__tests__\/e2e\/dashboard_badges.test.js/i.
+Jest did not exit one second after the test run has completed.
+
+This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+node:internal/process/promises:245
+          triggerUncaughtException(err, true /* fromPromise */);
+          ^
+
+[UnhandledPromiseRejection: This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason "Error: Caught error after test environment was torn down
+
+net::ERR_CONNECTION_REFUSED at http://localhost:8080/login".] {
+  code: 'ERR_UNHANDLED_REJECTION'
+}
+rossperry@Rosss-MacBook-Pro server (test2) $
