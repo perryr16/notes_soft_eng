@@ -1,0 +1,20 @@
+HTML
+<form v-on:submit="SubmitFomr">
+  ...
+  <button type="submit">Submit</button>
+</form>
+
+*****************************
+OR use "@" instead of "v-on:"e
+*****************************
+
+
+<form @submit.prevent="submitForm">
+  ...
+</form>
+
+.prevent = Event.preventDefault()
+.stop    = Event.stopPropagation()
+
+
+more: https://vuejs.org/v2/api/#v-on

@@ -1,0 +1,4 @@
+use update 
+use $pull
+
+> db.users.update({email: 'perryr16@gmail.com'}, {$pull : { activeCourses: "TEST2"}})

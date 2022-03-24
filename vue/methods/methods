@@ -1,0 +1,16 @@
+The methods property is where Vue apps store their instance methods. 
+
+
+const app = new Vue({
+  el: "#app",
+  data: {
+    hoursStudied: 300
+  },
+  methods: {
+    resetProgress: function () {
+      this.hoursStudied = 0;
+    }
+  }
+});
+
+<button v-on:click="resetProgress">Reset Progress</button>

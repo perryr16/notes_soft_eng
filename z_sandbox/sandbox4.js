@@ -1,58 +1,19 @@
-`async updateBadge({ email, firstname, lastname }, badgeAssertionEntityId) {
-    if (!email || !badgeAssertionEntityId) throw new Error('Email and badge ID are required to update a badge.');
+const currentTabImages = {
+  'Strategy': '../../../../static/img/software-strategy14.jpg',
+  'Design': '../../../../static/img/design-workshop7.jpg', 
+  'Product Management': '../../../../static/img/devetry-team3.jpg',
+  'Technology': '../../../../static/img/code-on-computer3.jpg',
+  'Innovation': '../../../../static/img/office-conversation.jpg',
+}
 
-    const token = BADGR_AUTH_TOKEN || await BadgrService.getToken();
+const x = {
+  Strategy: 12,
+  Design: 23,
+  'Product Management': 34,
+  Technology: 45,
+  Innovation: 56
+}
 
-    return makeBadgrRequest({
-      method: 'put',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data: {
-        recipient: {
-          identity: email,
-          type: 'email',
-          hashed: true,
-          plaintextIdentity: email,
-        },
-        extensions: {
-          'extensions:recipientProfile': {
-            '@context':'https://openbadgespec.org/extensions/recipientProfile/context.json',
-            type: ['Extension', 'extensions:RecipientProfile'],
-          },
-        },
-      },
-    }, { verboseLogging: true })
-      .then(data => BadgrService.saveAssertions(data.result));
-  },`
+const keys = Object.keys(x)
 
-`async updateBadge({ email, firstname, lastname }, badgeAssertionEntityId) {
-    if (!email || !badgeAssertionEntityId) throw new Error('Email and badge ID are required to update a badge.');
-
-    const token = BADGR_AUTH_TOKEN || await BadgrService.updateAuthToken();
-
-    return makeBadgrRequest({
-      method: 'put',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data: {
-        recipient: {
-          identity: email,
-          type: 'email',
-          hashed: true,
-          plaintextIdentity: email,
-        },
-        extensions: {
-          'extensions:recipientProfile': {
-            '@context':'https://openbadgespec.org/extensions/recipientProfile/context.json',
-            type: ['Extension', 'extensions:RecipientProfile'],
-          },
-        },
-      },
-    }, { verboseLogging: true })
-      .then(data => BadgrService.saveAssertions(data.result));
-  },`
-
-  console.log('a.length', a.length)
-  console.log('b.length', b.length)
+console.log(currentTabImages[keys[0]])

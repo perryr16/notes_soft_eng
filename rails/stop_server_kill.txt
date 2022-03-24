@@ -12,6 +12,9 @@ $ ps aux | grep <application_name>
 -- or -- if port number known --
 $ lsof -i :<port number>
 
+NEED PERMISSION? 
+$ sudo lsof -i :<port number>
+
 print out will look like this:
 
 
@@ -19,5 +22,8 @@ rossperry         1258   0.0  0.4  4398732  33004   ??  S    10:02AM   0:00.90 r
 
 -- ! KILL ! --
 $ kill 1258
+
+NEED PERMISSION?
+$ sudo kill <port number>
 
 DO

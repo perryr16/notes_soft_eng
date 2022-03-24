@@ -1,0 +1,26 @@
+Gatsby:
+  - open source static website generator (SSG)
+  - based on React 
+  - Uses webpack 
+  - Uses GraphQL
+
+SSG: Static Site Generator 
+  - Only files and folder 
+  - no databases
+  - no server-side rendering
+  - no SQL injection if there is no db
+
+Webpack:
+  - Module bundler for JS 
+  - puts everything in a dependency graph 
+  - easier styling
+  - code splitting
+  - stable deploys
+  - faster page load
+
+Features:
+  - 2-3 times faster than other sites
+  - Open source 
+  - easily transfer data
+
+Steep learning curve

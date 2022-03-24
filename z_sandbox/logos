@@ -1,0 +1,57 @@
+MLB
+ball:
+  rockies
+  dodgers
+  brewers
+  twins
+  mets 
+  yankees 
+  giants
+  mariners
+  toronto 
+  rangers 
+bat:
+  cardinals 
+Field: 
+  phillies
+  rays 
+
+NFL 
+helmet: 
+  browns 
+  raiders 
+ball: 
+  bucs 
+  jets
+
+NHL 
+puck: 
+  colorado 
+stick:
+  islanders 
+  penguins 
+  sharks 
+  caps 
+
+NBA 
+ball:
+  lakers
+  clippers
+  mavs
+  cavs
+  hornets
+  pacers
+  pistons
+  celtics
+  nets
+  knicks
+  pelicans
+  timberwolves 
+  heat
+  kings
+  suns
+  76ers
+  magic
+  jazz
+  toronto
+  wizards

@@ -1,0 +1,32 @@
+// app.js 
+const app = new Vue({
+  el: '#app',
+  data: {
+    username: 'dog@dog.com',
+    dogs: [
+      'abe',
+      'bob',
+      'cal',
+    ],
+  }
+})
+
+el --> html Element
+  value of a css selector (id)
+  gives that element access to Vue fxnality
+
+data --> a store for dynamic data
+  always a key value pair 
+  usually pulled from a DB 
+  used in html with double '{' --> <p> {{username}} </p>
+  called a 'template'
+  often called mustaches
+
+
+-----------------------------
+<!-- index.html -->
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+  <script src="./js/app.js" defer></script>
+</head>
+...

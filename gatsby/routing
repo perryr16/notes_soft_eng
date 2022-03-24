@@ -1,0 +1,14 @@
+routes are built during the build 
+served from a CDN (?)
+
+Creating routes 
+- creating react components in src/pages 
+- file system route api (?)
+- `createPages` in gatsby-node.js 
+
+/src/pages 
+- generates a page for each .js 
+src/pages/tech/index.js --> www.com/tech 
+src/pages/tech/iot.js   --> www.com/tech/iot
+
+file system route api

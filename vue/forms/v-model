@@ -1,0 +1,24 @@
+binds fields to dynamic values 
+does onChange for you 
+
+HTML
+<input type="text" v-model="username" />
+
+JS
+const app = new Vue({ 
+  el: '#app',
+  data: { username: 'Michael' } 
+});
+
+when this example site is loaded, 
+the <input> will already be pre-filled with 'Michael', 
+the starting value of username. Then, whenever the <input> 
+is modified by the user, the username data value will 
+automatically change to the value typed in by the user.
+
+***********
+.number = convert value to a number 
+.trim   = removes whitespace from the begining and endings of form values 
+.lazy   = only update on change 
+
+more: https://vuejs.org/v2/api/#v-model

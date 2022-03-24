@@ -1,0 +1,43 @@
+inline
+  <h2 style="color:red">Breaking News</h2>
+
+------
+
+OR SET THE STYLE OBJECT IN DATA 
+HTML
+<h2 v-bind:style="[breakingNewsStyles, bold]">Breaking News</h2>
+
+JS // note: use an if else statement in the computed
+const app = new Vue({ 
+  data: { 
+    breakingNewsStyles: { 
+      color: 'red',
+      'font-size': '32px'
+    },
+    bold: {
+      'font-weight': 'bold'
+    }
+  }
+});
+
+------
+or inline 
+
+HTML
+<h2 v-bind:style="{ color: breakingNewsColor, 'font-size': breakingNewsFontSize }">Breaking News</h2>
+
+JS
+const app = new Vue({ 
+  data: { 
+    breakingNewsColor: 'red',
+    breakingNewsFontSize: '32px'
+  }
+});
+
+
+another... 
+<button type="submit" 
+  v-bind:disabled="!formIsValid"
+  v-bind:style="{'background-color': submitButtonColor, cursor: submitButtonCursor}"
+>Confirm Tickets</button>
+

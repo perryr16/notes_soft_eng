@@ -1,0 +1,10 @@
+for more complex look ups, use 
+aggregate 
+
+to find an individual entry use (or multiple with shared)
+$match
+
+to return specific fields use 
+$project
+
+> db.users.aggregate( [ { $match: {firstname: 'Ross'}},  {$project : {firstname: 1, email: 1}}])

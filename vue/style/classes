@@ -1,0 +1,44 @@
+HTML 
+<span v-bind:class="{ unread: hasNotifications }">Notifications</span>
+// if true, apply this css
+
+CSS
+.unread {
+  background-color: blue;
+}
+
+JS
+const app = new Vue({
+  data: { notifications: [ ... ] },
+  computed: {
+    hasNotifications: function() {
+      return notifications.length > 0;
+    }
+  }
+}
+
+------- multi class ---------
+HTML
+<span v-bind:class="[{ unread: hasNotifications }, menuItemClass]">Notifications</span>
+
+JS
+const app = new Vue({
+  data: { 
+    notifications: [ ... ],
+    menuItemClass: 'menu-item'
+  },
+  computed: {
+    hasNotifications: function() {
+      return notifications.length > 0;
+    }
+  }
+}
+
+CSS
+.menu-item {
+  font-size: 12px;
+}
+ 
+.unread {
+  background-color: blue;
+}

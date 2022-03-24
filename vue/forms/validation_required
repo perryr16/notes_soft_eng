@@ -1,0 +1,15 @@
+HTML
+<form  @submit="submitForm">
+  <button type="submit" v-bind:disabled="!formIsValid">Submit</button>
+</form>
+
+JS
+const app = new Vue({ 
+  el: '#app', 
+  computed: { 
+    formIsValid: function() { ... } 
+  },
+  methods: {
+    submitForm: function() { ... }
+  }
+});

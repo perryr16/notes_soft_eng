@@ -11,3 +11,5 @@ $ pipenv shell
   >>> import <library>
   >>> print(<library>.__version__)
 cntrl + d to exit
+
+^^ What library?

@@ -1,0 +1,25 @@
+use watch to make changes to computed values without using a value in a computed fxn 
+
+These functions take two parameters: the new value of that property and the previous value of that property.
+  function(new, old)
+
+if possible, use computed.
+
+
+const app = new Vue({
+  el: '#app',
+  data: {
+    currentLanguage: 'Spanish',
+    supportedLanguages: ['Spanish', 'Italian', 'Arabic'],
+    hoursStudied: 274
+  },
+  watch: {
+    currentLanguage: function (newCurrentLanguage, oldCurrentLanguage) {
+      if (supportedLanguages.includes(newCurrentLanguage)) {
+        this.hoursStudied = 0;
+      } else {
+        this.currentLanguage = oldCurrentLanguage;
+      }
+    }
+  }
+});

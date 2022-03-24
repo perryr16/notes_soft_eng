@@ -1,0 +1,38 @@
+vue directives
+--------------
+  v-
+
+v-text
+v-html
+v-show
+v-if
+v-else
+v-else-if
+v-for
+v-on
+v-bind
+v-model
+v-slot
+v-pre
+v-cloak
+v-once
+
+https://vuejs.org/v2/api/#Directives
+
+
+conditional
+v-if 
+  <button v-if="userIsLoggedIn">Log Out</button>
+  <button v-if="!userIsLoggedIn">Log In</button>
+
+loop 
+v-for 
+  <ul>
+    <li v-for="dog in doglist">{{ dog }}</li>
+  </ul>
+
+modify (and show) 'data.username' in options-object
+  <input v-model="username" />
+
+v-on 
+  <button v-on:click="tweets.push(newTweet)"> Add Tweet </button>

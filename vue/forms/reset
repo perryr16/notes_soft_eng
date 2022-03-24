@@ -1,0 +1,26 @@
+HTML
+<form v-on:reset="resetForm">
+  ...
+  <button type="reset">Reset</button>
+</form>
+
+JS
+const app = new Vue({ 
+  el: '#app', 
+  methods: { 
+    resetForm: function() { 
+      this.firstName = '';
+      this.lastName = '';
+      this.qty = 1;
+      this.referrals = [];
+      this.signed = false;
+  } }
+});
+
+
+NOTE: v-on: can be replaced with @ 
+HTML
+<form @reset="resetForm">
+  ...
+  <button type="reset">Reset</button>
+</form>

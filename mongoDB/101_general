@@ -11,6 +11,12 @@ $ mongo //enter shell
 > use <collection_name> // not needed 
 > db.<collection_name>.find() // show all data in <collection_name>
 
+NESTED QUERY: 
+use quotes and dot notation similar to JS 
+> db.users.find({"levelOne.levelTwo.levelThree": "propertyName"})
+
+AGGREGATE AND FIND (use $match)
+> db.users.aggregate([ { $lookup: { from: 'badge_assertions', localField: '_id', foreignField: 'user_id', as: 'badges' } }, {$match:{'email':'tony_lione@yahoo.com'}}]).pretty()
 
 help: // in shell
 > helpdv

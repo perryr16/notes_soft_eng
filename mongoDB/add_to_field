@@ -1,0 +1,11 @@
+use update 
+use $push
+
+> db.users.update({email: 'perryr16@gmail.com'}, {$push : { activeCourses: "TEST2"}})
+
+or 
+
+> db.users.update({email: 'joanna.zimmerman@asu.edu'}, {$pull : {completedCourses: "course-v1:E4H+ENT01+ENT_1_TEST"}})
+
+USE $set IF ITS NOT AN ARRAY 
+  name: 'bob'

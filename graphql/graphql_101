@@ -63,4 +63,3 @@ query findManyUsers ($userID1: Int!, $userID2: Int!) {
     age
   }
 }
-

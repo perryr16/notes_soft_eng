@@ -1,0 +1,13 @@
+
+Add this to the <head></head>
+* defer loads the page first, then load vue
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+
+
+new app --------------- 
+const app = new Vue({<options_object>})
+
+the options object contians info about the app 
+
+
+el --> html Element 

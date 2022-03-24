@@ -1,0 +1,29 @@
+SET THE DATA VALUES 
+
+const app = new Vue({
+  el: '#app',
+  data: {
+    hoursStudied: 274
+  },
+  computed: {
+    languageLevel: {
+      get: function() {
+        if (this.hoursStudied < 100) {
+          return 'Beginner';
+        } else if (this.hoursStudied < 1000) {
+          return 'Intermediate';
+        } else {
+          return 'Expert';
+        }
+      },
+      set: function(newLanguageLevel) {
+        if (newLanguageLevel === 'Beginner') {
+          this.hoursStudied = 0;
+        } else if (newLanguageLevel === 'Intermediate') {
+          this.hoursStudied = 100;
+        } else if (newLanguageLevel === 'Expert') {
+          this.hoursStudied = 1000;
+        }
+      }
+    }
+  }
